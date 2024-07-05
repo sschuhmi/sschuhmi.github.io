@@ -57,7 +57,7 @@ Therefore, a Linear Regression model [[4]](#ref4), [[5]](#ref5) was used to pred
 
 ![image5\label=image5](https://github.com/sschuhmi/sschuhmi.github.io/blob/main/_posts/img/WorkStart_PredictedSalaries.png?raw=true)
 
-*Figure 5 - Predicted Annual Salary (in $) using SciKit Learn´s LinearRegression Model [[4](#ref4), [[5](#ref5)]*
+*Figure 5 - Predicted Annual Salary (in $) using SciKit Learn´s LinearRegression Model [[4](#ref4), [5](#ref5)]*
 
 ## Conclusion 
 
