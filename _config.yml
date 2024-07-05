@@ -1,12 +1,17 @@
 # Site settings
 title: sschuhmi's Data Science Blog
 author:
-  name: S. Schuhmann
+  name: sschuhmi
   #email: your-email@domain.com
-description: "Stephan's blog"
+#description: "Data Science blog of sschuhmi"
+description: ""
 
 # Build settings
 remote_theme: jekyll/minima
 
 minima:
-  skin: solarized-dark
+  skin: dark
+
+# Set the Sass partials directory, as we're using @imports
+sass:
+  style: :expanded # You might prefer to minify using :compressed
