@@ -1,6 +1,6 @@
 # This will make you rethink of developers' infamous reputation as passionated night-working coders
 
-![](img/coding-pic.jpg)
+![](/img/coding-pic.jpg)
 
 # Introduction	
 
