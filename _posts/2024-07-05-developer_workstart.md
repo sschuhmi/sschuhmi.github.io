@@ -1,7 +1,7 @@
 # This will make you rethink of developers' infamous reputation as passionated night-working coders
 
-(/url/of/image.png)
-See figure \ref{mylabel}.
+![image1](img/coding-pic.jpg)
+See figure \ref{image1}.
 
 # Introduction	
 
