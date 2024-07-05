@@ -11,3 +11,7 @@ remote_theme: jekyll/minima
 
 minima:
   skin: dark
+
+# Set the Sass partials directory, as we're using @imports
+sass:
+  style: :expanded # You might prefer to minify using :compressed
