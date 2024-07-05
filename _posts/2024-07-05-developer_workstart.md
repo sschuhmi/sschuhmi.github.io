@@ -61,7 +61,7 @@ Therefore, a Linear Regression model [[4]](#ref4), [[5]](#ref5) was used to pred
 
 ## Conclusion 
 
-In this articles, we focused on questions concerning the preferred working times of software developers, trying to find out if there is something special about them (“coding at night”) or if they are rather traditional workers that prefer to work at daylight times.
+In this article, we focused on questions concerning the preferred working times of software developers, trying to find out if there is something special about them (“coding at night”) or if they are rather traditional workers that prefer to work at daylight times.
 
 Analyzing the results of the regarded survey showed that …
 -	… the vast majority of developers prefers not to work at night
