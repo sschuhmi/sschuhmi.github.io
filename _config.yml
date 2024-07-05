@@ -6,8 +6,8 @@ author:
 description: "Data Science blog of sschuhmi"
 
 # Build settings
-remote_theme: jekyll/minima
-#remote_theme: jekyll-theme-minimal
+#remote_theme: jekyll/minima
+remote_theme: jekyll/minimal-mistakes
 
 minima:
   skin: dark
