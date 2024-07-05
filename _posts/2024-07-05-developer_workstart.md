@@ -6,7 +6,7 @@
 
 There are many circulating prejudices about software developers, like being “sociophobic nerds, neglecting their real lifes in favor of hanging in front of the computer for writing code, discussing hacking and eating pizza” [[1]](#ref1). Moreover, there exists the persistent opinion that many software developers start their work day quite late, while loving to code at night, being a key to creativity and productivity [[2]](#ref2) in a distraction-free zone [[6]](#ref6).
 
-But, do those statements defy a critical analysis or are they just urban legends? To find out, I analyzed data from the 2017 Annual Developer Survey of Stack Overflow [[3]](#ref3) covering more than 64,000 reviews from more than 200 countries, particularly concentrating on the typical work start of developers to find out if there are effects on satisfaction and the expected salary, obviously having in mind that the work start is only one of several factors which has an influence on these issues.
+But, do those statements defy a critical analysis or are they just urban legends? To find out, I analyzed data from the 2017 Annual Developer Survey of Stack Overflow [[3]](#ref3) covering more than 64,000 reviews from more than 200 countries, particularly concentrating on developers' preferred  time of day to start work. The goal is to find out if there are effects on satisfaction and the expected salary, obviously having in mind that the time of day where developers would preferably work is only one of several factors which has an influence on these issues.
 
 # Analyzing the time of day developers would prefer to start their work
 
