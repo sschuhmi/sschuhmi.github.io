@@ -1,6 +1,7 @@
 # This will make you rethink of developers' infamous reputation as passionated night-working coders
 
 ![image0\label=image0](img/coding-pic.jpg)
+![Caption.](img/coding-pic.jpg) {#fig:coding}
 
 # Introduction	
 
