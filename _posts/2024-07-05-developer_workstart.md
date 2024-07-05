@@ -25,7 +25,7 @@ Regarding Figure 1 which shows the histogram of the survey results for this ques
 -	Most developers would prefer to start at 09:00am (3,570, i.e., 26.4%), following by 10:00am (3,380, i.e., 25.0%), meaning more than half of the participants would prefer working completely over the typical daylight times.
 -	In contrast, only 7.6% in sum decided in favor of rather unconventional work start times between 01:00 PM and 05:00 AM
 
-![image1\label=image1](img/WorkStart24_Distribution.jpg)
+![image1\label=image1](img/WorkStart24_Distribution.png)
 
 Furthermore, having a closer look on Figure 2 showing the respective cumulative histogram, it becomes obvious that around 90% of the survey participants would start an 8h-work day between 06:00 AM and 11:00 AM, meaning they would finish work before 08:00 PM and, thus, would clearly not prefer to work at night.
 
