@@ -35,7 +35,7 @@ Furthermore, having a closer look on Figure 2 showing the respective cumulative 
 
 To discover the answer this question, let us take a look on Figure 3, which represents a heatmap illustrating the dependency between preferred week start (on the x-axis) and the denoted satisfactions and the salary the respective persons gain. While positive values (> 0.00) represent a positive effect on satisfaction or salary, negative values (<0.00) represent a negative effect and zero values depict no effect.
 
-![image3\label=image3](img/CorrelationHeatmap_cropped.png)
+![image3\label=image3](img/CorrelationHeatMap_cropped.png)
 
 Figure 4 summarizes the effects of the values shown in Figure 3 by summing up the 4 values per work start column and showing the correlation between the preferred work start and the cumulated satisfaction/salary values. As there may be many other factors which obviously influence satisfactions and salary in a much larger way than the preferred work start of the developers, it still can be seen there is a trend that the typical “daylight developers” preferring to start between 05:00am and 10:00am have positive aggregated values, while the most other developers which prefer rather unconventional work start times display mostly negative values in this figure.
 
