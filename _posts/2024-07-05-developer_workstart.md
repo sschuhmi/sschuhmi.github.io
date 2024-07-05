@@ -1,6 +1,6 @@
 # This will make you rethink of developers' infamous reputation as passionated night-working coders
 
-![image1](img/coding-pic.jpg)
+![image1\label=image1](img/coding-pic.jpg)
 See figure \ref{image1}.
 
 # Introduction	
