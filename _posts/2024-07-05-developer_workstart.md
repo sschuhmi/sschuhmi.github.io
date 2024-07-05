@@ -1,6 +1,7 @@
 # This will make you rethink of developers' infamous reputation as passionated night-working coders
 
-Insert Figure here!
+(/url/of/image.png)
+See figure \ref{mylabel}.
 
 # Introduction	
 
