@@ -11,7 +11,7 @@ But, do those statements defy a critical analysis or are they just urban legends
 # Analyzing the time of day developers would prefer to start their work
 
 When analyzing the time of day the developers would like to start their work day according to the survey, I particularly focused on three questions which came to my mind:
-1.	Do developers really have “special times” for work, or would they prefer to be the typical “9-to-5 workers”?
+1.	Do developers really have “special times” for work, or would they prefer to be the typical “9-to-5" workers?
 2.	Is there a influence on the developers’ job and career satisfactions based on the time of day they wanted to start their work?
 3.	Can you recognize a trend on the predicted salary for a developer solely based on the time they wanted to start to work? 
 
