@@ -11,20 +11,3 @@ remote_theme: jekyll/minima
 
 minima:
   skin: dark
-
-# Optional features
-animated:             false
-show_related_posts:   false
-show_post_footers:    false
-show_social_icons:    false
-ajaxify_contact_form: false
-
-# Build settings
-markdown:     kramdown
-redcarpet:
-  extensions: ['smart', 'tables', 'with_toc_data']
-#permalink:    pretty
-permalink:   /:categories/:title/
-paginate:     nil
-sass:
-  compressed: true
