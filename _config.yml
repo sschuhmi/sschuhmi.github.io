@@ -3,7 +3,7 @@ title: sschuhmi's Data Science Blog
 author:
   name: S. Schuhmann
   #email: your-email@domain.com
-description: "Stephan's blog"
+description: "Data Science blog of sschuhmi"
 
 # Build settings
 remote_theme: jekyll/minima
