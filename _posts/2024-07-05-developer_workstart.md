@@ -29,9 +29,9 @@ A numbered list is created using a number + `.`, like:
 6. three
 2. four
 
-# References
+## References
 
-1. [Are you afraid of software developers?](https://ilnumerics.net/blog/are-you-afraid-of-software-developers/)
+1. <a name="ref1">[Are you afraid of software developers?](https://ilnumerics.net/blog/are-you-afraid-of-software-developers/)</a>
 2. [Why developers like to code at night](https://opensource.com/article/20/2/why-developers-code-night)
 3. [Stack Overflow Developer Survey 2017](https://survey.stackoverflow.co/2017)
 4. [LinearRegression — scikit-learn 1.5.1 documentation](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LinearRegression.html)
