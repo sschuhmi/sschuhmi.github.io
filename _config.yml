@@ -9,4 +9,4 @@ description: "Stephan's blog"
 remote_theme: jekyll/minima
 
 minima:
-  skin: solarized-dark
+  skin: dark
