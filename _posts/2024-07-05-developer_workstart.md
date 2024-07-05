@@ -1,6 +1,6 @@
 # This will make you rethink of developers' infamous reputation as passionated night-working coders
 
-![image1\label=image1](img/coding-pic.jpg)
+![image0\label=image0](img/coding-pic.jpg)
 
 # Introduction	
 
@@ -25,20 +25,28 @@ Regarding Figure 1 which shows the histogram of the survey results for this ques
 -	Most developers would prefer to start at 09:00am (3,570, i.e., 26.4%), following by 10:00am (3,380, i.e., 25.0%), meaning more than half of the participants would prefer working completely over the typical daylight times.
 -	In contrast, only 7.6% in sum decided in favor of rather unconventional work start times between 01:00 PM and 05:00 AM
 
+![image1\label=image1](img/WorkStart24_Distribution.jpg)
+
 Furthermore, having a closer look on Figure 2 showing the respective cumulative histogram, it becomes obvious that around 90% of the survey participants would start an 8h-work day between 06:00 AM and 11:00 AM, meaning they would finish work before 08:00 PM and, thus, would clearly not prefer to work at night.
+
+![image2\label=image2](img/WorkStart24_Aggregation.png)
 
 ## Question 2: Is there a influence between the time of day a developer would prefer to start to work and their satisfaction?
 
 To discover the answer this question, let us take a look on Figure 3, which represents a heatmap illustrating the dependency between preferred week start (on the x-axis) and the denoted satisfactions and the salary the respective persons gain. While positive values (> 0.00) represent a positive effect on satisfaction or salary, negative values (<0.00) represent a negative effect and zero values depict no effect.
 
+![image3\label=image3](img/CorrelationHeatmap_cropped.png)
+
 Figure 4 summarizes the effects of the values shown in Figure 3 by summing up the 4 values per work start column and showing the correlation between the preferred work start and the cumulated satisfaction/salary values. As there may be many other factors which obviously influence satisfactions and salary in a much larger way than the preferred work start of the developers, it still can be seen there is a trend that the typical “daylight developers” preferring to start between 05:00am and 10:00am have positive aggregated values, while the most other developers which prefer rather unconventional work start times display mostly negative values in this figure.
+
+![image4\label=image4](img/AggregatedCorrelations.png)
 
 
 ## Question 3: Is there a difference in the salary that is predicted based on the time of day a developer prefers to start work?
 
 Finally, let us try to find an answer on the question if the predicted annual salary for developers which would prefer to work at traditional daylight times differs from those which rather would work at unconventional times, involving evening hours, night hours or very early morning hours. 
 
-Therefore, a Linear Regression model [[4]](#ref4) was used to predict the expected salary based on the given answers in the survey. While this may be an oversimplification as it only regards one specific question concerning the preferred work start, it is interesting to see that the respective Figure 5 shows a very interesting trend that people which preferred traditional work start hours seem to have the highest predicted salaries, while “night workers” which would prefer to start their work day between 10:00pm and 02:00am have by far the lowest predicted salaries: The highest predicted annual salary (almost 80k $ for the “early birds” that would prefer to start at 05:00am) is more than 7 times as much as the lowest predicted salary (around 11k $ for those that would prefer to start at midnight).
+Therefore, a Linear Regression model [[4]](#ref4), [[5]](#ref5) was used to predict the expected salary based on the given answers in the survey. While this may be an oversimplification as it only regards one specific question concerning the preferred work start, it is interesting to see that the respective Figure 5 shows a very interesting trend that people which preferred traditional work start hours seem to have the highest predicted salaries, while “night workers” which would prefer to start their work day between 10:00pm and 02:00am have by far the lowest predicted salaries: The highest predicted annual salary (almost 80k $ for the “early birds” that would prefer to start at 05:00am) is more than 7 times as much as the lowest predicted salary (around 11k $ for those that would prefer to start at midnight).
 
 ## Conclusion 
 
@@ -49,7 +57,7 @@ Analyzing the results of the regarded survey showed that …
 -	… developers tend to be happier and/or earn more if they prefer to work at traditional daylight times
 -	… ”early birds” which would like to start an 8h working day in the early morning are supposed to earn the highest salaries
 
-These results seem to unmask the established hypotheses (e.g., in [2], [6]) to be rather prejudices up to urban legends than representing the truth.
+These results seem to unmask the established hypotheses (e.g., in [[2]](#ref2), [[6]](#ref6)) to be rather prejudices up to urban legends than representing the truth.
 
 ## References
 
