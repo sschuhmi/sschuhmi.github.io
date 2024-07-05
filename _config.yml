@@ -7,7 +7,6 @@ author:
 description: ""
 
 # Build settings
-permalink: pretty
 remote_theme: jekyll/minima
 
 minima:
