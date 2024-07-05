@@ -7,10 +7,10 @@ author:
 description: ""
 
 # Build settings
-remote_theme: jekyll/minima
+#remote_theme: jekyll/minima
 
-minima:
-  skin: dark
+#minima:
+#  skin: dark
 
 # Set the Sass partials directory, as we're using @imports
 sass:
