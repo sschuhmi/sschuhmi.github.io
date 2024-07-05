@@ -7,6 +7,9 @@ author:
 description: ""
 
 # Build settings
+markdown: kramdown
+permalink: pretty
+
 remote_theme: jekyll/minima
 
 minima:
