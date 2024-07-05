@@ -7,7 +7,7 @@ description: "Data Science blog of sschuhmi"
 
 # Build settings
 #remote_theme: jekyll/minima
-remote_theme: jekyll/minimal-mistakes
+theme: jekyll-theme-minimal
 
 minima:
   skin: dark
