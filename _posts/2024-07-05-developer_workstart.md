@@ -15,7 +15,7 @@ When analyzing the time of day the developers would like to start their work day
 2.	Is there a influence on the developers’ job and career satisfactions based on the time of day they wanted to start their work?
 3.	Can you recognize a trend on the predicted salary for a developer solely based on the time they wanted to start to work? 
 
-## Question 1: Are software developers the typical "9-to-5"-workers?
+## Question 1: Are software developers the typical "9-to-5" workers?
 
 One of the raised questions in Stack Overflow´s survey was:
 
