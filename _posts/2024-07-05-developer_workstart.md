@@ -1,6 +1,6 @@
 # This will make you rethink of developers' infamous reputation as passionated night-working coders
 
-![](https://github.com/sschuhmi/sschuhmi.github.io/blob/main/_posts/img/coding-pic.jpg))
+![](https://github.com/sschuhmi/sschuhmi.github.io/blob/main/_posts/img/coding-pic.jpg)
 
 # Introduction	
 
