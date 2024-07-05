@@ -1,9 +1,13 @@
 # This will make you rethink of developers' infamous reputation as passionated night-working coders
 
-This is a paragraph in my first post.
-Show off your Markdown!
+Insert Figure here!
 
-## Heading Two 
+# Introduction	
+
+There are many circulating prejudices about software developers, like being “sociophobic nerds, neglecting their real lifes in favor of hanging in front of the computer for writing code, discussing hacking and eating pizza” [1]. Moreover, there exists the persistent opinion that many software developers start their work day quite late, while loving to code at night, being a key to creativity and productivity [2] in a distraction-free zone [6].
+
+But, do those statements defy a critical analysis or are they just urban legends? To find out, I analyzed data from the 2017 Annual Developer Survey of Stack Overflow [3] covering more than 64,000 reviews from more than 200 countries, particularly concentrating on the typical work start of developers to find out if there are effects on satisfaction and the expected salary, obviously having in mind that the work start is only one of several factors which has an influence on these issues.
+
 
 Any text with no empty lines between will become a paragraph.
 Leave an blank line between headings and paragraphs.
@@ -24,3 +28,12 @@ A numbered list is created using a number + `.`, like:
 2. two
 6. three
 2. four
+
+# References
+
+[1] [Are you afraid of software developers? - The ILNumerics Blog](https://ilnumerics.net/blog/are-you-afraid-of-software-developers/)
+[2] [Why developers like to code at night | Opensource.com](https://opensource.com/article/20/2/why-developers-code-night)
+[3] [Stack Overflow Developer Survey 2017](https://survey.stackoverflow.co/2017)
+[4] [LinearRegression — scikit-learn 1.5.1 documentation](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LinearRegression.html)
+[5] [Linear Regression in Python with Scikit-Learn | by Kinder Sham | Analytics Vidhya | Medium](https://medium.com/analytics-vidhya/linear-regression-in-python-with-scikit-learn-e1bb8a059cd2#:~:text=With%20Scikit-Learn%20it%20is%20extremely%20straight%20forward%20to,machine%20learning%20library%20to%20train%20on%20your%20data.)
+[6] [The Advantages of Coding at Night: The Distraction-Free Zone. | Lucid Coder](https://www.lucidcoder.dev/the-advantages-of-coding-at-night)
