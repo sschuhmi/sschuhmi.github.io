@@ -26,20 +26,24 @@ Regarding Figure 1 which shows the histogram of the survey results for this ques
 -	In contrast, only 7.6% in sum decided in favor of rather unconventional work start times between 01:00 PM and 05:00 AM
 
 ![Figure 1](https://github.com/sschuhmi/sschuhmi.github.io/blob/main/_posts/img/WorkStart24_Distribution.png?raw=true)
+*Figure 1 – Histogram of survey results to the question concerning preferred work start*
 
 Furthermore, having a closer look on Figure 2 showing the respective cumulative histogram, it becomes obvious that around 90% of the survey participants would start an 8h-work day between 06:00 AM and 11:00 AM, meaning they would finish work before 08:00 PM and, thus, would clearly not prefer to work at night.
 
 ![image2\label=image2](https://github.com/sschuhmi/sschuhmi.github.io/blob/main/_posts/img/WorkStart24_Aggregation.png?raw=true)
+*Figure 2 – Cumulative histogram of preferred work starts*
 
 ## Question 2: Is there a influence between the time of day a developer would prefer to start to work and their satisfaction?
 
 To discover the answer this question, let us take a look on Figure 3, which represents a heatmap illustrating the dependency between preferred week start (on the x-axis) and the denoted satisfactions and the salary the respective persons gain. While positive values (> 0.00) represent a positive effect on satisfaction or salary, negative values (<0.00) represent a negative effect and zero values depict no effect.
 
 ![image3\label=image3](https://github.com/sschuhmi/sschuhmi.github.io/blob/main/_posts/img/CorrelationHeatMap_cropped.png?raw=true)
+*Figure 3 – Heatmap showing the influence of preferred work starts on different satisfaction values and salary*
 
 Figure 4 summarizes the effects of the values shown in Figure 3 by summing up the 4 values per work start column and showing the correlation between the preferred work start and the cumulated satisfaction/salary values. As there may be many other factors which obviously influence satisfactions and salary in a much larger way than the preferred work start of the developers, it still can be seen there is a trend that the typical “daylight developers” preferring to start between 05:00am and 10:00am have positive aggregated values, while the most other developers which prefer rather unconventional work start times display mostly negative values in this figure.
 
 ![image4\label=image4](https://github.com/sschuhmi/sschuhmi.github.io/blob/main/_posts/img/AggregatedCorrelations.png?raw=true)
+*Figure 4 – Correlation between preferred Work Start and aggregated satisfactions and salary*
 
 ## Question 3: Is there a difference in the salary that is predicted based on the time of day a developer prefers to start work?
 
@@ -48,7 +52,7 @@ Finally, let us try to find an answer on the question if the predicted annual sa
 Therefore, a Linear Regression model [[4]](#ref4), [[5]](#ref5) was used to predict the expected salary based on the given answers in the survey. While this may be an oversimplification as it only regards one specific question concerning the preferred work start, it is interesting to see that the respective Figure 5 shows a very interesting trend that people which preferred traditional work start hours seem to have the highest predicted salaries, while “night workers” which would prefer to start their work day between 10:00pm and 02:00am have by far the lowest predicted salaries: The highest predicted annual salary (almost 80k $ for the “early birds” that would prefer to start at 05:00am) is more than 7 times as much as the lowest predicted salary (around 11k $ for those that would prefer to start at midnight).
 
 ![image5\label=image5](https://github.com/sschuhmi/sschuhmi.github.io/blob/main/_posts/img/WorkStart_PredictedSalaries.png?raw=true)
-
+*Figure 5 - Predicted Annual Salary (in $) using SciKit Learn´s LinearRegression Model [[4](#ref4), [[5](#ref5)]*
 ## Conclusion 
 
 In this articles, we focused on questions concerning the preferred working times of software developers, trying to find out if there is something special about them (“coding at night”) or if they are rather traditional workers that prefer to work at daylight times.
