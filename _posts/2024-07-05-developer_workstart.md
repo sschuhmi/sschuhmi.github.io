@@ -66,7 +66,7 @@ In this article, we focused on questions concerning the preferred working times 
 Analyzing the results of the regarded survey showed that …
 -	...the vast majority of developers prefers *not* to work at night, but rather at conventional times over the day
 -	...developers tend to be happier and/or earn more if they prefer to work at traditional daylight times
--	...”early birds” which would like to start an 8h working day in the early morning are supposed to earn the highest salaries
+-	...”early birds” which would like to start an 8h working day in the early morning are supposed to earn the highest (predicted) salaries
 
 These results seem to unmask the established hypotheses (e.g., in [[2]](#ref2), [[6]](#ref6)) to be rather prejudices up to urban legends than representing the truth.
 
