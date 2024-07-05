@@ -32,8 +32,8 @@ A numbered list is created using a number + `.`, like:
 # References
 
 1. [Are you afraid of software developers? - The ILNumerics Blog](https://ilnumerics.net/blog/are-you-afraid-of-software-developers/)
-2. [Why developers like to code at night | Opensource.com](https://opensource.com/article/20/2/why-developers-code-night)
+2. [Why developers like to code at night - Opensource.com](https://opensource.com/article/20/2/why-developers-code-night)
 3. [Stack Overflow Developer Survey 2017](https://survey.stackoverflow.co/2017)
 4. [LinearRegression — scikit-learn 1.5.1 documentation](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LinearRegression.html)
-5. [Linear Regression in Python with Scikit-Learn | by Kinder Sham | Analytics Vidhya | Medium](https://medium.com/analytics-vidhya/linear-regression-in-python-with-scikit-learn-e1bb8a059cd2#:~:text=With%20Scikit-Learn%20it%20is%20extremely%20straight%20forward%20to,machine%20learning%20library%20to%20train%20on%20your%20data.)
-6. [The Advantages of Coding at Night: The Distraction-Free Zone. | Lucid Coder](https://www.lucidcoder.dev/the-advantages-of-coding-at-night)
+5. [Linear Regression in Python with Scikit-Learn - Medium](https://medium.com/analytics-vidhya/linear-regression-in-python-with-scikit-learn-e1bb8a059cd2#:~:text=With%20Scikit-Learn%20it%20is%20extremely%20straight%20forward%20to,machine%20learning%20library%20to%20train%20on%20your%20data.)
+6. [The Advantages of Coding at Night: The Distraction-Free Zone. - Lucid Coder](https://www.lucidcoder.dev/the-advantages-of-coding-at-night)
