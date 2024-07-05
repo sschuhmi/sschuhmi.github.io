@@ -1,7 +1,4 @@
----
-layout: post
-title: This will make you rethink of developers' infamous reputation as passionated night-working coders
----
+# This will make you rethink of developers' infamous reputation as passionated night-working coders
 
 This is a paragraph in my first post.
 Show off your Markdown!
