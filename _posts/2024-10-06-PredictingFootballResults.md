@@ -177,18 +177,19 @@ As we need to predict three binary result columns, a multi-output classifier is 
 
 The following algorihms were implemented to predict the classification results:
 - RandomClassifier: a simple classifier which randomly chooses among one of the three possible outcomes ([1, 0, 0], [0, 1, 0] or [0, 0, 1]). This accuracy, precision, recall and f1 results of this classifier serve as benchmark for the other classifiers.
-- scikit-learn´s MultiOutputClassifier with DecisionTree estimator
-- scikit-learn´s MultiOutputClassifier with RandomForests estimator
-- scikit-learn´s MultiOutputClassifier with LogisticRegression estimator
+- scikit-learn´s MultiOutputClassifier [[5]](#ref5) with DecisionTrees [[6]](#ref6) estimator
+- scikit-learn´s MultiOutputClassifier [[5]](#ref5) with RandomForests [[7]](#ref7) estimator
+- scikit-learn´s MultiOutputClassifier [[5]](#ref5) with LogisticRegression [[8]](#ref8) estimator 
 
 ## Refinement
 
 While the three multi-output classifiers represent modern Machine Learning approaches, they face one big problem: As each value of the result column is calculated independently of each other, it may be possible that not always exactly one of the three outcomes is predicted with a 1. Instead, it may be possible that all predicted values are zero (i.e., [0, 0, 0] as result vector) or more than one predicted value is one (i.e., [1, 1, 0], [1, 0, 1], [0, 1, 1] or even [1, 1, 1]. To address this issue, we addditionally implemented three multi-output regressors from scikit-learn which predict not binary, but continuous values for the result vector. As the result values may still only be a 0 or a 1, the optimized algorithm takes the column which the largest predicted value and puts this value to 1, while the other two values ar put to 0. For instance, if the regressor´s result is [0.2, 0.6, 0.7], then the result vector is adapted to [0, 0, 1], since the value of the third column was the largest.
 
 The following three regressors were implemented and optizimed using the algorithm described above:
-- scikit-learn´s MultiOutputRegressor with GradientBoostingRegressor as estimator
-- scikit-learn´s MultiOutputRegressor with Ridge as estimator
-- scikit-learn´s MultiOutputRegressor with Stochastic Gradient Descent (SGD) as estimator
+- scikit-learn´s MultiOutputRegressor [[9]](#ref6) with GradientBoostingRegressor [[7]](#ref7) as estimator
+- scikit-learn´s MultiOutputRegressor [[9]](#ref6) with Ridge [[10]](#ref10) as estimator: Ridge represents a Linear least squares with l2 regularization and minimizes the following objective function:
+||y - Xw||^2_2 + alpha * ||w||^2_2
+- scikit-learn´s MultiOutputRegressor [[9]](#ref6) with Stochastic Gradient Descent (SGD) [[11]](#ref11) as estimator: SGD represents a simple, yet very efficient approach to fitting linear classifiers and regressors under convex loss functions such as (linear) Support Vector Machines and Logistic Regression.
 
 In summary, we compare
 
@@ -224,3 +225,10 @@ Acknowledges go to StatsBomb for providing their open data set.
 2. <a name="ref2">[StatsBomb Open Data - public GitHub Repository](https://github.com/statsbomb/open-data)</a>
 3. <a name="ref3">[Performance Metrics in Machine Learning | Complete Guide]](https://neptune.ai/blog/performance-metrics-in-machine-learning-complete-guide)</a>
 4. <a name="ref4">[scikit-learn Classification Report Metrics](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.classification_report.html)</a>
+5. <a name="ref5">[scikit-learn MultiOutputClassifier](https://scikit-learn.org/stable/modules/generated/sklearn.multioutput.MultiOutputClassifier.html)</a>
+6. <a name="ref6">[Decision Trees in scikit-learn](https://scikit-learn.org/stable/modules/tree.html)</a>
+7. <a name="ref7">[RandomForests, GradientBoosting and others in scikit-learn](https://scikit-learn.org/stable/modules/ensemble.html)</a>
+8. <a name="ref8">[Logistic Regression in scikit-learn](https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression)</a>
+9. <a name="ref9">[scikit-learn MultiOutputRegressor](https://scikit-learn.org/stable/modules/generated/sklearn.multioutput.MultiOutputRegressor.html)</a>
+10. <a name="ref10">[Ridge in scikit-learn](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.Ridge.html#sklearn.linear_model.Ridge))</a>
+11. <a name="ref11">[StochasticGradientBoost in scikit-learn](https://scikit-learn.org/stable/modules/sgd.html)</a>
