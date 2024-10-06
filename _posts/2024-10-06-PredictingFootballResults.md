@@ -42,10 +42,12 @@ Mathematically set, the sum of |y_pred - y| (row-wise calculated) should be as m
 
 To quantify the results of the classification algorithms, common classification metrics in Machine Learning [[3]](#ref3) are used, being combined in a classification report which is provided by the used scikit-learn framework [[4]](#ref4).
 These comprise the following:
-- Precision score:
-- Recall score:
-- F1 score:
-- Accuracy score:
+- Precision score: Precision is the ability of the classifier not to label a sample which actually is negative as positive. 
+- Recall score: Contrary to precision, recall is the ability of the classifier to find all the positive samples.
+- F1 score: This netric can be interpreted as a weighted harmonic mean of the precision and recall. It considers precision and recall with the same fraction and calculates as 2*precision*recall/(precision+recall)
+- Accuracy score: The accuracy_score represents the fraction of correctly classified samples. Here, a sample represents of one row vector within the results matrix.
+
+Mathematical details on these metrics can also be found at [[4]](#ref4).
 
 As our main goal is to have the most matches between the actual and the predicted results (i.e., the number rows of the result matrix should be maximized), the accuracy (calculated on a row-wise manner) is considered to
 be the most important of the above metrics here, but the other metrics are also taken into considertion in the evaluation.
