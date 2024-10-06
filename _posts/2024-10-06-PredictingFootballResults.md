@@ -54,7 +54,7 @@ A fine-grained documentation of the files, their formats and their contents is a
 While the results presented in the previous section show that optimized Multi-Output Regressors which use advanced algorithms like Ridge or SVD help to significantly improve the prediction accuracy,
 it has to be mentioned that there is still a large optimization potential, considering that the best accuracy was only slightly above 50%.
 
-However, regarding that the data set consisted only of 120 out of the 3500 matches from open data (and the whole StatsBomb data comprises much more than those matches), it is obvious that there exists a large potential 
+However, regarding that the data set consisted only of 120 out of the 3500 matches from open data (and the whole StatsBomb data comprises even much more than those matches!), it is obvious that there exists a large potential 
 by increasing the training set for the ML predictors.
 
 Futhermore, we only used a quantitative approach by simply counting the number of events per event type. As there is also qualitative information included in the data (i.e, different results of the event types), this data could additionally be used to have an even more fine-grained feature set to further improve prediction accuracies.
