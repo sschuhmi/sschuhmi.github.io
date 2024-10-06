@@ -32,8 +32,17 @@ As an example, consider the following Figure 1 which represents score data from 
 
 ![Fig1](https://github.com/sschuhmi/sschuhmi.github.io/blob/main/_posts/img/2014-10_Football/Result_Vector.PNG?raw=true)
 
+The goal of a prediction algorithm is to minimize to calculate result matrices y_pred which are close to or, in the optimum case, represent exactly the result matrix y of the actual results.
+Mathematically set, the sum of |y_pred - y| (row-wise calculated) should be as minimal as possible. If the prediction exactly matches the actual results, the sum of |y_pred - y| is zero.
+
 ## Metrics
 
+To quantify the results of the algorithms, common metrics from ... are used, being combined in a classification report which is provided by the used framework (Python3 with scikit-learn library).
+These comprise the following:
+
+
+As our main goal is to have the most matches between the actual and the predicted results (i.e., the number rows of the result matrix should be maximized), the accuracy (calculated on a row-wise manner) is considered to
+be the most important of the above metrics here, but the other metrics are also taken into considertion in the evaluation.
 
 # Analysis
 
