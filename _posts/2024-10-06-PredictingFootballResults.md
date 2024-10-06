@@ -33,8 +33,6 @@ As an example, consider the following Figure [1] which represents score data fro
 ![StatsBomb](https://github.com/sschuhmi/sschuhmi.github.io/blob/main/_posts/img/2014-10_Football/Result_Matrix.PNG?raw=true)
 
 <p align="center" style="text-align:center">
-  <img align="center" href="Fig1" name="1" caption="2" title="Result Matrix as output vector for prediction" src="https://github.com/sschuhmi/sschuhmi.github.io/blob/main/_posts/img/2014-10_Football/Result_Matrix.PNG">
-  
   *Fig. 1: Result Matrix as output vector for prediction*
 </p>
 
