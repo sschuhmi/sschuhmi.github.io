@@ -5,7 +5,7 @@
 # Project Definition
 
 Football - also known as soccer in the USA - is one of the most famous sports in the world. In the last years, the amount of analysis data that are generated in modern football matches using cameras, drones or
-other advanced technologies has significantly increased. StatsBomb [[1]](#ref1) has become one of the most famous analysis data providers in this area, delivering tons of analysis data of matches all over the planet. Besides data where the customer needs to pay for, there is also a large StatsBomb open data repository in GitHub available [[2]](#ref2) which includes more than ... matches from ... competitions, reaching from national competitions up to continental and global championships like the FIFA World Cup 2024.
+other advanced technologies has significantly increased. StatsBomb [[1]](#ref1) has become one of the most famous analysis data providers in this area, delivering tons of analysis data of matches all over the planet. Besides data where the customer needs to pay for, there is also a large StatsBomb open data repository in GitHub available [[2]](#ref2) which includes more than ... matches from ... competitions, reaching from national competitions up to continental and global championships like the FIFA World Cup 2022.
 
 ## Project Overview
 
