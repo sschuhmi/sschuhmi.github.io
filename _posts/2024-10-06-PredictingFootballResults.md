@@ -122,6 +122,20 @@ In order to find out which event types are most important to become features for
 Regarding the immense amount of the dataset and the immense amount and memory consumption for processing the data, we focused on a small subset of matches for our observations, leaving the extension to a larger set for further work. Thus, the data visualizations in the following are created using the following data:
 - All 116 provided matches from a specific season of 3 competitions - Spanish 'La Liga' 2019/2020, World Cup 2022 and Copa America 2024
 - These matches include 417221 events of all event types, which can be distinguished to the following numbers of event patterns:
+ | play_pattern.name  |  count  | 
+ |--------------------|---------|
+ | Regular Play       | 175188  |
+ | From Throw In      | 175188  |
+ | From Free Kick     | 175188  |
+ | From Goal Kick     | 175188  |
+ | From Corner        | 175188  |
+ | From Kick Off      | 175188  |
+ | From Keeper        | 175188  |
+ | From Counter       | 175188  |
+ | Other              | 175188  |
+ 
+ 
+
   play_pattern.id  play_pattern.name    count
   1                Regular Play         175188
   4                From Throw In         92072
