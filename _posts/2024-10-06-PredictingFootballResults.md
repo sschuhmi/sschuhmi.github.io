@@ -43,4 +43,4 @@
 
 # References
 
-1. <a name="ref1">[StatsBomb Open Data GitHub Repository](https://github.com/statsbomb/open-data))</a>
+1. <a name="ref1">[StatsBomb Open Data GitHub Repository](https://github.com/statsbomb/open-data)</a>
