@@ -9,7 +9,7 @@ other advanced technologies has significantly increased. StatsBomb [[1]](#ref1) 
 
 An interesting question that arises with this constantly increasing amount of football analysis data is the following:
 
-*“Suppose you only have the analysis data of a specific match available, without knowing who know the match or if there was a draw. Is it possible to predict the winner with a high accuracy based on the analysis data and modern Machine Learning algorithms?”*
+*“Suppose you have the analysis data of a specific match available, without knowing who know the match or if there was a draw. Solely based on analysis data of previous matches where the winners are known, is it possible to predict the winner of this match with a high accuracy by taking advantage of modern Machine Learning algorithms?”*
 
 That´s exactly what is the focus of this project: We exploit the large open data set and use Machine Learning multi-output Classifiers and Regressors to predict the winner of a match, compared to a simple non-ML Classifier which randomly decides one of the possible three results - first team wins, second team wins, or there is a draw between the teams.
 ## Project Overview
