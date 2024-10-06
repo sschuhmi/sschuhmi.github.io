@@ -193,6 +193,8 @@ The following three regressors were implemented and optizimed using the algorith
 
 In summary, we compare the simple RandomClassifier with three ML multi-output classifiers and three ML multi-output regressor with corrected result vectors.
 
+Finally, after having evaluated the results and decided in favor of a specific classifier or regressor (see Results section below), the corresponding classifier was organized within a ML pipeline. Furthermore, the extract, transform and load data parts were also extracted in an ETL pipeline which is executed prior to the ML pipeline. The pipeline guarantee automized, simple and flexible runs of the algorithms.
+
 # Results
 
 ## Model Evaluation and Validation
