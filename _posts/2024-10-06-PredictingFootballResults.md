@@ -56,7 +56,7 @@ A fine-grained documentation of the files, their formats and their contents is a
 # Acknowledges
 
 Thanks to StatsBomb for providing their open data set.
-![StatsBomb](https://github.com/sschuhmi/sschuhmi.github.io/blob/main/_posts/img/2014-10_Football/StatsBomb-logo.png?raw=true)
+![StatsBomb](https://github.com/sschuhmi/sschuhmi.github.io/blob/main/_posts/img/2014-10_Football/StatsBomb-logo.png?raw=true&width=300)
 
 # References
 
