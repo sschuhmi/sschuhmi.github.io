@@ -66,15 +66,11 @@ A fine-grained documentation of the files, their formats and their contents is a
 
 #### Competitions and Seasons
 
-The single competition.json file includes an array of competition-season objects with the following properties:
-- competition_id (unique identifier of the competition)
-- season_id (unique identifier of the season)
-- competition_name (name of the competition)
-- competition_gender (gender of the players competing in the competition)
-- country_name (name of the country or ragion the competition relates to)
-- season_name (name of the season)
-- match_updated (date and time at which a match was last updated)
-- match_available (date and time at which a match was made available)
+The single competition.json file includes an array of competition-season objects with the following properties relevant for this project:
+- competition_id, competition_name (unique identifier of the competition and the respective name of this competition)
+- season_id, season_name (unique identifier of the season and the respective name of this season)
+
+The full set of objects can be found [[here]](https://github.com/statsbomb/open-data/blob/master/doc/Open%20Data%20Competitions%20v2.0.0.pdf)).
 
 The competition file was used as starting point for the data import in this project.
 
