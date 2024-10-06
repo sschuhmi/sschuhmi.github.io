@@ -18,10 +18,12 @@ other advanced technologies has significantly increased. StatsBomb [[1]](#ref1) 
 
 ## Data Exploration
 
-StatsBomb´s open data is provided as JSON files exported from the StatsBomb Data API, in the following structure:
-- Competition and seasons
-- Matches for each competition and season
-- Events and lineups for each match, included additional StatsBomb 360 data for selected matches.
+Currently in October 2024, StatsBomb´s open data represents only a small, but yet comprehensive subset of the overall StatsBomb data. 
+
+The data is provided as JSON files exported from the StatsBomb Data API, in the following structure:
+- 21 Competition with 74 seasons
+- Almost 3500 matches, spread among the above mentioned competitions and seasons
+- Events and lineups for each of these matches, included additional StatsBomb 360 data for selected matches.
 
 A fine-grained documentation of the files, their formats and their contents is also included in the GitHub repository. [[2]](#ref2)
 
