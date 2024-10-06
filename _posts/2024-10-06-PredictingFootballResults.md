@@ -148,6 +148,10 @@ To clarify this, let us take a closer look on some specific cells of the heatmap
 Fig. 4: Zoom-in Heatmap for some of the goalkeeper-releated events
 </p>
 
+There are some interesting insights to gain from these cells:
+- There is a significant impact on the team for which a goalkeeper-specific event was recorded: Taking the home team related goalkeeper events, it can be seen that there a positive impact on the result 'win_home', while the impact on the result 'win_away' is negative and the impact on the result 'win_none' is rather marginal. Contrary to this, the away team related goalkeeper events' impact on 'win_home' and 'win_away' is switched. Thus, keeping both of these event types (home_ and away_) strongly seems to make sense.
+- Moreover, some of the events have significantly higher impact than others. For instance, the 'technique.id' events have impacts with absolute values that are larger than 0.3 on 'win_home' or 'win_away', while the 'shot_saved_off_target' events have rather low impact, as all absolute values are below 0.15.
+
 
 # Methodology
 
