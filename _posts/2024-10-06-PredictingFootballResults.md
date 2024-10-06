@@ -28,7 +28,7 @@ Thus in a single match, there are always 3 possible results where exactly one wi
 
 In order to be processable by an algorithm and allow the observation of multiple matches at the same time, the 3 variables are in the following encoded as array of three columns with binary values, where the rows represent the matches and the columns represent the three possible outcomes (i.e., results) of the matches (1 if the result has entered, otherwise 0).
 
-As an example, consider the following Figure [1] which represents score data from five matches with the number of goals of the home team ('home_score') and the number of goals of the away team ('away_score') and the resulting (3x5) result matrix including three row vectors [1, 0, 0] where the home team won (match_ids 3939976, 3939971, 3939969), one row vector with values [0, 0, 1] where the away team won (match_id 3939972), and one row with values [0, 1, 0] where the result was a draw (match_id 3939970).
+As an example, consider the following Fig. 1 which represents score data from five matches with the number of goals of the home team ('home_score') and the number of goals of the away team ('away_score') and the respective (5x3) result matrix including three row vectors [1, 0, 0] where the home team won (match_ids 3939976, 3939971, 3939969), one row vector with values [0, 0, 1] where the away team won (match_id 3939972), and one row with values [0, 1, 0] where the result was a draw (match_id 3939970).
 
 ![StatsBomb](https://github.com/sschuhmi/sschuhmi.github.io/blob/main/_posts/img/2014-10_Football/Result_Matrix.PNG?raw=true)
 <p align="center" style="text-align:center, text-style:italic">
@@ -40,7 +40,7 @@ Mathematically set, the sum of |y_pred - y| (row-wise calculated) should be as m
 
 ## Metrics
 
-To quantify the results of the algorithms, common metrics from ... are used, being combined in a classification report which is provided by the used framework (Python3 with scikit-learn library).
+To quantify the results of the algorithms, common metrics from the scikit-learn classification report  are used, being combined in a classification report which is provided by the used framework (Python3 with scikit-learn library).
 These comprise the following:
 - Precision score:
 - Recall score:
@@ -105,3 +105,4 @@ Acknowledges go to StatsBomb for providing their open data set.
 # References
 1. <a name="ref1">[StatsBomb homepage](https://statsbomb.com/)</a>
 2. <a name="ref2">[StatsBomb Open Data - public GitHub Repository](https://github.com/statsbomb/open-data)</a>
+3. <a name="ref3">[scikit-learn Classification Report Metrics](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.classification_report.html)</a>
