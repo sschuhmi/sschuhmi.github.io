@@ -33,8 +33,7 @@ As an example, consider the following Figure [1] which represents score data fro
 ![StatsBomb](https://github.com/sschuhmi/sschuhmi.github.io/blob/main/_posts/img/2014-10_Football/Result_Matrix.PNG?raw=true)
 
 <p align="center" style="text-align:center">
-
-*Fig. 1: Result Matrix as output vector for prediction*
+Fig. 1: Result Matrix as output vector for prediction
 </p>
 
 The goal of a prediction algorithm is to minimize to calculate result matrices y_pred which are close to or, in the optimum case, represent exactly the result matrix y of the actual results.
