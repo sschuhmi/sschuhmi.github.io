@@ -9,3 +9,34 @@
 ## Problem Statement
 
 ## Metrics
+
+
+# Analysis
+
+## Data Exploration
+
+## Data Visualization
+
+
+# Methodology
+
+## Data Preprocessing
+
+## Implementation
+
+## Refinement
+
+
+# Results
+
+## Model Evaluation and Validation
+
+## Justification
+
+
+# Conclusion
+
+## Reflection
+
+## Improvement
+
