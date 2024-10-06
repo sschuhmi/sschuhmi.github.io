@@ -116,6 +116,23 @@ As there is no further information on the players included like their skills, va
 
 ## Data Visualization
 
+As mentioned above, the event types in the events file contain the most important analysis data on a specific match, so we focus on them here.
+
+In order to find out which event types are most important to become features for the supervised classification algorithms later on, we imported the data of a specific subset of the 3600 matches.
+Regarding the immense amount of the dataset and the immense amount and memory consumption for processing the data, we focused on a small subset of matches for our observations, leaving the extension to a larger set for further work. Thus, the data visualizations in the following are created using the following data:
+- All 116 provided matches from a specific season of 3 competitions - Spanish 'La Liga' 2019/2020, World Cup 2022 and Copa America 2024
+- These matches include 417221 events of all event types, which can be distinguished to the following numbers of event patterns:
+  play_pattern.id  play_pattern.name    count
+  1                Regular Play         175188
+  4                From Throw In         92072
+  3                From Free Kick        68334
+  7                From Goal Kick        32727
+  2                From Corner           15741
+  9                From Kick Off         15070
+  8                From Keeper           12416
+  6                From Counter           3268
+  5                Other                  2405
+
 Taking into consideration that to score, a team typically needs to get adequately close to the goal. This is typically performed by 
 - conquering the ball in a dribble, duel, a misleading pass of the oppenent or getting a free kick or throw-in,
 - then passing the ball between players to come closer to the door
