@@ -1,6 +1,6 @@
 # Predicting Results of Modern Football Matches using StatsBomb analysis data and advanced Multi-Output Machine Learning Regressors
 
-![StatsBomb](https://github.com/sschuhmi/sschuhmi.github.io/blob/main/_posts/img/2014-10_Football/StatsBomb-logo.png?raw=true)
+![Football](https://github.com/sschuhmi/sschuhmi.github.io/blob/main/_posts/img/2014-10_Football/football.jpg?raw=true)
 
 # Project Definition
 
@@ -52,6 +52,11 @@ A fine-grained documentation of the files, their formats and their contents is a
 
 ## Improvement
 
+
+# Acknowledges
+
+Thanks to StatsBomb for providing their open data set.
+![StatsBomb](https://github.com/sschuhmi/sschuhmi.github.io/blob/main/_posts/img/2014-10_Football/StatsBomb-logo.png?raw=true)
 
 # References
 
