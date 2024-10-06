@@ -66,7 +66,7 @@ A fine-grained documentation of the files, their formats and their contents is a
 
 #### Competitions and Seasons
 
-The single competition.json file includes an arrey of competition-season objects with the following properties:
+The single competition.json file includes an array of competition-season objects with the following properties:
 - competition_id (unique identifier of the competition)
 - season_id (unique identifier of the season)
 - competition_name (name of the competition)
@@ -80,7 +80,19 @@ The competition file was used as starting point for the data import in this proj
 
 #### Matches
 
+For every competition-season, there exists a match file which includes 1 to n matches of this season. Thus, there exist 74 match-specific json files.
+Each match file contains an array of match objects, the most important objects for further investigation are the following:
+- match_id (unique identifier for the match, which is required to request events, as the events files are named by this match_id)
+- competition (mixed-type containing the unique ID for the competition and the respective name of the competition)
+- season (mixed-type containing the unique ID for the season and the respective name of the season)
+- home_team (mixed-type containing the unique ID for the home team and the respective name of this team)
+- away_team (mixed-type containing the unique ID for the away team and the respective name of this team)
+- home_score (final score of the home team)
+- away_score (final score of the away team)
 
+Please note that there is no explicit information on the result (i.e., the winner) of the match - this has to be retrieved manually, as described later on in the Data Preprocessing section.
+
+The full set of objects can be found [[here](https://github.com/statsbomb/open-data/blob/master/doc/Open%20Data%20Matches%20v3.0.0.pdf).
 
 ## Data Visualization
 
