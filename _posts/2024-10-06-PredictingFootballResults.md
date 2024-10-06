@@ -121,7 +121,7 @@ As mentioned above, the event types in the events file contain the most importan
 In order to find out which event types are most important to become features for the supervised classification algorithms later on, we imported the data of a specific subset of the 3600 matches.
 Regarding the immense amount of the dataset and the immense amount and memory consumption for processing the data, we focused on a small subset of matches for our observations, leaving the extension to a larger set for further work. Thus, the data visualizations in the following are created using the following data:
 - All 116 provided matches from a specific season of 3 competitions - Spanish 'La Liga' 2019/2020, World Cup 2022 and Copa America 2024
-- These matches include 417221 events of all event types, which can be distinguished to the following numbers of event patterns:
+- These matches include 417,221 events of all event types, which can be distinguished to the following numbers of event patterns:
 ![Pattern-types](https://github.com/sschuhmi/sschuhmi.github.io/blob/main/_posts/img/2014-10_Football/Pattern-types.PNG?raw=true)
 - In order to score, a team typically needs to get adequately close to the goal. This is typically performed by 
   - conquering the ball in a dribble, duel, clearance, by a misleading pass of the oppenent or by getting a free kick, penalty kick or throw-in,
@@ -165,16 +165,13 @@ First of all, as we already discussed in the data visualizations section, some f
 
 For this project, we decided just to consider the quantitative amounts of the event types, meaning we count the amount of each event type per match and added an additional column for this feature holding the number of counts of this event. For some events, it may be possible to additionally exploit the actual qualitative value of an event (, but we leave this for future work, as it would increase the computational complexity again (e.g., the goalkeeper´s body part for an event may be 'head', 'chest', 'both hands', 'left hand', 'right hand', 'left foot' or 'right foot', i.e. 7 possible values for only one event type!) when considering the whole feature set for this technique.
 
-However, this does not hold for the events data: In order to allow the exploitation and processing of them, the following preprocessing steps needed to be taken on the events data:
-1. 
+Immanent to this way of calculating and adding up the match statistics is that there are neither missing values nor duplicates in the feature set included, as each cell is calculated (even if an event did not occur, there still is a zero and not a NaN as the cell value) exactly once per feature and team.
 
-#### Calculate result rows
-
-
-
-#### Complexity reduction by removing features with very low impact on match results
+Summarizing, there are 179,136 out of the originally 417,221 events remaining for further analysis within this project.
 
 ## Implementation
+
+For the implementation of the classification algorithm, a Jupyter Notebook was created relying on Python 3 within the Anaconda Distribution. The most important packages that were used comprise Pandas, Numpy, Matplotlib and Seaborn as well as several scikit-learn packages such as various classifier (e.g., MultiOutputClassifier, DecisionTreeClassifier or RandomForestClassifier) and regressory (e.g., MultiOutputRegressor, Ridge or GradientBoostingRegressor). The complete set of packages to be imported can be found in the initial import section of the provided Jupyter Notebook.
 
 ## Refinement
 
