@@ -44,7 +44,7 @@ To quantify the results of the classification algorithms, common classification 
 These comprise the following:
 - <b>Precision score:</b> Precision is the ability of the classifier not to label a sample which actually is negative as positive. 
 - <b>Recall score:</b> Contrary to precision, recall is the ability of the classifier to find all the positive samples.
-- <b>F1 score:</b> This netric can be interpreted as a weighted harmonic mean of the precision and recall. It considers precision and recall with the same fraction and calculates as 2*precision*recall/(precision+recall)
+- <b>F1 score:</b> This netric can be interpreted as a weighted harmonic mean of the precision and recall. It considers precision and recall with the same fraction and calculates as 2**precision*recall/(precision+recall)
 - <b>Accuracy score:</b> The accuracy_score represents the fraction of correctly classified samples. Here, a sample represents a single row vector within the results matrix.
 
 Mathematical details on these metrics can also be found at [[4]](#ref4).
