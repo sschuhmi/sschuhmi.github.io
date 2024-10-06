@@ -28,8 +28,9 @@ Thus in a single match, there are always 3 possible results where exactly one wi
 
 In order to be processable by an algorithm and allow the observation of multiple matches at the same time, the 3 variables are in the following encoded as array of three columns with binary values, where the rows represent the matches and the columns represent the three possible outcomes (i.e., results) of the matches (1 if the result has entered, otherwise 0).
 
-As an example, consider the following Figure 1 which represents score data from five matches with the number of goals of the home team ('home_score') and the number of goals of the away team ('away_score') and the resulting (3x5)-outcome vector
-![Fig1](https://github.com/sschuhmi/sschuhmi.github.io/blob/main/_posts/img/2014-10_Football/Result_Vector.jpg?raw=true)
+As an example, consider the following Figure 1 which represents score data from five matches with the number of goals of the home team ('home_score') and the number of goals of the away team ('away_score') and the resulting (3x5)-outcome vector including three rows with values [1, 0, 0] where the home team won, one row with values [0, 0, 1] where the away team won, and one row with values [0, 1, 0] where the result was a draw.
+
+![Fig1](https://github.com/sschuhmi/sschuhmi.github.io/blob/main/_posts/img/2014-10_Football/Result_Vector.PNG?raw=true)
 
 ## Metrics
 
