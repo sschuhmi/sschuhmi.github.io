@@ -22,7 +22,7 @@ The problem which needs to be solved here is the prediction of the winner of a m
 A football match always consists of exactly two teams that play against each other: The first team is called the 'home team', while the second team is called the 'away team'. In order to win a match, a team has to score more goals than the other team after full time (90 minutes; note that in international championships, it is common to continue the match in case of a draw after full time by extra time and/or penalty shooting; however, we do not regard extra time or penalty shootings here). If both teams scored the same number of goals, the result is called a 'draw'.
 
 Thus in a single match, there are always 3 possible results where exactly one will be the outcome:
-- 'win_home': The home team scores more goals than the away team and wins
+- <b>'win_home':</b> The home team scores more goals than the away team and wins
 - 'win_none': The home team and the away team score exactly the same number of goals, i.e. the result is a draw
 - 'win_away': The away team scores more goals than the home team and wins
 
