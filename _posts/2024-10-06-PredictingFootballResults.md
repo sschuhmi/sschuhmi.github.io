@@ -149,9 +149,9 @@ Fig. 3: Part of Heatmap E, zoomed-in to some specific goalkeeper-related events
 </p>
 
 There are some interesting insights to gain from these cells:
-- There is a significant impact on the team for which a goalkeeper-specific event was recorded: Taking the home team related goalkeeper events, it can be seen that there a positive impact on the result 'win_home', while the impact on the result 'win_away' is negative and the impact on the result 'win_none' is rather marginal. Contrary to this, the away team related goalkeeper events' impact on 'win_home' and 'win_away' is switched. Thus, keeping both of these event types (home_ and away_) strongly seems to make sense.
+- There is a significant different in terms of the team for which a goalkeeper-specific event was recorded: Taking the home team related goalkeeper events, it can be seen that there is a positive impact on the result 'win_home', while the impact on the result 'win_away' is negative and the impact on the result 'win_none' is rather marginal. Contrary to this, the away team related goalkeeper events' impact on 'win_home' and 'win_away' is switched. Thus, keeping both of these event types ('home_' and 'away_') strongly seems to make sense, as their appearences particularly help to predict the results where a specific team won.
 - Moreover, some of the events have significantly higher impact than others. For instance, the 'technique.id' events have impacts with absolute values that are larger than 0.3 on 'win_home' or 'win_away', while the 'shot_saved_off_target' events have rather low impact, as all absolute values are below 0.15.
-
+- As the influences of the features on the third result column that represents a draw with no winner are much lower than those on the home or away win columns, it may be harder to accurately predict draws than to predict wins of the home or the away team
 
 # Methodology
 
