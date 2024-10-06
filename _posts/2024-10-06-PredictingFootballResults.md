@@ -28,10 +28,10 @@ Thus in a single match, there are always 3 possible results where exactly one wi
 
 In order to be processable by an algorithm and allow the observation of multiple matches at the same time, the 3 variables are in the following encoded as array of three columns with binary values, where the rows represent the matches and the columns represent the three possible outcomes (i.e., results) of the matches (1 if the result has entered, otherwise 0).
 
-As an example, consider the following Figure 1 which represents score data from five matches with the number of goals of the home team ('home_score') and the number of goals of the away team ('away_score') and the resulting (3x5) result matrix including three row vectors [1, 0, 0] where the home team won (match_ids 3939976, 3939971, 3939969), one row vector with values [0, 0, 1] where the away team won (match_id 3939972), and one row with values [0, 1, 0] where the result was a draw (match_id 3939970).
+As an example, consider the following Figure [1] which represents score data from five matches with the number of goals of the home team ('home_score') and the number of goals of the away team ('away_score') and the resulting (3x5) result matrix including three row vectors [1, 0, 0] where the home team won (match_ids 3939976, 3939971, 3939969), one row vector with values [0, 0, 1] where the away team won (match_id 3939972), and one row with values [0, 1, 0] where the result was a draw (match_id 3939970).
 
 <p align="center">
-  <img align="center" href="Fig1" title="Result Matrix as output vector for prediction" src="https://github.com/sschuhmi/sschuhmi.github.io/blob/main/_posts/img/2014-10_Football/Result_Matrix.PNG">
+  <img align="center" href="Fig1" name="1" caption="2" title="Result Matrix as output vector for prediction" src="https://github.com/sschuhmi/sschuhmi.github.io/blob/main/_posts/img/2014-10_Football/Result_Matrix.PNG">
 </p>
 
 The goal of a prediction algorithm is to minimize to calculate result matrices y_pred which are close to or, in the optimum case, represent exactly the result matrix y of the actual results.
