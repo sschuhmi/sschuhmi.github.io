@@ -70,9 +70,9 @@ The single competition.json file includes an array of competition-season objects
 - competition_id, competition_name (unique identifier of the competition and the respective name of this competition)
 - season_id, season_name (unique identifier of the season and the respective name of this season)
 
-The full set of objects can be found [here](https://github.com/statsbomb/open-data/blob/master/doc/Open%20Data%20Competitions%20v2.0.0.pdf).
-
 The competition file was used as starting point for the data import in this project.
+
+The full set of objects can be found [here](https://github.com/statsbomb/open-data/blob/master/doc/Open%20Data%20Competitions%20v2.0.0.pdf).
 
 #### Matches
 
