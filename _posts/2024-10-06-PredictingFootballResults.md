@@ -183,7 +183,7 @@ The following algorihms were implemented to predict the classification results:
 
 ## Refinement
 
-While the three multi-output classifiers represent modern Machine Learning approaches, they face one big problem: As each value of the result column is calculated independently of each other, it may be possible that not always exactly one of the three outcomes is predicted with a 1. Instead, it may be possible that all predicted values are zero (i.e., [0, 0, 0] as result vector) or more than one predicted value is one (i.e., [1, 1, 0], [1, 0, 1], [0, 1, 1] or even [1, 1, 1]. To address this issue, we addditionally implemented three multi-output regressors from scikit-learn which predict not binary, but continuous values for the result vector. As the result values may still only be a 0 or a 1, the optimized algorithm takes the column which the largest predicted value and puts this value to 1, while the other two values ar put to 0. For instance, if the regressor´s result is [0.2, 0.6, 0.7], then the result vector is adapted to [0, 0, 1], since the value of the third column was the largest.
+While the three multi-output classifiers represent modern Machine Learning approaches, they face one big problem: As each value of the result column is calculated independently of each other, it may be possible that not always exactly one of the three outcomes is predicted with a 1. Instead, it may be possible that all predicted values are zero (i.e., [0, 0, 0] as result vector) or more than one predicted value is one (i.e., [1, 1, 0], [1, 0, 1], [0, 1, 1] or even [1, 1, 1]. To address this issue, we addditionally implemented three multi-output regressors from scikit-learn which predict not binary, but continuous values for the result vector. As the result values may still only be a 0 or a 1, the correction part of the algorithm takes the column which the largest predicted value and puts this value to 1, while the other two values ar put to 0. For instance, if the regressor´s result is [0.2, 0.6, 0.7], then the result vector is adapted to [0, 0, 1], since the value of the third column was the largest.
 
 The following three regressors were implemented and optizimed using the algorithm described above:
 - scikit-learn´s MultiOutputRegressor [[9]](#ref6) with GradientBoostingRegressor [[7]](#ref7) as estimator
@@ -191,7 +191,7 @@ The following three regressors were implemented and optizimed using the algorith
 ||y - Xw||^2_2 + alpha * ||w||^2_2
 - scikit-learn´s MultiOutputRegressor [[9]](#ref6) with Stochastic Gradient Descent (SGD) [[11]](#ref11) as estimator: SGD represents a simple, yet very efficient approach to fitting linear classifiers and regressors under convex loss functions such as (linear) Support Vector Machines and Logistic Regression.
 
-In summary, we compare
+In summary, we compare the simple RandomClassifier with three ML multi-output classifiers and three ML multi-output regressor with corrected result vectors.
 
 # Results
 
