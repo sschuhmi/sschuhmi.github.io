@@ -16,7 +16,20 @@ An interesting question that arises with this constantly increasing amount of fo
 That´s exactly what is the focus of this project: We exploit the large open data set and use Machine Learning multi-output Classifiers and Regressors to predict the winner of a match, compared to a simple non-ML Classifier which randomly decides one of the possible three results - first team wins, second team wins, or there is a draw between the teams.
 
 ## Problem Statement
+The problem which needs to be solved is clearly defined. A strategy for solving the problem, including discussion of the expected solution, has been made.
 
+The problem which needs to be solved here is the prediction of the winner of a match without exploiting the score data (i.e., which team shot how many goals).
+A football match always consists of exactly two teams that play against each other: The first team is called the 'home team', while the second team is called the 'away team'. In order to win a match, a team has to score more goals than the other team after full time (90 minutes; note that in international championships, it is common to continue the match in case of a draw after full time by extra time and/or penalty shooting; however, we do not regard extra time or penalty shootings here). If both teams scored the same number of goals, the result is called a 'draw'.
+
+Thus in a single match, there are always 3 possible results where exactly one will be the outcome:
+- 'win_home': The home team scores more goals than the away team and wins
+- 'win_none': The home team and the away team score exactly the same number of goals, i.e. the result is a draw
+- 'win_away': The away team scores more goals than the home team and wins
+
+In order to be processable by an algorithm and allow the observation of multiple matches at the same time, the 3 variables are in the following encoded as array of three columns with binary values, where the rows represent the matches and the columns represent the three possible outcomes (i.e., results) of the matches (1 if the result has entered, otherwise 0).
+
+As an example, consider the following Figure 1 which represents score data from five matches with the number of goals of the home team ('home_score') and the number of goals of the away team ('away_score') and the resulting (3x5)-outcome vector
+![Fig1](https://github.com/sschuhmi/sschuhmi.github.io/blob/main/_posts/img/2014-10_Football/Result_Vector.jpg?raw=true)
 
 ## Metrics
 
