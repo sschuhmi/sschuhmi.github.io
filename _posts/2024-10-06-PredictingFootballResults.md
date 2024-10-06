@@ -99,6 +99,17 @@ Each events file contains an array containing information for both teams. Some e
 
 For each event, there are some basic information on the event like the period, minute and second when the event was recorded.
 
+The heart of the complexity consists in the very fine-granular event types used in this file.
+
+
+Thus, we consider the following event types to be the most important ones for our further investigations:
+- shot specific
+
+A complete list of the 119 event types (which are recorded team-specific, thus doubling this number in practice) can be found in the following figure, just to clarify the complexity of a modern football match.
+
+![Event-types](https://github.com/sschuhmi/sschuhmi.github.io/blob/main/_posts/img/2014-10_Football/Event-Types.PNG?raw=true)
+
+
 ## Data Visualization
 
 
@@ -106,6 +117,9 @@ For each event, there are some basic information on the event like the period, m
 # Methodology
 
 ## Data Preprocessing
+
+### Complexity reduction by removing features with very low impact on match results
+Taking into consideration that to score, a need typically needs to get adequately close to the goal, which is typically performed by winning the ball in a dribble, duel or getting a free kick, then passing the ball between players to come closer to the door and finally, performing a shot on the goal to overcome the goalkeeper of the opponent team. Contrary to this, events like the start or end of a half, or an interception where the game is stopped should have a rather minimal impact on the result of a match.
 
 ## Implementation
 
