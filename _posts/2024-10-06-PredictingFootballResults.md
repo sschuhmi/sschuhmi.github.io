@@ -40,7 +40,7 @@ Mathematically set, the sum of |y_pred - y| (row-wise calculated) should be as m
 
 ## Metrics
 
-To quantify the results of the classification algorithms, common classification metrics in Machine Learning [[3]](#ref3) are used, being combined in a classification report which is provided by the used framework [[4]](#ref4).
+To quantify the results of the classification algorithms, common classification metrics in Machine Learning [[3]](#ref3) are used, being combined in a classification report which is provided by the used scikit-learn framework [[4]](#ref4).
 These comprise the following:
 - Precision score:
 - Recall score:
