@@ -42,9 +42,9 @@ Mathematically set, the sum of |y_pred - y| (row-wise calculated) should be as m
 
 To quantify the results of the classification algorithms, common classification metrics in Machine Learning [[3]](#ref3) are used, being combined in a classification report which is provided by the used scikit-learn framework [[4]](#ref4).
 These comprise the following:
-- <b>Precision score:</b> Precision is the ability of the classifier not to label a sample which actually is negative as positive. 
-- <b>Recall score:</b> Contrary to precision, recall is the ability of the classifier to find all the positive samples.
-- <b>F1 score:</b> This netric can be interpreted as a weighted harmonic mean of the precision and recall. It considers precision and recall with the same fraction and calculates as *2 * precision * recall / (precision + recall)*
+- <b>Precision score:</b> Precision is the ability of the classifier not to label a sample which actually is negative as positive. This metric is important here to find out if there are many false positives where a result was predicted (i.e., y_pred = 1) which actually did not occur (i.e., y_true = 0).
+- <b>Recall score:</b> Contrary to precision, recall is the ability of the classifier to find all the positive samples. This metric is important to find out if a classifier has many undesired false negatives, where a result which actually occurred (i.e., y_true = 1) was not predicted by classifier (i.e., y_pred = 0)
+- <b>F1 score:</b> This metric can be interpreted as a weighted harmonic mean of the precision and recall and takes care both of false positives and false negatives. It considers precision and recall with the same fraction and calculates as *2 * precision * recall / (precision + recall)*
 - <b>Accuracy score:</b> The accuracy_score represents the fraction of correctly classified samples. Here, a sample represents a single row vector within the results matrix.
 
 Mathematical details on these metrics can also be found at [[4]](#ref4).
@@ -64,6 +64,10 @@ The data is provided as JSON files exported from the StatsBomb Data API, in the 
 - Events and lineups for each of these matches, included additional StatsBomb 360 data for selected matches
 
 A fine-grained documentation of the files, their formats and their contents is also included in the GitHub repository. [[2]](#ref2)
+
+### Competitions and Seasons
+
+
 
 ## Data Visualization
 
