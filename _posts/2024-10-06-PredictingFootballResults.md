@@ -69,7 +69,7 @@ Futhermore, we only used a quantitative approach by simply counting the number o
 # Acknowledges
 
 Acknowledges go to StatsBomb for providing their open data set.
-![StatsBomb](https://github.com/sschuhmi/sschuhmi.github.io/blob/main/_posts/img/2014-10_Football/StatsBomb-logo.png?raw=true&width=300)
+![StatsBomb](https://github.com/sschuhmi/sschuhmi.github.io/blob/main/_posts/img/2014-10_Football/StatsBomb-logo_small.png?raw=true)
 
 # References
 1. <a name="ref1">[StatsBomb homepage](https://statsbomb.com/)</a>
