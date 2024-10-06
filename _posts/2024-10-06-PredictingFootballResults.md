@@ -70,7 +70,7 @@ The single competition.json file includes an array of competition-season objects
 - competition_id, competition_name (unique identifier of the competition and the respective name of this competition)
 - season_id, season_name (unique identifier of the season and the respective name of this season)
 
-The full set of objects can be found [[here]](https://github.com/statsbomb/open-data/blob/master/doc/Open%20Data%20Competitions%20v2.0.0.pdf)).
+The full set of objects can be found [here](https://github.com/statsbomb/open-data/blob/master/doc/Open%20Data%20Competitions%20v2.0.0.pdf).
 
 The competition file was used as starting point for the data import in this project.
 
@@ -88,7 +88,7 @@ Each match file contains an array of match objects, the most important objects f
 
 Please note that there is no explicit information on the result (i.e., the winner) of the match - this has to be retrieved manually, as described later on in the Data Preprocessing section.
 
-The full set of objects can be found [[here](https://github.com/statsbomb/open-data/blob/master/doc/Open%20Data%20Matches%20v3.0.0.pdf).
+The full set of objects can be found [here](https://github.com/statsbomb/open-data/blob/master/doc/Open%20Data%20Matches%20v3.0.0.pdf).
 
 ## Data Visualization
 
