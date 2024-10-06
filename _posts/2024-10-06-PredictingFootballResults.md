@@ -132,20 +132,20 @@ Regarding the immense amount of the dataset and the immense amount and memory co
 We consider events that are related to the above mentioned game techniques to be most important for prediction the winner of a match based on analysis date.
 Contrary to this, events like the start or end of a half, or an interception where the game is stopped should have a rather minimal impact on the result of a match.
 
-As the event types start with a technique specific prefix (e.g., 'shot.' for all goal shot-related event types), we distinguished between to team for which event was relevant (home or away time) and created multiple heatmaps showing the influence of these team-specific event types showing their influence on the result columns for the prediction, i.e. the 3 binary columns for the different match outcomes ('win_home', 'win_away', 'win_none'). [Fig. 3](#Fig3) shows these heatmaps.
+As the event types start with a technique specific prefix (e.g., 'shot.' for all goal shot-related event types), we distinguished between to team for which event was relevant (home or away time) and created multiple heatmaps showing the influence of these team-specific event types showing their influence on the result columns for the prediction, i.e. the 3 binary columns for the different match outcomes ('win_home', 'win_away', 'win_none'). [Fig. 2](#Fig2) shows these heatmaps.
 
-![Fig3](https://github.com/sschuhmi/sschuhmi.github.io/blob/main/_posts/img/2014-10_Football/Heatmap_comb_trans.png?raw=true)
+![Fig2](https://github.com/sschuhmi/sschuhmi.github.io/blob/main/_posts/img/2014-10_Football/Heatmap_comb_trans.png?raw=true)
 <p align="center" style="text-align:center, text-style:italic">
-Fig. 3: Heatmaps for specific event-types: A) clearance-, dribble- and duel-related events, B) foul-related events, C) pass-related events, D) shot-related events, E) goalkeeper-releated events
+Fig. 2: Heatmaps for specific event-types: A) clearance-, dribble- and duel-related events, B) foul-related events, C) pass-related events, D) shot-related events, E) goalkeeper-releated events
 </p>
 
 The heatmaps show at first glance that influence of the specific types on the result columns is widely spreaded: Some of the events have a positive impact on a specific result column, represented by a positive value and in a rather bright color, while other events have a negative impact with values below 0. More important, some events have a rather large impact on the result with values >0.2 or <-0.2, while others have a rather minimal impact on the results columns since their values are close to 0.
 
-To clarify this, let us take a closer look on some specific cells of the heatmap E for some of the goalkeeper-related event types. [Fig. 4](#Fig4) displays them.
+To clarify this, let us take a closer look on some specific cells of the heatmap E for some of the goalkeeper-related event types. [Fig. 3](#Fig3) displays them.
 
-![Fig4](https://github.com/sschuhmi/sschuhmi.github.io/blob/main/_posts/img/2014-10_Football/Heatmap_goalkeeper_zoom.png?raw=true)
+![Fig3](https://github.com/sschuhmi/sschuhmi.github.io/blob/main/_posts/img/2014-10_Football/Heatmap_goalkeeper_zoom.png?raw=true)
 <p align="center" style="text-align:center, text-style:italic">
-Fig. 4: Part of Heatmap E, zoomed-in to some specific goalkeeper-related events
+Fig. 3: Part of Heatmap E, zoomed-in to some specific goalkeeper-related events
 </p>
 
 There are some interesting insights to gain from these cells:
