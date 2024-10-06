@@ -145,7 +145,7 @@ To clarify this, let us take a closer look on some specific cells of the heatmap
 
 ![Fig4](https://github.com/sschuhmi/sschuhmi.github.io/blob/main/_posts/img/2014-10_Football/Heatmap_goalkeeper_zoom.png?raw=true)
 <p align="center" style="text-align:center, text-style:italic">
-Fig. 4: Zoom-in Heatmap for some of the goalkeeper-releated events
+Fig. 4: Part of Heatmap E, zoomed-in to some specific goalkeeper-related events
 </p>
 
 There are some interesting insights to gain from these cells:
