@@ -33,7 +33,7 @@ As an example, consider the following Figure 1 which represents score data from 
 ![Fig1](https://github.com/sschuhmi/sschuhmi.github.io/blob/main/_posts/img/2014-10_Football/Result_Matrix.PNG?raw=true#center)
 
 <p align="center">
-  <img align="center" src="https://github.com/sschuhmi/sschuhmi.github.io/blob/main/_posts/img/2014-10_Football/Result_Matrix.PNG">
+  <img align="center" title="Result Matrix as output vector for prediction" src="https://github.com/sschuhmi/sschuhmi.github.io/blob/main/_posts/img/2014-10_Football/Result_Matrix.PNG">
 </p>p
 The goal of a prediction algorithm is to minimize to calculate result matrices y_pred which are close to or, in the optimum case, represent exactly the result matrix y of the actual results.
 Mathematically set, the sum of |y_pred - y| (row-wise calculated) should be as minimal as possible. If the prediction exactly matches the actual results, the sum of |y_pred - y| is zero.
