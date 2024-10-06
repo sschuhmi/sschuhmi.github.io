@@ -230,5 +230,5 @@ Acknowledges go to StatsBomb for providing their open data set.
 7. <a name="ref7">[RandomForests, GradientBoosting and others in scikit-learn](https://scikit-learn.org/stable/modules/ensemble.html)</a>
 8. <a name="ref8">[Logistic Regression in scikit-learn](https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression)</a>
 9. <a name="ref9">[scikit-learn MultiOutputRegressor](https://scikit-learn.org/stable/modules/generated/sklearn.multioutput.MultiOutputRegressor.html)</a>
-10. <a name="ref10">[Ridge in scikit-learn](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.Ridge.html#sklearn.linear_model.Ridge))</a>
+10. <a name="ref10">[Ridge in scikit-learn](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.Ridge.html#sklearn.linear_model.Ridge)</a>
 11. <a name="ref11">[StochasticGradientBoost in scikit-learn](https://scikit-learn.org/stable/modules/sgd.html)</a>
