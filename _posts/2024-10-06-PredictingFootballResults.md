@@ -40,13 +40,12 @@ Mathematically set, the sum of |y_pred - y| (row-wise calculated) should be as m
 
 ## Metrics
 
-To quantify the results of the algorithms, common metrics from the scikit-learn classification report [[3]](#ref3) are used, being combined in a classification report which is provided by the used framework (Python3 with scikit-learn library).
+To quantify the results of the classification algorithms, common classification metrics in Machine Learning [[3]](#ref3) are used, being combined in a classification report which is provided by the used framework [[4]](#ref4).
 These comprise the following:
 - Precision score:
 - Recall score:
 - F1 score:
 - Accuracy score:
-
 
 As our main goal is to have the most matches between the actual and the predicted results (i.e., the number rows of the result matrix should be maximized), the accuracy (calculated on a row-wise manner) is considered to
 be the most important of the above metrics here, but the other metrics are also taken into considertion in the evaluation.
@@ -105,4 +104,5 @@ Acknowledges go to StatsBomb for providing their open data set.
 # References
 1. <a name="ref1">[StatsBomb homepage](https://statsbomb.com/)</a>
 2. <a name="ref2">[StatsBomb Open Data - public GitHub Repository](https://github.com/statsbomb/open-data)</a>
-3. <a name="ref3">[scikit-learn Classification Report Metrics](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.classification_report.html)</a>
+3. <a name="ref2">[Performance Metrics in Machine Learning | Complete Guide]](https://neptune.ai/blog/performance-metrics-in-machine-learning-complete-guide)</a>
+4. <a name="ref3">[scikit-learn Classification Report Metrics](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.classification_report.html)</a>
