@@ -165,7 +165,7 @@ First of all, as we already discussed in the data visualizations section, some f
 
 For this project, we decided just to consider the quantitative amounts of the event types, meaning we count the amount of each event type per match and added an additional column for this feature holding the number of counts of this event. For some events, it may be possible to additionally exploit the actual qualitative value of an event (, but we leave this for future work, as it would increase the computational complexity again (e.g., the goalkeeper´s body part for an event may be 'head', 'chest', 'both hands', 'left hand', 'right hand', 'left foot' or 'right foot', i.e. 7 possible values for only one event type!) when considering the whole feature set for this technique.
 
-Immanent to this way of calculating and adding up the match statistics is that there are neither missing values nor duplicates in the feature set included, as each cell is calculated (even if an event did not occur, there still is a zero and not a NaN as the cell value) exactly once per feature and team.
+Immanent to this way of calculating and adding up the match statistics is that there are neither missing values nor duplicates in the feature set included, as each cell is calculated (even if an event did not occur, there is still a zero and not a NaN as the cell value) exactly once per feature and team.
 
 Summarizing, there are 179,136 out of the originally 417,221 events remaining for further analysis within this project.
 
@@ -173,8 +173,24 @@ Summarizing, there are 179,136 out of the originally 417,221 events remaining fo
 
 For the implementation of the classification algorithm, a Jupyter Notebook was created relying on Python 3 within the Anaconda Distribution. The most important packages that were used comprise Pandas, Numpy, Matplotlib and Seaborn as well as several scikit-learn packages such as various classifier (e.g., MultiOutputClassifier, DecisionTreeClassifier or RandomForestClassifier) and regressory (e.g., MultiOutputRegressor, Ridge or GradientBoostingRegressor). The complete set of packages to be imported can be found in the initial import section of the provided Jupyter Notebook.
 
+As we need to predict three binary result columns, a multi-output classifier is required which has to provide binary results per output, i.e. a vector [y1, y2, y3] with binary values for y1 (1 for 'win_home', otherwise 0), y2 (1 for 'win_none' i.e. a draw, otherwise 0) and y3 (1 for 'win_away', otherwise 0).
+
+The following algorihms were implemented to predict the classification results:
+- RandomClassifier: a simple classifier which randomly chooses among one of the three possible outcomes ([1, 0, 0], [0, 1, 0] or [0, 0, 1]). This accuracy, precision, recall and f1 results of this classifier serve as benchmark for the other classifiers.
+- scikit-learn´s MultiOutputClassifier with DecisionTree estimator
+- scikit-learn´s MultiOutputClassifier with RandomForests estimator
+- scikit-learn´s MultiOutputClassifier with LogisticRegression estimator
+
 ## Refinement
 
+While the three multi-output classifiers represent modern Machine Learning approaches, they face one big problem: As each value of the result column is calculated independently of each other, it may be possible that not always exactly one of the three outcomes is predicted with a 1. Instead, it may be possible that all predicted values are zero (i.e., [0, 0, 0] as result vector) or more than one predicted value is one (i.e., [1, 1, 0], [1, 0, 1], [0, 1, 1] or even [1, 1, 1]. To address this issue, we addditionally implemented three multi-output regressors from scikit-learn which predict not binary, but continuous values for the result vector. As the result values may still only be a 0 or a 1, the optimized algorithm takes the column which the largest predicted value and puts this value to 1, while the other two values ar put to 0. For instance, if the regressor´s result is [0.2, 0.6, 0.7], then the result vector is adapted to [0, 0, 1], since the value of the third column was the largest.
+
+The following three regressors were implemented and optizimed using the algorithm described above:
+- scikit-learn´s MultiOutputRegressor with GradientBoostingRegressor as estimator
+- scikit-learn´s MultiOutputRegressor with Ridge as estimator
+- scikit-learn´s MultiOutputRegressor with Stochastic Gradient Descent (SGD) as estimator
+
+In summary, we compare
 
 # Results
 
