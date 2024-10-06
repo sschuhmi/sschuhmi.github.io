@@ -76,8 +76,14 @@ The single competition.json file includes an arrey of competition-season objects
 - match_updated (date and time at which a match was last updated)
 - match_available (date and time at which a match was made available)
 
+The competition file was used as starting point for the data import in this project.
+
+#### Matches
+
+
 
 ## Data Visualization
+
 
 
 # Methodology
