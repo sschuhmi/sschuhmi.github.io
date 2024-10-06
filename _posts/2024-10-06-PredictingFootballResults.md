@@ -64,8 +64,17 @@ The data is provided as JSON files exported from the StatsBomb Data API, in the 
 
 A fine-grained documentation of the files, their formats and their contents is also included in the GitHub repository. [[2]](#ref2)
 
-### Competitions and Seasons
+#### Competitions and Seasons
 
+The single competition.json file includes an arrey of competition-season objects with the following properties:
+- competition_id (unique identifier of the competition)
+- season_id (unique identifier of the season)
+- competition_name (name of the competition)
+- competition_gender (gender of the players competing in the competition)
+- country_name (name of the country or ragion the competition relates to)
+- season_name (name of the season)
+- match_updated (date and time at which a match was last updated)
+- match_available (date and time at which a match was made available)
 
 
 ## Data Visualization
