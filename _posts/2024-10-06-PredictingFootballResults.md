@@ -30,7 +30,7 @@ In order to be processable by an algorithm and allow the observation of multiple
 
 As an example, consider the following Figure [1] which represents score data from five matches with the number of goals of the home team ('home_score') and the number of goals of the away team ('away_score') and the resulting (3x5) result matrix including three row vectors [1, 0, 0] where the home team won (match_ids 3939976, 3939971, 3939969), one row vector with values [0, 0, 1] where the away team won (match_id 3939972), and one row with values [0, 1, 0] where the result was a draw (match_id 3939970).
 
-<p align="center">
+<p align="center" style="text-align:center">
   <img align="center" href="Fig1" name="1" caption="2" title="Result Matrix as output vector for prediction" src="https://github.com/sschuhmi/sschuhmi.github.io/blob/main/_posts/img/2014-10_Football/Result_Matrix.PNG">
   
   *Fig. 1: Result Matrix as output vector for prediction*
