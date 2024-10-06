@@ -90,6 +90,15 @@ Please note that there is no explicit information on the result (i.e., the winne
 
 The full set of objects can be found [here](https://github.com/statsbomb/open-data/blob/master/doc/Open%20Data%20Matches%20v3.0.0.pdf).
 
+#### Events
+
+The events represent the actual complexity of the data set as they involve each recorded event of a match.
+Thus, there is one json file per match, summing up to almost 3500 matches. The number of recorded events per match obviously differs (since every game is different from each other), but is typically in the range of 2000 up to 5000 events. The average number of recorded events per match is around 3600 in this open data set, as investigated within this project.
+
+Each events file contains an array containing information for both teams. Some elements have rather child elements (e.g., ID and name of an object) and some have even child arrays, leading to a deeper structure of this file type.
+
+For each event, there are some basic information on the event like the period, minute and second when the event was recorded.
+
 ## Data Visualization
 
 
@@ -119,10 +128,11 @@ The full set of objects can be found [here](https://github.com/statsbomb/open-da
 While the results presented in the previous section show that optimized Multi-Output Regressors which use advanced algorithms like Ridge or SVD help to significantly improve the prediction accuracy,
 it has to be mentioned that there is still a large optimization potential, considering that the best accuracy was only slightly above 50%.
 
-However, regarding that the data set consisted only of 120 out of the 3500 matches from open data (and the whole StatsBomb data comprises even much more than those matches!), it is obvious that there exists a large potential 
-by increasing the training set for the ML predictors.
+However, regarding that the data set consisted only of 120 out of the 3500 matches from open data (and the whole StatsBomb data comprises even much more than those matches!), it is obvious that there exists a large potential by increasing the training set for the ML predictors.
 
-Futhermore, we only used a quantitative approach by simply counting the number of events per event type. As there is also qualitative information included in the data (i.e, different results of the event types), this data could additionally be used to have an even more fine-grained feature set to further improve prediction accuracies.
+Futhermore, we only used a quantitative approach by simply counting the number of events per event type. As there is also qualitative information included in the data (i.e, different results of the event types), this data could additionally be used to have an even more fine-grained feature set to further improve prediction accuracies. 
+
+Taking into account the timely manner and sequence in which specific events occur may also help to further increase the performance of the classifiers, but additionally increase the complexity of the model, making it much more time and resource consuming. Thus, one has to consider if maximum accuracy should be aspired under each circumstances without considering consumption costs of the data processings and calculations.
 
 # Acknowledges
 
