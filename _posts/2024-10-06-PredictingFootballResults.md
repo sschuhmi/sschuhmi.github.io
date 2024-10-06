@@ -157,6 +157,22 @@ There are some interesting insights to gain from these cells:
 
 ## Data Preprocessing
 
+The competitions and matches files could simply be imported using the standard Python3 json import function. They did not include any duplicates or missing rows. While there was no further preprocessing needed for the competitions set, the matches needed to be enriched by the event-specific data of the events files.
+
+First of all, as we already discussed in the data visualizations section, some features seemed to have only a minor impact on the result columns. Thus, we only considered those features from the events dataset where at least one of the absolute cell values was above 0.2, i.e. |value > 0.2|. This leads to significantly reduced calculation and processing costs without a larger impact on the classification results. [Fig. 4](#Fig4) shows the resulting consolidated heatmap which only includes the features with the largest influence on the result columns that were taken into consideration for the classification algorithms later on.
+
+![Fig4](https://github.com/sschuhmi/sschuhmi.github.io/blob/main/_posts/img/2014-10_Football/Heatmap_mixed_type.png?raw=true)
+
+For this project, we decided just to consider the quantitative amounts of the event types
+Calculate result rows: As the winner of the match was not explicitly stated, but only the home and away scores were provided, three additional columns needed to be added to the matches dataset.
+
+However, this does not hold for the events data: In order to allow the exploitation and processing of them, the following preprocessing steps needed to be taken on the events data:
+1. 
+
+#### Calculate result rows
+
+
+
 #### Complexity reduction by removing features with very low impact on match results
 
 ## Implementation
