@@ -136,10 +136,18 @@ As the event types start with a technique specific prefix (e.g., 'shot.' for all
 
 ![Fig3](https://github.com/sschuhmi/sschuhmi.github.io/blob/main/_posts/img/2014-10_Football/Heatmap_comb_trans.png?raw=true)
 <p align="center" style="text-align:center, text-style:italic">
-Fig. 3: Heatmap for specific event-types: A) clearance-, dribble- and duel-related events, B) foul-related events, C) pass-related events, D) shot-related events, E) goalkeeper-releated events
+Fig. 3: Heatmaps for specific event-types: A) clearance-, dribble- and duel-related events, B) foul-related events, C) pass-related events, D) shot-related events, E) goalkeeper-releated events
 </p>
 
-The heatmaps show at first glance that influence of the specific types on the result columns is widely spreaded: Some of the events have a positive impact on a specific result column, represented by a positive value and in a rather bright color, while other events have a negative impact with values below 0. More important, some events have a rather large impact on the result with values >0.2 or <-0.2, while others have a rather minimal impact on the results columns since their values are clos to 0.
+The heatmaps show at first glance that influence of the specific types on the result columns is widely spreaded: Some of the events have a positive impact on a specific result column, represented by a positive value and in a rather bright color, while other events have a negative impact with values below 0. More important, some events have a rather large impact on the result with values >0.2 or <-0.2, while others have a rather minimal impact on the results columns since their values are close to 0.
+
+To clarify this, let us take a closer look on some specific cells of the heatmap E for some of the goalkeeper-related event types. [Fig. 4](#Fig4) displays them.
+
+![Fig4](https://github.com/sschuhmi/sschuhmi.github.io/blob/main/_posts/img/2014-10_Football/Heatmap_goalkeeper_zoom.png?raw=true)
+<p align="center" style="text-align:center, text-style:italic">
+Fig. 4: Zoom-in Heatmap for some of the goalkeeper-releated events
+</p>
+
 
 # Methodology
 
