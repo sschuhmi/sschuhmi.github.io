@@ -23,8 +23,8 @@ A football match always consists of exactly two teams that play against each oth
 
 Thus in a single match, there are always 3 possible results where exactly one will be the outcome:
 - <b>'win_home':</b> The home team scores more goals than the away team and wins
-- 'win_none': The home team and the away team score exactly the same number of goals, i.e. the result is a draw
-- 'win_away': The away team scores more goals than the home team and wins
+- <b>'win_none'</b>: The home team and the away team score exactly the same number of goals, i.e. the result is a draw
+- <b>'win_away'</b>: The away team scores more goals than the home team and wins
 
 In order to be processable by an algorithm and allow the observation of multiple matches at the same time, the 3 variables are in the following encoded as array of three columns with binary values, where the rows represent the matches and the columns represent the three possible outcomes (i.e., results) of the matches (1 if the result has entered, otherwise 0).
 
@@ -42,10 +42,10 @@ Mathematically set, the sum of |y_pred - y| (row-wise calculated) should be as m
 
 To quantify the results of the classification algorithms, common classification metrics in Machine Learning [[3]](#ref3) are used, being combined in a classification report which is provided by the used scikit-learn framework [[4]](#ref4).
 These comprise the following:
-- Precision score: Precision is the ability of the classifier not to label a sample which actually is negative as positive. 
-- Recall score: Contrary to precision, recall is the ability of the classifier to find all the positive samples.
-- F1 score: This netric can be interpreted as a weighted harmonic mean of the precision and recall. It considers precision and recall with the same fraction and calculates as 2*precision*recall/(precision+recall)
-- Accuracy score: The accuracy_score represents the fraction of correctly classified samples. Here, a sample represents of one row vector within the results matrix.
+- <b>Precision score:</b> Precision is the ability of the classifier not to label a sample which actually is negative as positive. 
+- <b>Recall score:</b> Contrary to precision, recall is the ability of the classifier to find all the positive samples.
+- <b>F1 score:</b> This netric can be interpreted as a weighted harmonic mean of the precision and recall. It considers precision and recall with the same fraction and calculates as 2*precision*recall/(precision+recall)
+- <b>Accuracy score:</b> The accuracy_score represents the fraction of correctly classified samples. Here, a sample represents a single row vector within the results matrix.
 
 Mathematical details on these metrics can also be found at [[4]](#ref4).
 
