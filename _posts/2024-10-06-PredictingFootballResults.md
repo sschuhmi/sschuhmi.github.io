@@ -246,26 +246,44 @@ Fig. 7: MOC_DecTree evaluation results
 
 ##### 3. Multi-Output Classifier with RandomForests estimator (MOC_RandomForests)
 
-CR_ClassificationReport_for_3_MOC_RandomForests_testRatios=0.1..0.5.png
 
+![Fig8](https://github.com/sschuhmi/sschuhmi.github.io/blob/main/_posts/img/2014-10_Football/CR_ClassificationReport_for_3_MOC_RandomForests_testRatios=0.1..0.5.png?raw=true)
+<p align="center" style="text-align:center, text-style:italic">
+Fig. 8: MOC_RandomForests evaluation results
+</p>
 
 ##### 4. Multi-Output Classifier with LogisticRegression estimator (MOC_LogisticRegression)
 
-CR_ClassificationReport_for_4_MOC_LogisticRegression_testRatios=0.1..0.5.png
+
+![Fig9](https://github.com/sschuhmi/sschuhmi.github.io/blob/main/_posts/img/2014-10_Football/CR_ClassificationReport_for_4_MOC_LogisticRegression_testRatios=0.1..0.5.png?raw=true)
+<p align="center" style="text-align:center, text-style:italic">
+Fig. 9: MOC_LogisticRegression evaluation results
+</p>
 
 
 ##### 5. Multi-Output Regressor with GradientBoosting estimator (MOR_GradBoo)
 
-CR_ClassificationReport_for_5_MOR_GradBoost_testRatios=0.1..0.5.png
+
+![Fig10](https://github.com/sschuhmi/sschuhmi.github.io/blob/main/_posts/img/2014-10_Football/CR_ClassificationReport_for_5_MOR_GradBoost_testRatios=0.1..0.5.png?raw=true)
+<p align="center" style="text-align:center, text-style:italic">
+Fig. 10: MOC_GradBoost evaluation results
+</p>
 
 ##### 6. Multi-Output Regressor with Ridge estimator (MOR_Ridge)
 
-CR_ClassificationReport_for_6_MOR_Ridge_testRatios=0.1..0.5.png
+
+![Fig11](https://github.com/sschuhmi/sschuhmi.github.io/blob/main/_posts/img/2014-10_Football/CR_ClassificationReport_for_6_MOR_Ridge_testRatios=0.1..0.5.png?raw=true)
+<p align="center" style="text-align:center, text-style:italic">
+Fig. 11: MOR_Ridge evaluation results
+</p>
 
 ##### 7. Multi-Output Regressor with SGD estimator (MOR_SGD)
 
-CR_ClassificationReport_for_7_MOR_SGD_testRatios=0.1..0.5.png
 
+![Fig12](https://github.com/sschuhmi/sschuhmi.github.io/blob/main/_posts/img/2014-10_Football/CR_ClassificationReport_for_7_MOR_SGD_testRatios=0.1..0.5.png?raw=true)
+<p align="center" style="text-align:center, text-style:italic">
+Fig. 12: MOR_SGD evaluation results
+</p>
 
 #### Accuracy: Is the training set big enough?
 The evaluation results presented in the last section show that the overall accuracy over the complete test series can significantly be increased compared to random choice by using a multi-output regressor with an estimator like Ridge or SGD. However, one question that may arise when looking on the number of investigated matches is: Is this amount of matches and events sufficient for an adequate use of Machine Learning classifiers? To find an answer on this question, we decided to vary the test_ratio and change the amount of training data in terms of matches for the classifier: While the training set is rather large when test_ratio = 0.1 - there still remain 108 out of 120 matches for training (see Evaluation Setup) - this number is significantly lower when test_ratio = 0.5 - then, there are only 60 out of 120 matches left for training. By starting with test_ratio = 0.1 and then taking small increases of 0.05 for the test_ratio up to 0.5, the accuracies per classifier were recorded and are shown in Fig. ...
