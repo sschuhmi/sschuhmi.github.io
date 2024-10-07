@@ -308,7 +308,7 @@ The evaluation results presented in the last section show that the accuracy over
 
 These results show once again that all ML algorithms are suited even for small training sets, and that the multi-output regressors with Ridge or SGD estimator should be preferred over the other classifiers, as they still perform well with particularly small training sets.
 
-![Fig13](https://github.com/sschuhmi/sschuhmi.github.io/blob/main/_posts/img/2014-10_Football/CR_ClassificationReport_for_7_MOR_SGD_testRatios=0.1..0.5.png?raw=true)
+![Fig13](https://github.com/sschuhmi/sschuhmi.github.io/blob/main/_posts/img/2014-10_Football/Accuracy_vs_test_ratio.png?raw=true)
 <p align="center" style="text-align:center, text-style:italic">
 Fig. 13: Accuracy scores at various test ratios
 </p>
