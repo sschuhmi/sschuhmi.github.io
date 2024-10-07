@@ -157,7 +157,7 @@ There are some interesting insights to gain from these cells:
 
 ## Data Preprocessing
 
-The competitions and matches files could simply be imported using the standard Python3 json import function. They did not include any duplicates or missing rows. While there was no further preprocessing needed for the competitions set, the matches needed to be enriched by the event-specific data of the events files.
+The competitions and matches files could simply be imported using the standard Python3 json import function. They did not include any duplicates or missing rows. While there was no further preprocessing needed for the competitions set, the matches needed to be enriched by the event-specific data of the events files to have the feature set (X) and the output set (y) for the classification algorithms.
 
 First of all, as we already discussed in the data visualizations section, some features seemed to have only a minor impact on the result columns. Thus, we only considered those features from the events dataset where at least one of the absolute cell values was above 0.2, i.e. |value > 0.2|. This leads to significantly reduced calculation and processing costs without a larger impact on the classification results. [Fig. 4](#Fig4) shows the resulting consolidated heatmap which only includes those 60 features with the largest influence on the result columns that were taken into consideration for the classification algorithms later on. As one can see, there is still a lot of complexity included in this immense feature set.
 
@@ -198,6 +198,15 @@ Finally, after having evaluated the results and decided in favor of a specific c
 # Results
 
 ## Model Evaluation and Validation
+
+#### Evaluation Setup
+We evaluated the implemented models presented in the last section using a set of automated tests with randomized, but determined generation of the training and test sets (using built-in scikit-learn function train_test_split) witzh different test ratios (i.e., the size of the test set compared to the total size)
+
+After each test run comprising of the fitting each classifier separately to the train set, predicting of the results for each classifier in the test set and storing these results in an array, the random_state was increased by 1 to ensure a different train_test_split at the next run. For each test_ratio, there were 300 tests performed and then, the test_ratio was increased by 0.05 and the next test series were started. While the test series for a single test_ratio took around 140sec in avergae, the complete test series took around 21 minutes to be completed.
+
+#### Classification Reports
+
+#### Accuracy: Is the training set big enough?
 
 ## Justification
 
