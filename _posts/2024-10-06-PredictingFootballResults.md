@@ -327,7 +327,7 @@ Summing up the evaluation results, the following interesting insights could be g
 
 ## Reflection
 
-In this paper, we presented an ML-based approach to predict results of football matches using advanced statistical analysis data from StatsBomb. After exploring the provided data set, we first made some necessary preprocessings, visualized the data and selected a feature set that promises to have the biggest impact on the prediction performance of the ML algorihms. Then, we implemented and evaluated a bunch of modern ML classifiers and regressors and compared their accuracies to a naive approach where the result is selected randomly by the classifier.
+In this paper, we presented an ML-based approach to predict results of football matches using advanced statistical analysis data from StatsBomb. After exploring the provided data set, we first made some necessary preprocessings, visualized the data and selected a feature set that promises to have the biggest impact on the prediction performance of the ML algorihms. Then, we implemented and evaluated a bunch of modern ML classifiers and regressors and compared their accuracies to a naive approach where the result was selected randomly by the classifier.
 
 The extensive evaluations showed that standard binary multi-output classifiers suffered the problem of non-unique classification results and, thus, led to poor prediction accuracies. However, using advanced continuous multi-output regressors with corrected binary results helped to significantly improve accuracies by up to 50% compared to the naive approach. This shows that Data Science and Machine Learning becomes more and more an important field of intereset in modern supervised sports events.
 
