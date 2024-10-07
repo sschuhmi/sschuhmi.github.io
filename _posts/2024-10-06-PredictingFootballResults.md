@@ -334,7 +334,7 @@ The extensive evaluations showed that standard binary multi-output classifiers s
 ## Improvement
 
 While the results presented in the previous section show that optimized Multi-Output Regressors which use advanced algorithms like Ridge or SVD help to significantly improve the prediction accuracy,
-it has to be mentioned that there is still a large optimization potential, considering that the best accuracy was only slightly above 50%.
+it has to be mentioned that there is still a large optimization potential, considering that the best accuracy was only slightly above 50% (which is, though, quite nice for complex football matches).
 
 However, regarding that the data set consisted only of 120 out of the 3500 matches from open data (and the whole StatsBomb data comprises even much more than those matches!), it is obvious that there exists a large potential by increasing the training set for the ML predictors.
 
