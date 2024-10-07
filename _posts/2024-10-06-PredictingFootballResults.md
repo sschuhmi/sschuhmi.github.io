@@ -228,10 +228,11 @@ Fig. 5: Evaluation Setup
 The following sections show the evaluated classification metrics of the different classifiers that were gained over the test series described above.
 While precision, recall and F1 scores are separated per possible result (home team wins, draw, away team wins), the accuracy is reported as average over all possible results in the classification report.
 
-##### 1. RandomClassifier
+##### 1. RandomClassifier (RC)
 
-The RandomClassifier performed in the anticipated accuracy, with an accuracy of 0.34 which is close to 1/3, the expected when the result is randomly predicted.
-Regarding the other metrics, 
+The RandomClassifier (RC) produced accuracies in the anticipated range: The average accuracy is 0.34 which is close to 1/3, the expected when the result is randomly predicted.
+The other metrics - precision, recall and F1 - are in the same range, except the precision score for 'win_home' that was around 25% above the accuracy score. 
+As already mentioned, the RandomClassifier just serves as benchmark for the ML classifiers and regressors.
 
 ![Fig6](https://github.com/sschuhmi/sschuhmi.github.io/blob/main/_posts/img/2014-10_Football/CR_ClassificationReport_for_1_RandomClassifier_testRatios=0.1-0.5.png?raw=true)
 <p align="center" style="text-align:center, text-style:italic">
@@ -240,6 +241,7 @@ Fig. 6: RandomClassifier evaluation results
 
 ##### 2. Multi-Output Classifier with DecisionTrees estimator (MOC_DecTree)
 
+Decision Trees represent a rather simple ML approach. Furthermore, they suffer from the problem of non-unique classifcations discussed in the Refinement section. Because of this, it is not surprising that the average accuracy is quite poor with only 0.25. The classification matrix also shows that only the win of the home team could be predicted in an acceptable range that is higher than the one of the RandomClassifier. The correct prediction of the outcome 'win_away' was worse than with RC, and the prediction performance of draws was particularly poor.
 
 ![Fig7](https://github.com/sschuhmi/sschuhmi.github.io/blob/main/_posts/img/2014-10_Football/CR_ClassificationReport_for_2_MOC_DecTree_testRatios=0.1..0.5.png?raw=true)
 <p align="center" style="text-align:center, text-style:italic">
