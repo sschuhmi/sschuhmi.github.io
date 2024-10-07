@@ -230,8 +230,8 @@ While precision, recall and F1 scores are separated per possible result outcome 
 
 ##### 1. RandomClassifier (RC)
 
-The RandomClassifier (RC) produced accuracies in the anticipated range: The average accuracy is 0.34 which is close to 1/3, the expected when the result is randomly predicted.
-The other metrics - precision, recall and F1 - are in the same range, except the precision score for 'win_home' that was around 25% above the accuracy score. 
+The RandomClassifier (RC) produced accuracies in the anticipated range: The average accuracy was 0.34 which is close to 1/3, the expected when the result is randomly predicted.
+The other metrics - precision, recall and F1 - were in the same range, except the precision score for 'win_home' that was around 25% above the accuracy score. 
 As already mentioned, the RandomClassifier just serves as benchmark for the ML classifiers and regressors.
 
 ![Fig6](https://github.com/sschuhmi/sschuhmi.github.io/blob/main/_posts/img/2014-10_Football/CR_ClassificationReport_for_1_RandomClassifier_testRatios=0.1-0.5.png?raw=true)
