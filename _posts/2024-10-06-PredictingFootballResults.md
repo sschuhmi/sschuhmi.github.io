@@ -34,7 +34,7 @@ As an example, consider the following Fig. 1 which represents score data from fi
 Fig. 1: Result Matrix as output vector for prediction
 </p>
 
-The goal of a prediction algorithm is to predict result matrices y_pred which are close to or, in the optimum case, exactly the result matrix y of the actual results.
+The goal of a prediction algorithm is to predict result matrices y_pred which are close to or, in the optimum case, exactly the result matrix y_true of the actual results.
 Mathematically set, the sum of |y_pred - y| (row-wise calculated) should be as minimal as possible. If the prediction exactly matches the actual results, the sum of |y_pred - y| is zero.
 
 ## Metrics
