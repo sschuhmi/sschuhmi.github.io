@@ -315,7 +315,7 @@ Fig. 13: Accuracy scores at various test ratios
 
 ## Justification
 
-Summing up the evaluation results, the following interesting insights could be gained:
+Summing up the evaluation results, the following interesting insights could be gained in this project:
 - The randomized classifier which serves as benchmark for the ML algorithms produced performance scores in the anticipated range. The overall accuracy score was 0.34.
 - As the simple multi-output classifiers suffered from the problem of non-unique classifications, they could not really outperform the randomized classifier, but were in the same range of this simple non-ML classifier.
 - However, the advanced multi-output regressors with corrected result vectors showed significantly improved accuracy scores around 0.5 (i.e., around 50% better than the naive randomized approach), as they do not suffer from the non-unique classification problem. The choice of the estimator seems to be of secondary nature, since the differences in the accuracy scores were quite low.
