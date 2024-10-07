@@ -199,7 +199,7 @@ While the three multi-output classifiers represent modern Machine Learning appro
 
 The following three regressors were implemented and optizimed using the algorithm described above in the Refinement section:
 - scikit-learn´s MultiOutputRegressor [[10]](#ref10) with GradientBoostingRegressor [[8]](#ref8) as estimator: This estimator builds an additive model in a forward stage-wise fashion; it allows for the optimization of arbitrary differentiable loss functions
-- scikit-learn´s MultiOutputRegressor [[10]](#ref10) with Ridge [[11]](#ref11) as estimator: Ridge represents a Linear least squares with l2 regularization and minimizes the following objective function:
+- scikit-learn´s MultiOutputRegressor [[10]](#ref10) with Ridge [[11]](#ref11) as estimator: Ridge represents a Linear least squares with L2 regularization and minimizes the following objective function:
 ||y - Xw||^2_2 + alpha * ||w||^2_2
 - scikit-learn´s MultiOutputRegressor [[10]](#ref10) with Stochastic Gradient Descent (SGD) [[12]](#ref12) as estimator: SGD represents a simple, yet very efficient approach to fitting linear classifiers and regressors under convex loss functions such as (linear) Support Vector Machines and Logistic Regression.
 
@@ -260,6 +260,7 @@ Fig. 8: MOC_RandomForests evaluation results
 
 ##### 4. Multi-Output Classifier with LogisticRegression estimator (MOC_LogisticRegression)
 
+As the above mentioned multi-output classifier, Logistic Regression as a linear classifier also suffers from the non-uniqueness of some classifications. However, since Logistic Regression typically is advanced compared to Decision Trees or Random Forests, its classification accuracy of 0.37 is slightly higher than theirs or the RC accuracy. While precision, recall and, consequently, F1 scores are fine for 'win_home', the scores of 'win_away' are also better than those of the previously discussed algorithms. However, a 'draw' is still very hard to be predicted by Logistic Regression, especially regarding the very poor score of only 0.07 for recall.
 
 ![Fig9](https://github.com/sschuhmi/sschuhmi.github.io/blob/main/_posts/img/2014-10_Football/CR_ClassificationReport_for_4_MOC_LogisticRegression_testRatios=0.1..0.5.png?raw=true)
 <p align="center" style="text-align:center, text-style:italic">
@@ -275,7 +276,11 @@ Fig. 9: MOC_LogisticRegression evaluation results
 Fig. 10: MOC_GradBoost evaluation results
 </p>
 
+The Gradient Boosting-based multi-outpot regressor represents an advanced algorithm over the simple classifier, as it predicts non-binary, continuous prediction values whose row maximum can simply be determined and the corresponding predicted vector set to 1 only for this result, while the others become zero. Thus, non-unique classification are not possible here. This leads to a much better accuracy of 0.48 which is around 41% higher than the one of RC. The other metric are also improved compared to the previously discussed classifiers, especially considering that all scores for 'win_home' are at least 0.6, 'win_away' scores are around 0.4 and 'draw' scores are around 0.3.
+
 ##### 6. Multi-Output Regressor with Ridge estimator (MOR_Ridge)
+
+The Ridge estimator based multi-output regressor performs quite similar to the Gradient Boosting variant with an only slightly increased accuracy of 0.49. While the precision, recall and F1-scores for 'win_home' and 'win_away' are slightly better in average than those from Gradient Boosting, the 'draw' prediction scores are a bit lower.
 
 ![Fig11](https://github.com/sschuhmi/sschuhmi.github.io/blob/main/_posts/img/2014-10_Football/CR_ClassificationReport_for_6_MOR_Ridge_testRatios=0.1..0.5.png?raw=true)
 <p align="center" style="text-align:center, text-style:italic">
@@ -283,6 +288,10 @@ Fig. 11: MOR_Ridge evaluation results
 </p>
 
 ##### 7. Multi-Output Regressor with SGD estimator (MOR_SGD)
+
+The multi-output regressor with an stochastic gradient descent estimator produced the best overall scores with an accuracy of 0.51 and all values for 'win_home' and 'win_away' also above 0.5. However, even for this advanced regressor, it was very hard to predict a draw and the precision, recall and F1-score did not exceed 0.3 there. 
+
+Compared to the RC benchmark classifier, the accuracy score was improved by exactly 50%, making this predictor the preferable choice among all of the discussed classifiers and regressors..
 
 ![Fig12](https://github.com/sschuhmi/sschuhmi.github.io/blob/main/_posts/img/2014-10_Football/CR_ClassificationReport_for_7_MOR_SGD_testRatios=0.1..0.5.png?raw=true)
 <p align="center" style="text-align:center, text-style:italic">
