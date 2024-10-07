@@ -274,7 +274,7 @@ The Gradient Boosting-based multi-outpot regressor represents an advanced algori
 
 ![Fig10](https://github.com/sschuhmi/sschuhmi.github.io/blob/main/_posts/img/2014-10_Football/CR_ClassificationReport_for_5_MOR_GradBoost_testRatios=0.1..0.5.png?raw=true)
 <p align="center" style="text-align:center, text-style:italic">
-Fig. 10: MOC_GradBoost evaluation results
+Fig. 10: MOR_GradBoost evaluation results
 </p>
 
 ##### 6. Multi-Output Regressor with Ridge estimator (MOR_Ridge)
