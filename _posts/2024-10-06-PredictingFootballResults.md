@@ -46,7 +46,7 @@ These comprise the following:
 - <b>F1 score:</b> This metric can be interpreted as a weighted harmonic mean of the precision and recall and takes care both of false positives and false negatives. It considers precision and recall with the same fraction and calculates as *2 * precision * recall / (precision + recall)*
 - <b>Accuracy score:</b> The accuracy_score represents the fraction of correctly classified samples. Here, a sample represents a single row vector within the results matrix. As our main goal is to have the most matches between the actual and the predicted results (i.e., the number rows of the result matrix should be maximized), the accuracy (calculated on a row-wise manner) is considered to be the most important of the above metrics here.
 
-Mathematical details on these metrics can also be found at [[4]](#ref4).
+Mathematical foundations on these metrics can also be found at [[4]](#ref4).
 
 As mentioned, our focus is on the highest possible accuracy, but the other metrics are also taken into considertion in the evaluations to additionally record if an algorithm performs good or bad in terms of false positives and/or false negatives.
 
