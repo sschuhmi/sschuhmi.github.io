@@ -270,13 +270,12 @@ Fig. 9: MOC_LogisticRegression evaluation results
 
 ##### 5. Multi-Output Regressor with GradientBoosting estimator (MOR_GradBoo)
 
+The Gradient Boosting-based multi-outpot regressor represents an advanced algorithm over the simple classifier, as it predicts non-binary, continuous prediction values whose row maximum can simply be determined and the corresponding predicted vector set to 1 only for this result, while the others become zero. Thus, non-unique classification are not possible here. This leads to a much better accuracy of 0.48 which is around 41% higher than the one of RC. The other metric are also improved compared to the previously discussed classifiers, especially considering that all scores for 'win_home' are at least 0.6, 'win_away' scores are around 0.4 and 'draw' scores are around 0.3.
 
 ![Fig10](https://github.com/sschuhmi/sschuhmi.github.io/blob/main/_posts/img/2014-10_Football/CR_ClassificationReport_for_5_MOR_GradBoost_testRatios=0.1..0.5.png?raw=true)
 <p align="center" style="text-align:center, text-style:italic">
 Fig. 10: MOC_GradBoost evaluation results
 </p>
-
-The Gradient Boosting-based multi-outpot regressor represents an advanced algorithm over the simple classifier, as it predicts non-binary, continuous prediction values whose row maximum can simply be determined and the corresponding predicted vector set to 1 only for this result, while the others become zero. Thus, non-unique classification are not possible here. This leads to a much better accuracy of 0.48 which is around 41% higher than the one of RC. The other metric are also improved compared to the previously discussed classifiers, especially considering that all scores for 'win_home' are at least 0.6, 'win_away' scores are around 0.4 and 'draw' scores are around 0.3.
 
 ##### 6. Multi-Output Regressor with Ridge estimator (MOR_Ridge)
 
