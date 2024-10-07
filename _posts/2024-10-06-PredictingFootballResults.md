@@ -183,7 +183,7 @@ Summarizing, there are 179,136 out of the originally 417,221 events remaining fo
 
 ## Implementation
 
-For the implementation of the classification algorithm, a Jupyter Notebook was created relying on Python 3 within the Anaconda Distribution. The most important packages that were used comprise Pandas, Numpy, Matplotlib and Seaborn as well as several scikit-learn packages such as various classifier (e.g., MultiOutputClassifier, DecisionTreeClassifier or RandomForestClassifier) and regressory (e.g., MultiOutputRegressor, Ridge or GradientBoostingRegressor). The complete set of packages to be imported can be found in the initial import section of the provided Jupyter Notebook.
+For the implementation of the classification algorithm, a Jupyter Notebook was created relying on Python 3 within the Anaconda Distribution. The most important packages that were used comprise Pandas, Numpy, Matplotlib and Seaborn as well as several scikit-learn packages such as various classifier (e.g., MultiOutputClassifier, DecisionTreeClassifier or RandomForestClassifier) and regressors (e.g., MultiOutputRegressor, Ridge or GradientBoostingRegressor). The complete set of packages to be imported can be found in the initial import section of the provided Jupyter Notebook.
 
 As we need to predict three binary result columns, a multi-output classifier is required which has to provide binary results per output, i.e. a vector [y1, y2, y3] with binary values for y1 (1 for 'win_home', otherwise 0), y2 (1 for 'win_none' i.e. a draw, otherwise 0) and y3 (1 for 'win_away', otherwise 0).
 
