@@ -16,7 +16,6 @@ An interesting question that arises with this constantly increasing amount of fo
 That´s exactly what the focus of this project is: We exploit the large open data set and use Machine Learning multi-output Classifiers and Regressors to predict the winner of a match, compared to a simple non-ML Classifier which randomly decides one of the possible three results - first team wins, second team wins, or there is a draw between the teams.
 
 ## Problem Statement
-The problem which needs to be solved is clearly defined. A strategy for solving the problem, including discussion of the expected solution, has been made.
 
 The problem which needs to be solved here is the prediction of the winner of a match without exploiting the score data (i.e., which team shot how many goals).
 A football match always consists of exactly two teams that play against each other: The first team is called the 'home team', while the second team is called the 'away team'. In order to win a match, a team has to score more goals than the other team after full time (90 minutes; note that in international championships, it is common to continue the match in case of a draw after full time by extra time and/or penalty shooting; however, we do not regard extra time or penalty shootings here). If both teams scored the same number of goals, the result is called a 'draw'.
