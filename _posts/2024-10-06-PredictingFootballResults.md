@@ -304,6 +304,13 @@ TODO: Add accuracy graph
 
 ## Justification
 
+Summing up the evaluation results, the following insights could be gained:
+- The randomized classifier which serves as benchmark for the ML algorithms produced performance scores in the anticipated range. The overall accuracy score was 0.34.
+- As the simple multi-output classifiers suffered from the problem of non-unique classifications, they could not really outperform the randomized classifier
+- However, the advanced multi-output regressors with corrected result vectors showed significantly improved accuracy scores around 0.5, as they do not suffer from the non-unique classification problem. The choice of the estimator seems to be of secondary nature, since the differences in the accuracy scores were quite low. If maximum accuracy has to be aspired, we suggest to the multi-output regressor with an SGD estimator.
+- The comparison of the accuracy scores when the test_ratio was varied showed that ...
+
+
 
 # Conclusion
 
