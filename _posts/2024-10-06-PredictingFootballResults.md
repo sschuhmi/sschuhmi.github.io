@@ -162,6 +162,9 @@ The competitions and matches files could simply be imported using the standard P
 First of all, as we already discussed in the data visualizations section, some features seemed to have only a minor impact on the result columns. Thus, we only considered those features from the events dataset where at least one of the absolute cell values was above 0.2, i.e. |value > 0.2|. This leads to significantly reduced calculation and processing costs without a larger impact on the classification results. [Fig. 4](#Fig4) shows the resulting consolidated heatmap which only includes those 60 features with the largest influence on the result columns that were taken into consideration for the classification algorithms later on. As one can see, there is still a lot of complexity included in this immense feature set.
 
 ![Fig4](https://github.com/sschuhmi/sschuhmi.github.io/blob/main/_posts/img/2014-10_Football/Heatmap_mixed-type.png?raw=true)
+<p align="center" style="text-align:center, text-style:italic">
+Fig. 4: Heatmap of combined-type feature set with 60 features
+</p>
 
 For this project, we decided just to consider the quantitative amounts of the event types, meaning we count the amount of each event type per match and added an additional column for this feature holding the number of counts of this event. For some events, it may be possible to additionally exploit the actual qualitative value of an event (, but we leave this for future work, as it would increase the computational complexity again (e.g., the goalkeeper´s body part for an event may be 'head', 'chest', 'both hands', 'left hand', 'right hand', 'left foot' or 'right foot', i.e. 7 possible values for only one event type!) when considering the whole feature set for this technique.
 
@@ -207,6 +210,9 @@ After each test run comprising of the fitting each classifier separately to the 
 [[Fig. 5]](#fig5) gives an overview of the evaluation setup and the runtimes of the single test_ratio series.
 
 ![Fig5](https://github.com/sschuhmi/sschuhmi.github.io/blob/main/_posts/img/2014-10_Football/Evaluation-setup.PNG?raw=true)
+<p align="center" style="text-align:center, text-style:italic">
+Fig. 5: Evaluation Setup
+</p>
 
 #### Classification Reports
 
