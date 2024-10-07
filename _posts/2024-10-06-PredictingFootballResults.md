@@ -211,7 +211,7 @@ Finally, after having evaluated the results and decided in favor of a specific c
 #### Evaluation Setup
 We evaluated the implemented models presented in the last section using a set of automated tests with randomized, but determined generation of the training and test sets (using built-in scikit-learn function train_test_split) with different test ratios (i.e., the size of the test set compared to the total size). We decided to evaluate various test ratios to find out if the size of the training set for the ML classifier is sufficient, considering that only 116 matches were investigated.
 
-After each test run comprising of the fitting each classifier separately to the train set, predicting of the results for each classifier in the test set and storing these results in an array, the random_state was increased by 1 to ensure a different train_test_split at the next run. For each test_ratio, there were 300 tests performed and then, the test_ratio was increased by 0.05 and the next test series were started. While the test series for a single test_ratio took around 140sec in average, the complete test series took around 21 minutes to be completed.
+After each test run comprising of the fitting each classifier separately to the train set, predicting of the results for each classifier in the test set and storing these results in an array, the random_state was increased by 1 to ensure a different train_test_split at the next run. For each test_ratio, there were 300 tests performed and then, the test_ratio was increased by 0.05 and the next test series were started. While the test series for a single test_ratio took around 132.5sec in average, the complete test series took around 19.9 minutes to be completed.
 
 [[Fig. 5]](#fig5) gives an overview of the evaluation setup and the runtimes of the single test_ratio series.
 
@@ -221,6 +221,22 @@ Fig. 5: Evaluation Setup
 </p>
 
 #### Classification Reports
+
+##### RandomClassifier
+
+##### Multi-Output Classifier with DecisionTrees estimator (MOC_DecTree)
+
+##### Multi-Output Classifier with RandomForests estimator (MOC_RandomForests)
+
+##### Multi-Output Classifier with LogisticRegression estimator (MOC_LogisticRegression)
+
+##### Multi-Output Regressor with GradientBoosting estimator (MOR_GradBoo)
+
+##### Multi-Output Regressor with Ridge estimator (MOR_Ridge)
+
+##### Multi-Output Regressor with SGD estimator (MOR_SGD)
+
+
 
 #### Accuracy: Is the training set big enough?
 The evaluation results presented in the last section show that the overall accuracy over the complete test series can significantly be increased compared to random choice by using a multi-output regressor with an estimator like Ridge or SGD. However, one question that may arise when looking on the number of investigated matches is: Is this amount of matches and events sufficient for an adequate use of Machine Learning classifiers? To find an answer on this question, we decided to vary the test_ratio and change the amount of training data in terms of matches for the classifier: While the training set is rather large when test_ratio = 0.1 - there still remain 108 out of 120 matches for training - this number is significantly lower when test_ratio = 0.5 - then, there are only 60 out of 120 matches left for training. By starting with test_ratio = 0.1 and then taking small increases of 0.05 for the test_ratio up to 0.5, the accuracies per classifier were recorded and are shown in Fig. ...
