@@ -205,7 +205,7 @@ The following three regressors were implemented and optizimed using the algorith
 
 In summary, we compare the naive RandomClassifier with three ML multi-output classifiers and three ML multi-output regressor with corrected result vectors.
 
-Finally, after having evaluated the results and decided in favor of a specific classifier or regressor (see Results section below), the corresponding classifier can easily be organized within a ML pipeline. Furthermore, the extract (-> import from StatsBomb open data), transform (-> data preprocessing) and load (-> store processed data) parts could also be extracted in an ETL pipeline which would be executed prior to the ML pipeline. The pipelines guarantee automated, simple and flexible runs of the algorithms.
+Finally, after having evaluated the results and decided in favor of a specific classifier or regressor (see Results section below), the corresponding classifier can easily be organized within an ML pipeline. Furthermore, the extract (-> import from StatsBomb open data), transform (-> data preprocessing) and load (-> store processed data) parts could also be extracted in an ETL pipeline which would be executed prior to the ML pipeline. The pipelines guarantee automated, simple and flexible runs of the algorithms.
 
 # Results
 
