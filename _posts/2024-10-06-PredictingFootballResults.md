@@ -174,6 +174,8 @@ For this project, we decided just to consider the quantitative amounts of the ev
 
 Immanent to this way of calculating and adding up the match statistics is that there are neither missing values nor duplicates in the feature set included, as each cell is calculated (even if an event did not occur, there is still a zero and not a NaN as cell value) exactly once per feature and team.
 
+The feature set is imported event-type-wise from the events file into the matches dataframe within the function 'update_match_stats'.
+
 #### Scaling
 What was finally needed was scaling of the feature values: As the events occur in (partially) significantly different magnitudes, they need to be scaled before they can be used by Machine Learning algorithms, since otherwise, features would not be equally weighted by the algorithms. To scale the results in a positive range of floating-point numbers between zero (meaning this event type did not happen at all in this match) and one (meaning this event type happens most often in this match), we used scikit-learn´s standard MinMaxScaler [[5]](#ref5)
 
