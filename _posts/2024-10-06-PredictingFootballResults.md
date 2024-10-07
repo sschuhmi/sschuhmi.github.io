@@ -222,19 +222,22 @@ Fig. 5: Evaluation Setup
 
 #### Classification Reports
 
-##### RandomClassifier
+The following sections show the evaluated classification metrics of the different classifiers that were gained over the test series described above.
+While precision, recall and F1 scores are separated per possible result (home team wins, draw, away team wins), the accuracy is reported as average over all possible results in the classification report.
 
-##### Multi-Output Classifier with DecisionTrees estimator (MOC_DecTree)
+##### 1. RandomClassifier
 
-##### Multi-Output Classifier with RandomForests estimator (MOC_RandomForests)
+##### 2. Multi-Output Classifier with DecisionTrees estimator (MOC_DecTree)
 
-##### Multi-Output Classifier with LogisticRegression estimator (MOC_LogisticRegression)
+##### 3. Multi-Output Classifier with RandomForests estimator (MOC_RandomForests)
 
-##### Multi-Output Regressor with GradientBoosting estimator (MOR_GradBoo)
+##### 4. Multi-Output Classifier with LogisticRegression estimator (MOC_LogisticRegression)
 
-##### Multi-Output Regressor with Ridge estimator (MOR_Ridge)
+##### 5. Multi-Output Regressor with GradientBoosting estimator (MOR_GradBoo)
 
-##### Multi-Output Regressor with SGD estimator (MOR_SGD)
+##### 6. Multi-Output Regressor with Ridge estimator (MOR_Ridge)
+
+##### 7. Multi-Output Regressor with SGD estimator (MOR_SGD)
 
 
 
