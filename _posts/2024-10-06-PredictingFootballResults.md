@@ -99,7 +99,6 @@ Each events file contains an array containing information for both teams. Some e
 For each event, there is some basic information on the event like the period, minute and second when the event was recorded.
 
 The heart of the complexity consists in the very fine-granular event types used in this file. 
-Each event 
 
 A complete list of the 119 event types (which are recorded team-specific, thus doubling this number in practice) can be found in the following figure, just to clarify the complexity of a modern football match.
 
