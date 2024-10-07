@@ -7,7 +7,7 @@
 ## Project Overview
 
 Football - also known as soccer in the USA - is one of the most famous sports in the world. In the last years, the amount of analysis data that is generated in modern football matches using cameras, drones or
-other advanced technologies has significantly increased. StatsBomb [[1]](#ref1) has become one of the most famous data providers in this area, delivering tons of analysis data from matches all over the planet. Besides data where the customer needs to pay for, there is also a large StatsBomb open data repository in GitHub available [[2]](#ref2) which includes more than 3500 matches from 21 competitions, reaching from national competitions up to continental and global championships like the FIFA World Cup 2022.
+other advanced technologies has significantly increased. StatsBomb [[1]](#ref1) has become one of the most famous data providers in this area, delivering tons of analysis data from matches all over the planet. Besides data where the customer needs to pay for, there is also a large StatsBomb open data repository in GitHub available [[2]](#ref2) which includes more than 3500 matches from 21 competitions, reaching from national competitions up to continental and global championships like the recent World Cup 2022.
 
 An interesting question that arises with this constantly increasing amount of football analysis data is the following:
 
