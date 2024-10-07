@@ -122,6 +122,7 @@ In order to find out which event types are most important to become features for
 Regarding the immense amount of the dataset and the immense amount and memory consumption for processing the data, we focused on a small subset of matches for our observations, leaving the extension to a larger set for further work. Thus, the data visualizations in the following are created using the following data:
 - All 116 provided matches from a specific season of 3 competitions - Spanish 'La Liga' 2019/2020, World Cup 2022 and Copa America 2024
 - These matches include 417,221 events of all event types, which can be distinguished to the following numbers of event patterns:
+
 ![Pattern-types](https://github.com/sschuhmi/sschuhmi.github.io/blob/main/_posts/img/2014-10_Football/Pattern-types.PNG?raw=true)
 - In order to score, a team typically needs to get adequately close to the goal. This is typically performed by 
   - conquering the ball in a dribble, duel, clearance, by a misleading pass of the oppenent or by getting a free kick, penalty kick or throw-in,
