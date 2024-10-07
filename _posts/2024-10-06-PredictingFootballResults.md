@@ -236,7 +236,7 @@ Fig. 6: RandomClassifier evaluation results
 ##### 2. Multi-Output Classifier with DecisionTrees estimator (MOC_DecTree)
 
 
-![Fig7](https://github.com/sschuhmi/sschuhmi.github.io/blob/main/_posts/img/2014-10_Football/CR_Classification report_for_2_MOC_DecTree_testRatios=0.1..0.5.png?raw=true)
+![Fig7](https://github.com/sschuhmi/sschuhmi.github.io/blob/main/_posts/img/2014-10_Football/CR_ClassificationReport_for_2_MOC_DecTree_testRatios=0.1..0.5.png?raw=true)
 <p align="center" style="text-align:center, text-style:italic">
 Fig. 7: RandomClassifier evaluation results
 </p>
