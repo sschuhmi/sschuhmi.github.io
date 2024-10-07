@@ -226,7 +226,7 @@ Fig. 5: Evaluation Setup
 #### Classification Reports
 
 The following sections show the evaluated classification metrics of the different classifiers that were gained over the test series described above.
-While precision, recall and F1 scores are separated per possible result (home team wins, draw, away team wins), the accuracy is reported as average over all possible results in the classification report.
+While precision, recall and F1 scores are separated per possible result ('win_home', 'win_none', 'win_away'), the accuracy is reported as average over all possible results in the classification report.
 
 ##### 1. RandomClassifier (RC)
 
