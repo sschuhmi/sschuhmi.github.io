@@ -251,7 +251,7 @@ Fig. 7: MOC_DecTree evaluation results
 
 ##### 3. Multi-Output Classifier with RandomForests estimator (MOC_RandomForests)
 
-Using RandomForests as estimator increased the accuracy score slightly to 0.33, which is almost the value of RC. The averaging and randomization of decision trees seems to also improve the results of the other metrics. However, this only holds for the result 'win_home', while the metric scores of the other result 'draw' and 'win_away' were very poor. Like the other two multi-output classifiers, MOC_RandomForests also suffers from the non-unique classication matrix, explaining the rather poor overall results.
+Using RandomForests as estimator increased the accuracy score slightly to 0.33, which is almost the value of RC. The averaging and randomization of decision trees seems to also improve the results of the other metrics. However, this only holds for the result 'win_home', while the metric scores of the other results 'draw' and 'win_away' were very poor. Like the other two multi-output classifiers, MOC_RandomForests also suffers from the non-unique classication matrix, explaining the rather poor overall results.
 
 ![Fig8](https://github.com/sschuhmi/sschuhmi.github.io/blob/main/_posts/img/2014-10_Football/CR_ClassificationReport_for_3_MOC_RandomForests_testRatios=0.1..0.5.png?raw=true)
 <p align="center" style="text-align:center, text-style:italic">
