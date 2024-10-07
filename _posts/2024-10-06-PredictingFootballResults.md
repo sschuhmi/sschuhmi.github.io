@@ -96,7 +96,7 @@ Thus, there is one json file per match, summing up to almost 3500 matches. The n
 
 Each events file contains an array containing information for both teams. Some elements have rather child elements (e.g., ID and name of an object) and some have even child arrays, leading to a deeper structure of this file type.
 
-For each event, there are some basic information on the event like the period, minute and second when the event was recorded.
+For each event, there is some basic information on the event like the period, minute and second when the event was recorded.
 
 The heart of the complexity consists in the very fine-granular event types used in this file. 
 Each event 
