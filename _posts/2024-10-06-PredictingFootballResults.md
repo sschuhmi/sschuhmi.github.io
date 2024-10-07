@@ -315,17 +315,20 @@ Fig. 13: Accuracy scores at various test ratios
 
 ## Justification
 
-Summing up the evaluation results, the following insights could be gained:
+Summing up the evaluation results, the following interesting insights could be gained:
 - The randomized classifier which serves as benchmark for the ML algorithms produced performance scores in the anticipated range. The overall accuracy score was 0.34.
-- As the simple multi-output classifiers suffered from the problem of non-unique classifications, they could not really outperform the randomized classifier
-- However, the advanced multi-output regressors with corrected result vectors showed significantly improved accuracy scores around 0.5, as they do not suffer from the non-unique classification problem. The choice of the estimator seems to be of secondary nature, since the differences in the accuracy scores were quite low. If maximum accuracy has to be aspired, we suggest to the multi-output regressor with an SGD estimator.
-- The comparison of the accuracy scores when the test_ratio was varied showed that ...
-
+- As the simple multi-output classifiers suffered from the problem of non-unique classifications, they could not really outperform the randomized classifier, but were in the same range of this simple non-ML classifier.
+- However, the advanced multi-output regressors with corrected result vectors showed significantly improved accuracy scores around 0.5 (i.e., around 50% better than the naive randomized approach), as they do not suffer from the non-unique classification problem. The choice of the estimator seems to be of secondary nature, since the differences in the accuracy scores were quite low.
+- However, if maximum accuracy has to be aspired, we suggest to the multi-output regressor with an SGD estimator, since it produced the highest overall accuracy as well as fine precision, recall and F1-scores. Furthermore, its loss of accuracy was least when the training set was further reduced.
 
 
 # Conclusion
 
 ## Reflection
+
+In this paper, we presented an ML-based approach to predict results of football matches using advanced statistical analysis data from StatsBomb. After exploring the provided data set, we first made some necessary preprocessings, visualized the data and selected a feature set that promises to have the biggest impact on the prediction performance of the ML algorihms. Then, we implemented and evaluated a bunch of modern ML classifiers and regressors and compared their accuracies to a naive approach where the result is selected randomly by the classifier.
+
+The extensive evaluations showed that standard binary multi-output classifiers suffered the problem of non-unique classification results and, thus, led to poor prediction accuracies. However, using advanced continuous multi-output regressors with corrected binary results helped to significantly improve accuracies by up to 50% compared to the naive approach. This shows that Data Science and Machine Learning becomes more and more an important field of intereset in modern supervised sports events.
 
 ## Improvement
 
