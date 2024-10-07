@@ -165,7 +165,7 @@ First of all, as we already discussed in the data visualizations section, some f
 
 ![Fig4](https://github.com/sschuhmi/sschuhmi.github.io/blob/main/_posts/img/2014-10_Football/Heatmap_mixed-type.png?raw=true)
 <p align="center" style="text-align:center, text-style:italic">
-Fig. 4: Heatmap of combined-type feature set with 60 features
+Fig. 4: Heatmap of combined-type, reduced feature set with 60 features
 </p>
 
 #### Feature Set - Quantitative Approach
