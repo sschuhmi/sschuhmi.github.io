@@ -230,6 +230,9 @@ While precision, recall and F1 scores are separated per possible result (home te
 
 ##### 1. RandomClassifier
 
+The RandomClassifier performed in the anticipated accuracy, with an accuracy of 0.34 which is close to 1/3, the expected when the result is randomly predicted.
+Regarding the other metrics, 
+
 ![Fig6](https://github.com/sschuhmi/sschuhmi.github.io/blob/main/_posts/img/2014-10_Football/CR_ClassificationReport_for_1_RandomClassifier_testRatios=0.1..0.5.png?raw=true)
 <p align="center" style="text-align:center, text-style:italic">
 Fig. 6: RandomClassifier evaluation results
@@ -271,14 +274,12 @@ Fig. 10: MOC_GradBoost evaluation results
 
 ##### 6. Multi-Output Regressor with Ridge estimator (MOR_Ridge)
 
-
 ![Fig11](https://github.com/sschuhmi/sschuhmi.github.io/blob/main/_posts/img/2014-10_Football/CR_ClassificationReport_for_6_MOR_Ridge_testRatios=0.1..0.5.png?raw=true)
 <p align="center" style="text-align:center, text-style:italic">
 Fig. 11: MOR_Ridge evaluation results
 </p>
 
 ##### 7. Multi-Output Regressor with SGD estimator (MOR_SGD)
-
 
 ![Fig12](https://github.com/sschuhmi/sschuhmi.github.io/blob/main/_posts/img/2014-10_Football/CR_ClassificationReport_for_7_MOR_SGD_testRatios=0.1..0.5.png?raw=true)
 <p align="center" style="text-align:center, text-style:italic">
