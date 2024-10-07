@@ -303,10 +303,10 @@ The evaluation results presented in the last section show that the accuracy over
 - 5.9% for MOC_RandomForests
 - 7.7% for MOC_LogisticRegression
 - 7.8% for MOR_GradBoo
-- 3.9% for MOR_Ridge
+- 5.9% for MOR_Ridge
 - 3.8% for MOR_SGD
 
-These results show once again that all ML algorithms are suited even for small training sets, and that the multi-output regressors with Ridge or SGD estimator should be preferred over the other classifiers, as they still perform well with particularly small training sets.
+These results show once again that all ML algorithms are suited even for small training sets, and that the multi-output regressor with SGD estimator should be preferred over the other classifiers, as it its loss in accuracy is lowest when the training set becomes smaller.
 
 ![Fig13](https://github.com/sschuhmi/sschuhmi.github.io/blob/main/_posts/img/2014-10_Football/Accuracy_vs_test_ratio.png?raw=true)
 <p align="center" style="text-align:center, text-style:italic">
