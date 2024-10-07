@@ -241,7 +241,7 @@ Fig. 6: RandomClassifier evaluation results
 
 ##### 2. Multi-Output Classifier with DecisionTrees estimator (MOC_DecTree)
 
-Decision Trees represent a rather simple ML approach. Furthermore, they suffer from the problem of non-unique classifcations discussed in the Refinement section. Because of this, it is not surprising that the average accuracy is quite poor with only 0.25. The classification matrix also shows that only the win of the home team could be predicted in an acceptable range that is higher than the one of the RandomClassifier. The correct prediction of the outcome 'win_away' was worse than with RC, and the prediction performance of draws was particularly poor.
+Decision Trees represent a rather simple ML approach. Furthermore, they suffer from the problem of non-unique classifcations discussed in the Refinement section. Because of this, it is not surprising that the average accuracy is quite poor with only 0.25. The classification matrix also shows that only the win of the home team could be predicted in an acceptable range that is higher than the one of the RandomClassifier. The correct prediction of the outcome 'win_away' was worse than with RC, and the prediction performance of 'draws' was particularly poor.
 
 ![Fig7](https://github.com/sschuhmi/sschuhmi.github.io/blob/main/_posts/img/2014-10_Football/CR_ClassificationReport_for_2_MOC_DecTree_testRatios=0.1..0.5.png?raw=true)
 <p align="center" style="text-align:center, text-style:italic">
