@@ -204,6 +204,10 @@ We evaluated the implemented models presented in the last section using a set of
 
 After each test run comprising of the fitting each classifier separately to the train set, predicting of the results for each classifier in the test set and storing these results in an array, the random_state was increased by 1 to ensure a different train_test_split at the next run. For each test_ratio, there were 300 tests performed and then, the test_ratio was increased by 0.05 and the next test series were started. While the test series for a single test_ratio took around 140sec in avergae, the complete test series took around 21 minutes to be completed.
 
+[[Fig. 5]](#fig5) gives an overview of the evaluation setup and the runtimes of the single test_ratio series.
+
+![Fig5](https://github.com/sschuhmi/sschuhmi.github.io/blob/main/_posts/img/2014-10_Football/Evaluation-setup.PNG?raw=true)
+
 #### Classification Reports
 
 #### Accuracy: Is the training set big enough?
