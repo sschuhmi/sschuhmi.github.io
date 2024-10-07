@@ -186,9 +186,9 @@ As we need to predict three binary result columns, a multi-output classifier is 
 
 The following algorihms were implemented to predict the classification results:
 - RandomClassifier: a simple classifier which randomly chooses among one of the three possible outcomes ([1, 0, 0], [0, 1, 0] or [0, 0, 1]). This accuracy, precision, recall and f1 results of this classifier serve as benchmark for the other classifiers.
-- scikit-learn´s MultiOutputClassifier [[6]](#ref6) with DecisionTrees [[7]](#ref7) estimator: 
-- scikit-learn´s MultiOutputClassifier [[6]](#ref6) with RandomForests [[8]](#ref8) estimator
-- scikit-learn´s MultiOutputClassifier [[6]](#ref6) with LogisticRegression [[9]](#ref9) estimator 
+- scikit-learn´s MultiOutputClassifier [[6]](#ref6) with DecisionTrees [[7]](#ref7) estimator: Decision Trees are a non-parametric supervised learning method used for classification and regression. The goal is to create a model that predicts the value of a target variable by learning simple decision rules inferred from the data features. A tree can be seen as a piecewise constant approximation.
+- scikit-learn´s MultiOutputClassifier [[6]](#ref6) with RandomForests [[8]](#ref8) estimator: the RandomForest algorithm represents an averaging algorithms based on randomized Decision Trees. A diverse set of classifiers is created by introducing randomness in the classifier construction. The prediction of the ensemble is given as the averaged prediction of the individual classifiers.
+- scikit-learn´s MultiOutputClassifier [[6]](#ref6) with LogisticRegression [[9]](#ref9) estimator: Logistic Regression is actually implemented as a linear model for classification rather than regression in terms of the scikit-learn/ML nomenclature.
 
 ## Refinement
 
