@@ -320,7 +320,7 @@ Summing up the evaluation results, the following interesting insights could be g
 - As the simple multi-output classifiers suffered from the problem of non-unique classifications, they could not really outperform the randomized classifier, but were in the same range of this simple non-ML classifier.
 - However, the advanced multi-output regressors with corrected result vectors showed significantly improved accuracy scores around 0.5 (i.e., around 50% better than the naive randomized approach), as they do not suffer from the non-unique classification problem. The choice of the estimator seems to be of secondary nature, since the differences in the accuracy scores were quite low.
 - Nevertheless, if maximum accuracy has to be aspired, we suggest to the multi-output regressor with an SGD estimator, since it produced the highest overall accuracy as well as fine precision, recall and F1-scores. Furthermore, its loss of accuracy was least when the training set was further reduced.
-- All classifiers and regressors had problem in accurately determining a draw, which was kind of forecasted in the data visualization section when determining the influence of the features on the results.
+- All classifiers and regressors had problems in accurately determining a draw, which was kind of forecasted in the data visualization section when determining the influence of the features on the results.
 
 
 # Conclusion
