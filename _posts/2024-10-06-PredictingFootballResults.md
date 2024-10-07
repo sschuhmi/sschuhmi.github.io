@@ -48,7 +48,7 @@ These comprise the following:
 
 Mathematical foundations on these metrics can also be found at [[4]](#ref4).
 
-As mentioned, our focus is on the highest possible accuracy, but the other metrics are also taken into considertion in the evaluations to additionally record if an algorithm performs good or bad in terms of false positives and/or false negatives.
+As mentioned, our focus is on the highest possible accuracy, but the other metrics are also taken into consideration in the evaluations to additionally record if an algorithm performs good or bad in terms of false positives and/or false negatives.
 
 # Analysis
 
