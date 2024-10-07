@@ -342,7 +342,7 @@ Taking into account the timely manner and sequence in which specific events occu
 
 Thanks go to Udacity´s Data Scientist Nanodegree ([nd025](#ref13)) where this project is part of.
 
-Acknowledges go to StatsBomb for providing their open data set.
+Further acknowledges go to [StatsBomb](#ref1) for providing their [open data set](#ref2).
 ![StatsBomb](https://github.com/sschuhmi/sschuhmi.github.io/blob/main/_posts/img/2014-10_Football/StatsBomb-logo_small.png?raw=true)
 
 # References
