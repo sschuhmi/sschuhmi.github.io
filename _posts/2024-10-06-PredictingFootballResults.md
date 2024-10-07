@@ -140,7 +140,7 @@ Fig. 2: Heatmaps for specific event-types: A) clearance-, dribble- and duel-rela
 
 The heatmaps show at first glance that the influence of the specific types on the result columns is widely spread: 
 - Some of the events have a positive impact on a specific result column, represented by a positive value and in a rather bright color, while other events have a negative impact with values below 0.
-- More important, some events have a rather large impact on the result with values >0.2 or <-0.2, while others have a rather minimal impact on the results columns since their values are close to 0.
+- Moreover, some events have a rather large impact on the result with values >0.2 or <-0.2, while others have a rather minimal impact on the results columns since their values are close to 0.
 
 To clarify this, let us take a closer look on some specific cells of the heatmap E for some of the goalkeeper-related event types. [Fig. 3](#Fig3) displays them.
 
