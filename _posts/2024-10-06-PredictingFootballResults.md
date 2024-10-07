@@ -235,16 +235,32 @@ Fig. 6: RandomClassifier evaluation results
 
 ##### 2. Multi-Output Classifier with DecisionTrees estimator (MOC_DecTree)
 
+
+![Fig7](https://github.com/sschuhmi/sschuhmi.github.io/blob/main/_posts/img/2014-10_Football/CR_Classification report_for_2_MOC_DecTree_testRatios=0.1..0.5.png?raw=true)
+<p align="center" style="text-align:center, text-style:italic">
+Fig. 7: RandomClassifier evaluation results
+</p>
+
+
 ##### 3. Multi-Output Classifier with RandomForests estimator (MOC_RandomForests)
+
+CR_Classification report_for_3_MOC_RandomForests_testRatios=0.1..0.5.png
 
 ##### 4. Multi-Output Classifier with LogisticRegression estimator (MOC_LogisticRegression)
 
+CR_Classification report_for_4_MOC_LogisticRegression_testRatios=0.1..0.5.png
+
 ##### 5. Multi-Output Regressor with GradientBoosting estimator (MOR_GradBoo)
+
+CR_Classification report_for_5_MOR_GradBoost_testRatios=0.1..0.5.png
 
 ##### 6. Multi-Output Regressor with Ridge estimator (MOR_Ridge)
 
+CR_Classification report_for_6_MOR_Ridge_testRatios=0.1..0.5.png
+
 ##### 7. Multi-Output Regressor with SGD estimator (MOR_SGD)
 
+CR_Classification report_for_7_MOR_SGD_testRatios=0.1..0.5.png
 
 
 #### Accuracy: Is the training set big enough?
