@@ -65,7 +65,7 @@ A fine-grained documentation of the files, their formats and their contents is a
 
 #### Competitions and Seasons
 
-The single competition.json file includes an array of competition-season objects with the following properties relevant for this project:
+The single competitions.json file includes an array of competition-season objects with the following properties relevant for this project:
 - competition_id, competition_name (unique identifier of the competition and the respective name of this competition)
 - season_id, season_name (unique identifier of the season and the respective name of this season)
 
