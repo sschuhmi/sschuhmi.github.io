@@ -18,15 +18,30 @@ While previous work from 2024 focused solely on the fitting of classifiers to pr
 
 ## Problem Statement
 
-The problem which needs to be solved here is the prediction of the winner of a match without exploiting the score data (i.e., which team shot how many goals).
-A football match always consists of exactly two teams that play against each other: The first team is called the 'home team', while the second team is called the 'away team'. In order to win a match, a team has to score more goals than the other team after full time (90 minutes; note that in international championships, it is common to continue the match in case of a draw after full time by extra time and/or penalty shooting; however, we do not regard extra time or penalty shootings here). If both teams scored the same number of goals, the result is called a 'draw'.
+The objective of this project is to predict the outcome of a football match without directly using the final score information, i.e., without exploiting the number of goals scored by either team.
+In football, each match is contested by two teams: the home team and the away team. A team wins the match if it scores more goals than its opponent during regular playing time (90 minutes). If both teams score the same number of goals, the match ends in a draw. Although some knockout competitions continue with extra time and penalty shootouts when the score is level after regular time, these scenarios are not considered in the scope of this project. Only the result at the end of regular playing time is taken into account. Consequently, every match can result in exactly one of the following three outcomes:
 
-Thus in a single match, there are always 3 possible results where exactly one will be the outcome:
-- <b>'win_home':</b> The home team scores more goals than the away team and wins
-- <b>'win_none'</b>: The home team and the away team score exactly the same number of goals, i.e. the result is a draw
-- <b>'win_away'</b>: The away team scores more goals than the home team and wins
+- win_home: The home team scores more goals than the away team and wins the match.
+- win_none: Both teams score the same number of goals, resulting in a draw.
+- win_away: The away team scores more goals than the home team and wins the match.
 
-In order to be processable by an algorithm and allow the observation of multiple matches at the same time, the 3 variables are in the following encoded as array of three columns with binary values, where the rows represent the matches and the columns represent the three possible outcomes (i.e., results) of the matches (1 if the result has entered, otherwise 0).
+To enable efficient processing by Machine Learning algorithms, the match outcomes are encoded using a three-dimensional binary output vector. Each row represents a single match, while each column corresponds to one of the three possible outcomes. A value of 1 indicates the actual outcome of the match, whereas the remaining entries are set to 0.
+The resulting target representation is defined as follows:
+
+| Match Outcome | Encoded Vector |
+|---------------|---------------|
+| Home team wins | [1, 0, 0] |
+| Draw | [0, 1, 0] |
+| Away team wins | [0, 0, 1] |
+
+Academic version:
+
+| Match Outcome | win_home | win_none | win_away |
+|---------------|----------|----------|----------|
+| Home team wins | 1 | 0 | 0 |
+| Draw | 0 | 1 | 0 |
+| Away team wins | 0 | 0 | 1 |
+
 
 As an example, consider the following Fig. 1 which represents score data from five matches with the number of goals of the home team ('home_score') and the number of goals of the away team ('away_score') and the respective (5x3) result matrix including three row vectors [1, 0, 0] where the home team won (match_ids 3939976, 3939971, 3939969), one row vector with values [0, 0, 1] where the away team won (match_id 3939972), and one row with values [0, 1, 0] where the result was a draw (match_id 3939970).
 
