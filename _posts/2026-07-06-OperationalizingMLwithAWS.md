@@ -485,9 +485,8 @@ The heatmaps show at first glance that the influence of the specific types on th
 
 ![Fig5](https://github.com/sschuhmi/sschuhmi.github.io/blob/main/_posts/img/2026-07_MLE-Cap/eval/Heatmap-top30features.png?raw=true)
 <p align="center" style="text-align:center, text-style:italic">
-Fig. 5: Heatmap of combined-type, with reduced feature set to Top 30 features with highest influence on target columns 'win_home', 'win_none', 'win_away'
+Fig. 5: Heatmap of combined-type, filtered to reduced feature set to Top 30 features with highest influence on target columns 'win_home', 'win_none', 'win_away'
 </p>
-
 
 #### Feature Aggregation
 
