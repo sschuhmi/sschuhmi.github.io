@@ -448,9 +448,9 @@ The heatmaps show at first glance that the influence of the specific types on th
 
 To clarify this, let us take a closer look on some specific cells of the heatmap E for some of the goalkeeper-related event types. [Fig. 3](#Fig3) displays them.
 
-![Fig3](https://github.com/sschuhmi/sschuhmi.github.io/blob/main/_posts/img/2014-10_Football/Heatmap_goalkeeper_zoom.png?raw=true)
+![Fig3](https://github.com/sschuhmi/sschuhmi.github.io/blob/main/_posts/img/2026-07_MLE-Cap/Heatmap_comb_trans.png?raw=true)
 <p align="center" style="text-align:center, text-style:italic">
-Fig. 3: Part of Heatmap E, zoomed-in to some specific goalkeeper-related events
+Fig. 3: Focus on impact of specific events on results columns ('win_home', 'win_none', 'win_awyy')
 </p>
 
 There are some interesting insights to gain from these cells:
