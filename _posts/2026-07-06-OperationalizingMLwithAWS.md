@@ -918,7 +918,7 @@ Furthermore, the architecture separates feature engineering, model inference, an
 
 # Acknowledges
 
-Thanks go to Udacity´s Data Scientist Nanodegree ([nd189](#ref13)) where this project is part of.
+Thanks go to Udacity´s AWS Machine Learning Engineer Nanodegree ([nd189](#ref13)) where this project is part of.
 
 Further acknowledges go to [StatsBomb](#ref1) for providing their [open data set](#ref2).
 ![StatsBomb](https://github.com/sschuhmi/sschuhmi.github.io/blob/main/_posts/img/2014-10_Football/StatsBomb-logo_small.png?raw=true)
