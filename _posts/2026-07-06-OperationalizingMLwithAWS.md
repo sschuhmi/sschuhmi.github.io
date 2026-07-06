@@ -535,11 +535,78 @@ The resulting normalized feature matrix is subsequently used as input for all in
 To perform scaling, we used scikit-learn´s standard MinMaxScaler [[5]](#ref5)
 
 
-## Implementation
+## Model Implementation
 
-For the implementation of the classification algorithm, a Jupyter Notebook was created relying on Python 3 within the Anaconda Distribution. The most important packages that were used comprise Pandas, Numpy, Matplotlib and Seaborn as well as several scikit-learn packages such as various classifier (e.g., MultiOutputClassifier, DecisionTreeClassifier or RandomForestClassifier) and regressors (e.g., MultiOutputRegressor, Ridge or GradientBoostingRegressor). The complete set of packages to be imported can be found in the initial import section of the provided Jupyter Notebook.
+### Model Implementation
 
-As we need to predict three binary result columns, a multi-output classifier is required which has to provide binary results per output, i.e. a vector [y1, y2, y3] with binary values for y1 (1 for 'win_home', otherwise 0), y2 (1 for 'win_none' i.e. a draw, otherwise 0) and y3 (1 for 'win_away', otherwise 0).
+The Machine Learning pipeline was implemented in a Jupyter Notebook using **Python 3** within the **Anaconda Distribution**. The implementation relies on several widely used data science and machine learning libraries.
+
+The most important packages include:
+
+- **Pandas** for data manipulation and preprocessing.
+- **NumPy** for numerical computations.
+- **Matplotlib** and **Seaborn** for data visualization and exploratory data analysis.
+- **scikit-learn** for feature scaling, model training, and model evaluation.
+
+Within scikit-learn, a variety of supervised learning algorithms were investigated, including both classification and regression approaches. Examples include:
+
+- **Classification models:** `MultiOutputClassifier`, `DecisionTreeClassifier`, `RandomForestClassifier`, and `SGDClassifier`.
+- **Regression models:** `MultiOutputRegressor`, `Ridge`, and `GradientBoostingRegressor`.
+
+The complete set of imported packages and dependencies can be found in the initialization section of the accompanying Jupyter Notebook.
+
+### Multi-Output Prediction Formulation
+
+The prediction task considered in this project differs from a conventional binary classification problem because a football match can result in one of three possible outcomes:
+
+- `win_home`
+- `win_none`
+- `win_away`
+
+These outcomes are represented using a one-hot encoded target vector
+
+$$
+y =
+[y_1, y_2, y_3]
+$$
+
+where
+
+$$
+y_1 =
+\begin{cases}
+1 & \text{if the home team wins} \\
+0 & \text{otherwise}
+\end{cases}
+$$
+
+$$
+y_2 =
+\begin{cases}
+1 & \text{if the match ends in a draw} \\
+0 & \text{otherwise}
+\end{cases}
+$$
+
+$$
+y_3 =
+\begin{cases}
+1 & \text{if the away team wins} \\
+0 & \text{otherwise}
+\end{cases}
+$$
+
+As exactly one outcome can occur for a given match, the target vectors are constrained to the following set:
+
+$$
+[1,0,0],\;
+[0,1,0],\;
+[0,0,1]
+$$
+
+Consequently, the prediction problem can be formulated as a multi-output classification task with three binary target variables. The goal of the learning algorithm is to estimate the most likely outcome vector based on the engineered match features.
+
+To support this formulation, scikit-learn's multi-output framework was employed. Multi-output classifiers and regressors internally train a separate estimator for each target variable while allowing predictions for all three outputs to be generated simultaneously. This approach enables a direct representation of the one-hot encoded match outcomes and allows a consistent comparison between different Machine Learning algorithms.
 
 The following algorihms were implemented to predict the classification results:
 - RandomClassifier: a simple classifier which randomly chooses among one of the three possible outcomes ([1, 0, 0], [0, 1, 0] or [0, 0, 1]). This accuracy, precision, recall and f1 results of this classifier serve as benchmark for the other classifiers.
