@@ -466,18 +466,18 @@ To identify the most relevant predictive variables, correlation analyses were pe
 - `win_none`
 - `win_away`
 
-The results were visualized using a series of correlation heatmaps, as shown in #Fig2. These visualizations provide an intuitive overview of the strength and direction of the relationship between individual event-derived features and the different match outcomes.
+The results were visualized using a correlation heatmaps, as shown in Figure 2. These visualizations provide an intuitive overview of the strength and direction of the relationship between individual event-derived features and the different match outcomes.
+
+![Fig4](https://github.com/sschuhmi/sschuhmi.github.io/blob/main/_posts/img/2026-07_MLE-Cap/eval/Heatmap-filtered_mixed-type.png?raw=true)
+<p align="center" style="text-align:center, text-style:italic">
+Fig. 2: Heatmap of combined-type, full feature set
+</p>
 
 The analysis revealed that many features exhibit only weak correlations with the target variables and therefore contribute little predictive information. To reduce the dimensionality of the feature space and improve computational efficiency, only the features with the largest absolute correlation values were retained for model training.
 
 More specifically, the 30 most influential home-team features and the 30 most influential away-team features were selected, resulting in a reduced feature set of 60 variables. This approach substantially decreases computational and memory requirements while preserving the majority of the predictive information contained in the original event dataset.
 
-The resulting consolidated correlation heatmap is shown in #Fig4. Although the feature space was reduced from 238 team-specific event features (2 × 119 event attributes) to only 60 features, the remaining variables still capture a rich and diverse representation of match dynamics, including offensive actions, defensive behavior, possession-related statistics, goalkeeper actions, and expected-goal metrics. Consequently, the reduced feature set provides a strong foundation for the Machine Learning models developed in this project while avoiding unnecessary model complexity.
-
-![Fig4](https://github.com/sschuhmi/sschuhmi.github.io/blob/main/_posts/img/2026-07_MLE-Cap/eval/Heatmap-filtered_mixed-type.png?raw=true)
-<p align="center" style="text-align:center, text-style:italic">
-Fig. 4: Heatmap of combined-type, full feature set
-</p>
+The resulting consolidated correlation heatmap is shown in Figure 3. Although the feature space was reduced from 238 team-specific event features (2 × 119 event attributes) to only 60 features, the remaining variables still capture a rich and diverse representation of match dynamics, including offensive actions, defensive behavior, possession-related statistics, goalkeeper actions, and expected-goal metrics. Consequently, the reduced feature set provides a strong foundation for the Machine Learning models developed in this project while avoiding unnecessary model complexity.
 
 The heatmaps show at first glance that the influence of the specific types on the result columns is widely spread: 
 - Some of the events have a positive impact on a specific result column, represented by a positive value and in a rather bright color, while other events have a negative impact with values below 0.
@@ -485,7 +485,7 @@ The heatmaps show at first glance that the influence of the specific types on th
 
 ![Fig5](https://github.com/sschuhmi/sschuhmi.github.io/blob/main/_posts/img/2026-07_MLE-Cap/eval/Heatmap-top30features.png?raw=true)
 <p align="center" style="text-align:center, text-style:italic">
-Fig. 5: Heatmap of combined-type, filtered to reduced feature set to Top 30 features with highest influence on target columns 'win_home', 'win_none', 'win_away'
+Fig. 3: Heatmap of combined-type, filtered to reduced feature set to Top 30 features with highest influence on target columns 'win_home', 'win_none', 'win_away'
 </p>
 
 #### Feature Aggregation
@@ -749,7 +749,7 @@ The resulting performance metrics were subsequently aggregated and compared in o
 
 Before taking a look at the classification report, the investigated Machine Learning models are compared using their overall prediction accuracy. Since accuracy represents the primary evaluation metric of this study, it provides a concise overview of the relative performance of the different approaches.
 
-Figure 12 shows the average accuracy obtained by each classifier and regressor for test ratios between 10% and 20%. It can be observed that the accuracy remains largely stable across all investigated train-test splits, indicating that the models are relatively insensitive to the exact partitioning of the available data.
+Figure 4 shows the average accuracy obtained by each classifier and regressor for test ratios between 10% and 20%. It can be observed that the accuracy remains largely stable across all investigated train-test splits, indicating that the models are relatively insensitive to the exact partitioning of the available data.
 
 The RandomClassifier serves as the baseline and achieves an average accuracy of approximately 0.33, which corresponds closely to the theoretical expectation of randomly selecting one of three possible match outcomes. The DecisionTreeClassifier improves only moderately upon this baseline and achieves an average accuracy of approximately 0.39.
 
@@ -761,7 +761,7 @@ These results indicate that the regression-based formulation combined with the s
 
 ![Fig12](https://github.com/sschuhmi/sschuhmi.github.io/blob/main/_posts/img/2026-07_MLE-Cap/eval/Accuracy_vs_test_ratio.png?raw=true)
 <p align="center" style="text-align:center, text-style:italic">
-Fig. 12: Accuracy scores at various test ratios
+Fig. 4: Accuracy scores at various test ratios
 </p>
 
 #### Result Comparison
@@ -774,7 +774,7 @@ Several factors are likely to have contributed to this improvement. Most notably
 
 The MultiOutputRegressor based on Ridge regression achieved the highest overall accuracy of all investigated models, reaching an average accuracy of approximately 0.67. Compared to the random baseline (0.33), this corresponds to an improvement of more than 100%, demonstrating that the event-derived match features contain substantial predictive information regarding match outcomes.
 
-A more detailed view of the model performance is provided by the classification report shown in Figure X.
+A more detailed view of the model performance is provided by the classification report shown in Figure 5.
 
 The Ridge model performs particularly well for the `win_home` class. A recall score of approximately 0.90 indicates that the vast majority of home-team victories are correctly identified. The corresponding F1 score of approximately 0.72 further confirms that home wins can be predicted with comparatively high reliability.
 
@@ -788,7 +788,7 @@ While this class-specific weakness limits the practical applicability of the mod
 
 ![Fig13](https://github.com/sschuhmi/sschuhmi.github.io/blob/main/_posts/img/2026-07_MLE-Cap/eval/CR_Classification_report_for_MOR_Ridge.png?raw=true)
 <p align="center" style="text-align:center, text-style:italic">
-Fig. 13: Classification Report for MOR Ridge (Regressor with highest accuracy)
+Fig. 5: Classification Report for MOR Ridge (Regressor with highest accuracy)
 </p>
 
 # Operationalization and Deployment
@@ -865,11 +865,11 @@ An example prediction response is shown below:
 
 The SageMaker endpoint therefore represents the central prediction component of the deployed architecture.
 
-Figure X shows a screenshot of the Endpoint "up & running".
+Figure 6 shows a screenshot of the Endpoint "up & running".
 
 ![Fig14](https://github.com/sschuhmi/sschuhmi.github.io/blob/main/_posts/img/2026-07_MLE-Cap/10-endpoint_InService.jpg?raw=true)
 <p align="center" style="text-align:center, text-style:italic">
-Fig. 14: AWS SageMaker Inference Endpoint in Service
+Fig. 6: AWS SageMaker Inference Endpoint in Service
 </p>
 
 ## Feature Engineering Service using AWS Lambda
@@ -903,14 +903,14 @@ The resulting operational workflow can be summarized as follows:
 
 As a result, the complete Machine Learning workflow can be executed automatically without requiring any manual intervention after deployment.
 
-Figure X shows an exemplary successful test call on the Lambda function in AWS.
+Figure 7 shows an exemplary successful test call on the Lambda function in AWS.
 
 ![Fig16](https://github.com/sschuhmi/sschuhmi.github.io/blob/main/_posts/img/2026-07_MLE-Cap/04-LambdaSuccess.jpg?raw=true)
 <p align="center" style="text-align:center, text-style:italic">
-Fig. 16: Successful Test Call on AWS Lambda function
+Fig. 7: Successful Test Call on AWS Lambda function
 </p>
 
-Moreover, the next figure shows the taken concurrency settings to be able to react on temporarily high-throughput, low-latency situations where many parallel calls on the Lambda function are performed.
+Moreover, Figure 8 below shows the taken concurrency settings to be able to react on temporarily high-throughput, low-latency situations where many parallel calls on the Lambda function are performed.
 
 In AWS Lambda, concurrency refers to the number of function instances that can execute simultaneously. By default, Lambda automatically creates execution environments when requests arrive. If no initialized execution environment is available, Lambda must create a new one, resulting in a so-called cold start. During a cold start, AWS has to provision resources, initialize the runtime environment, load the function code, and execute all initialization logic before the actual request can be processed. This introduces additional latency for the affected invocation.
 
@@ -920,7 +920,7 @@ The value 30 was chosen primarily as a demonstration of the operational deployme
 
 ![Fig17](https://github.com/sschuhmi/sschuhmi.github.io/blob/main/_posts/img/2026-07_MLE-Cap/05-LambdaConcurrency.jpg?raw=true)
 <p align="center" style="text-align:center, text-style:italic">
-Fig. 17: Lambda Concurrency Settings
+Fig. 8: Lambda Concurrency Settings
 </p>
 
 
