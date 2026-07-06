@@ -737,96 +737,49 @@ From a computational perspective, a complete test series comprising 300 evaluati
 
 The resulting performance metrics were subsequently aggregated and compared in order to identify the most suitable Machine Learning approach for football match outcome prediction.
 
-#### Classification Reports
+#### 1. Overall Accuracy Comparison
 
-The following sections present the classification reports obtained from the experimental evaluation procedure described above. For each investigated Machine Learning model, the reported values represent the aggregated results obtained across the repeated train-test experiments.
+Before analyzing the individual classification reports in detail, the investigated Machine Learning models are compared using their overall prediction accuracy. Since accuracy represents the primary evaluation metric of this study, it provides a concise overview of the relative performance of the different approaches.
 
-The classification reports summarize the four evaluation metrics introduced previously: precision, recall, F1 score, and accuracy. Precision, recall, and F1 score are reported separately for each of the three possible match outcomes:
+Figure X shows the average accuracy obtained by each classifier and regressor for test ratios between 10% and 20%. It can be observed that the accuracy remains largely stable across all investigated train-test splits, indicating that the models are relatively insensitive to the exact partitioning of the available data.
 
-- `win_home`
-- `win_none`
-- `win_away`
+The RandomClassifier serves as the baseline and achieves an average accuracy of approximately 0.33, which corresponds closely to the theoretical expectation of randomly selecting one of three possible match outcomes. The DecisionTreeClassifier improves only moderately upon this baseline and achieves an average accuracy of approximately 0.39.
 
-This class-specific evaluation allows the predictive performance of a model to be analyzed individually for home-team victories, draws, and away-team victories. Such a breakdown is particularly useful for identifying potential weaknesses of a classifier with respect to specific match outcomes.
+Among the classification-based approaches, the RandomForestClassifier and LogisticRegressionClassifier perform substantially better, reaching accuracies of approximately 0.53 and 0.52, respectively.
 
-In contrast, the accuracy score provides a single overall measure of predictive performance. It represents the proportion of correctly classified matches across all outcome classes and therefore serves as the primary metric for comparing the investigated models.
+The strongest performance is achieved by the regression-based approaches. The MultiOutputRegressor using Ridge regression obtains the highest overall accuracy of approximately 0.67, followed closely by the GradientBoostingRegressor with approximately 0.65 and the SGDRegressor with approximately 0.63.
 
-Together, these metrics provide both a global assessment of model performance and a detailed view of class-specific prediction quality, enabling a comprehensive comparison of the different Machine Learning approaches.
+These results indicate that the regression-based formulation combined with the subsequent one-hot correction procedure provides a more effective solution to the match outcome prediction problem than the investigated classification-based approaches. Consequently, the following sections focus on a more detailed analysis of the best-performing models.
 
-##### 1. RandomClassifier (RC)
-
-As expected, the RandomClassifier (RC) achieved the weakest overall performance among all investigated models. The average accuracy of approximately 0.33–0.34 closely matches the theoretical baseline of one-third, which corresponds to randomly selecting one out of the three possible match outcomes (`win_home`, `win_none`, and `win_away`) with equal probability.
-
-The remaining evaluation metrics exhibit a similar behavior. Recall values are approximately 0.33 for all three classes, indicating that each outcome is identified at the expected rate of a random guess. Likewise, the F1 scores remain within the range that would be anticipated for a non-informative classifier.
-
-A noticeable exception is the precision score of the `win_home` class, which reaches a value of approximately 0.44 and is therefore substantially higher than the overall accuracy. This effect can be explained by the class distribution of the dataset. Home-team victories constitute the largest class in the training data (59,661 samples), followed by draws (46,317 samples) and away-team victories (29,022 samples). Consequently, a random prediction has a higher probability of being correct when predicting a home-team victory than when predicting an away-team victory, which results in a higher precision score for the `win_home` class and a considerably lower precision score for the `win_away` class.
-
-Overall, the obtained results confirm that the RandomClassifier behaves as expected and provides a suitable baseline for evaluating the predictive capabilities of the Machine Learning models investigated later in this study. Any meaningful Machine Learning approach should significantly outperform this benchmark in terms of both overall accuracy and class-specific evaluation metrics.
-
-Figure 6 shows the corresponding classification report for the RandomClassifier.
-
-![Fig6](https://github.com/sschuhmi/sschuhmi.github.io/blob/main/_posts/img/2026-07_MLE-Cap/eval/CR_Classification report for RandomClassifier, testRatio(s)=[0.1..0.2].png?raw=true)
+![Fig12](https://github.com/sschuhmi/sschuhmi.github.io/blob/main/_posts/img/2026-07_MLE-Cap/Accuracy_vs_test_ratio.png?raw=true)
 <p align="center" style="text-align:center, text-style:italic">
-Fig. 6: RandomClassifier evaluation results
+Fig. 12: Accuracy scores at various test ratios
 </p>
 
-##### 2. Multi-Output Classifier with DecisionTrees estimator (MOC_DecTree)
+### 2. MultiOutputRegressor using Ridge Regression (MOR-Ridge)
 
-Decision Trees represent a rather simple ML approach. Furthermore, they suffer from the problem of non-unique classifcations discussed in the Refinement section. Because of this, it is not surprising that the average accuracy is quite poor with only 0.25. The classification matrix also shows that only the win of the home team could be predicted in an acceptable range that is higher than the one of the RandomClassifier. The correct prediction of the outcome 'win_away' was worse than with RC, and the prediction performance of 'draws' was particularly poor.
+The MultiOutputRegressor based on Ridge regression achieved the highest overall accuracy of all investigated models, reaching an average accuracy of approximately 0.67. Compared to the random baseline (0.33), this corresponds to an improvement of more than 100%, demonstrating that the event-derived match features contain substantial predictive information regarding match outcomes.
 
-![Fig7](https://github.com/sschuhmi/sschuhmi.github.io/blob/main/_posts/img/2014-10_Football/CR_ClassificationReport_for_2_MOC_DecTree_testRatios=0.1..0.5.png?raw=true)
+A more detailed view of the model performance is provided by the classification report shown in Figure X.
+
+The Ridge model performs particularly well for the `win_home` class. A recall score of approximately 0.90 indicates that the vast majority of home-team victories are correctly identified. The corresponding F1 score of approximately 0.72 further confirms that home wins can be predicted with comparatively high reliability.
+
+The model also achieves balanced performance for the `win_none` class (draws), with precision, recall, and F1 scores ranging between approximately 0.63 and 0.71. This suggests that the model is reasonably capable of recognizing matches that end without a winner.
+
+However, the performance for the `win_away` class differs substantially. While the precision of approximately 0.36 remains moderate, the recall drops to only 0.04, resulting in an F1 score of approximately 0.08. This indicates that the model rarely predicts away-team victories, even when they actually occur.
+
+This behavior can largely be explained by the class distribution of the dataset. Home-team victories represent the largest outcome category, whereas away-team victories are the least frequent. Consequently, the Ridge model appears to be biased towards predicting the more common classes (`win_home` and `win_none`), thereby maximizing overall accuracy at the expense of detecting away-team victories.
+
+While this class-specific weakness limits the practical applicability of the model in its current form, the overall accuracy results nevertheless demonstrate that Ridge regression is the most effective approach among all investigated algorithms. The classification report further reveals that future improvements should primarily focus on enhancing the predictive performance for the `win_away` class, for example through improved feature engineering, class balancing techniques, or alternative model architectures.
+
+![Fig13](https://github.com/sschuhmi/sschuhmi.github.io/blob/main/_posts/img/2026-07_MLE-Cap/CR_Classification_report_for_MOR_Ridge.png?raw=true)
 <p align="center" style="text-align:center, text-style:italic">
-Fig. 7: MOC_DecTree evaluation results
-</p>
-
-
-##### 3. Multi-Output Classifier with RandomForests estimator (MOC_RandomForests)
-
-Using RandomForests as estimator increased the accuracy score slightly to 0.33, which is almost the value of RC. The averaging and randomization of decision trees seems to also improve the results of the other metrics. However, this only holds for the result 'win_home', while the metric scores of the other results 'draw' and 'win_away' were very poor. Like the other two multi-output classifiers, MOC_RandomForests also suffers from the non-unique classication matrix, explaining the rather poor overall results.
-
-![Fig8](https://github.com/sschuhmi/sschuhmi.github.io/blob/main/_posts/img/2014-10_Football/CR_ClassificationReport_for_3_MOC_RandomForests_testRatios=0.1..0.5.png?raw=true)
-<p align="center" style="text-align:center, text-style:italic">
-Fig. 8: MOC_RandomForests evaluation results
-</p>
-
-##### 4. Multi-Output Classifier with LogisticRegression estimator (MOC_LogisticRegression)
-
-As the above mentioned multi-output classifier, Logistic Regression as a linear classifier also suffers from the non-uniqueness of some classifications. However, since Logistic Regression typically is advanced compared to Decision Trees or Random Forests, its classification accuracy of 0.37 is slightly higher than theirs or the RC accuracy. While precision, recall and, consequently, F1 scores are fine for 'win_home', the scores of 'win_away' are also better than those of the previously discussed algorithms. However, a 'draw' is still very hard to be predicted by Logistic Regression, especially regarding the very poor score of only 0.07 for recall.
-
-![Fig9](https://github.com/sschuhmi/sschuhmi.github.io/blob/main/_posts/img/2014-10_Football/CR_ClassificationReport_for_4_MOC_LogisticRegression_testRatios=0.1..0.5.png?raw=true)
-<p align="center" style="text-align:center, text-style:italic">
-Fig. 9: MOC_LogisticRegression evaluation results
+Fig. 13: Accuracy scores at various test ratios
 </p>
 
 
-##### 5. Multi-Output Regressor with GradientBoosting estimator (MOR_GradBoo)
 
-The Gradient Boosting-based multi-outpot regressor represents an advanced algorithm over the simple classifier, as it predicts non-binary, continuous prediction values whose row maximum can simply be determined and the corresponding predicted vector set to 1 only for this result, while the others become zero. Thus, non-unique classification are not possible here. This leads to a much better accuracy of 0.48 which is around 41% higher than the one of RC. The other metric are also improved compared to the previously discussed classifiers, especially considering that all scores for 'win_home' are at least 0.6, 'win_away' scores are around 0.4 and 'draw' scores are around 0.3.
 
-![Fig10](https://github.com/sschuhmi/sschuhmi.github.io/blob/main/_posts/img/2014-10_Football/CR_ClassificationReport_for_5_MOR_GradBoost_testRatios=0.1..0.5.png?raw=true)
-<p align="center" style="text-align:center, text-style:italic">
-Fig. 10: MOR_GradBoost evaluation results
-</p>
-
-##### 6. Multi-Output Regressor with Ridge estimator (MOR_Ridge)
-
-The Ridge estimator based multi-output regressor performs quite similar to the Gradient Boosting variant with an only slightly increased accuracy of 0.49. While the precision, recall and F1-scores for 'win_home' and 'win_away' are slightly better in average than those from Gradient Boosting, the 'draw' prediction scores are a bit lower.
-
-![Fig11](https://github.com/sschuhmi/sschuhmi.github.io/blob/main/_posts/img/2014-10_Football/CR_ClassificationReport_for_6_MOR_Ridge_testRatios=0.1..0.5.png?raw=true)
-<p align="center" style="text-align:center, text-style:italic">
-Fig. 11: MOR_Ridge evaluation results
-</p>
-
-##### 7. Multi-Output Regressor with SGD estimator (MOR_SGD)
-
-The multi-output regressor with an stochastic gradient descent estimator produced the best overall scores with an accuracy of 0.51 and all values for 'win_home' and 'win_away' also above 0.5. However, even for this advanced regressor, it was very hard to predict a draw and the precision, recall and F1-score did not exceed 0.3 there. 
-
-Compared to the RC benchmark classifier, the accuracy score was improved by exactly 50%, making this predictor the preferable choice among all of the discussed classifiers and regressors..
-
-![Fig12](https://github.com/sschuhmi/sschuhmi.github.io/blob/main/_posts/img/2014-10_Football/CR_ClassificationReport_for_7_MOR_SGD_testRatios=0.1..0.5.png?raw=true)
-<p align="center" style="text-align:center, text-style:italic">
-Fig. 12: MOR_SGD evaluation results
-</p>
 
 #### Focus on Accuracy: Is the training set big enough?
 The evaluation results presented in the last section show that the accuracy over the complete test series can significantly be increased compared to random choice by using a multi-output regressor with an estimator like Ridge or SGD. However, one question that may arise when looking on the number of investigated matches is: Is this amount of matches and events sufficient for an adequate use of Machine Learning classifiers? To find an answer on this question, we decided to vary the test_ratio and change the amount of training data in terms of matches for the classifier: While the training set is rather large when test_ratio = 0.1 - there still remain 108 out of 120 matches for training and only 12 are used in testing (see Evaluation Setup) - this number is significantly lower when test_ratio = 0.5 - then, there are only 60 out of 120 matches left for training. By starting with test_ratio = 0.1 and then taking small increases of 0.05 for the test_ratio up to 0.5, the accuracies per classifier were recorded and are shown in Fig. 13. There, it can be seen that all of the ML algorithms perform best with the largest training set (i.e., test_ratio = 0.1) and the score decrease with a rising test_ratio value. However, the decrease is only slightly, meaning that even a small training set of 60 matches is sufficient for an acceptable accuracy. Comparing the best accuracies (typically at test_ratio 0.1 or 0.15) with the worst accuracies (typically at test_ratio 0.45 or 0.5), the relative decreases of accuracy are the following:
