@@ -898,6 +898,12 @@ Fig. 16: Successful Test Call on AWS Lambda function
 
 Moreover, the next figure shows the taken concurrency settings to be able to react on temporarily high-throughput, low-latency situations where many parallel calls on the Lambda function are performed.
 
+In AWS Lambda, concurrency refers to the number of function instances that can execute simultaneously. By default, Lambda automatically creates execution environments when requests arrive. If no initialized execution environment is available, Lambda must create a new one, resulting in a so-called cold start. During a cold start, AWS has to provision resources, initialize the runtime environment, load the function code, and execute all initialization logic before the actual request can be processed. This introduces additional latency for the affected invocation.
+
+To reduce this latency, AWS provides the Provisioned Concurrency feature. Provisioned Concurrency maintains a predefined number of pre-initialized Lambda execution environments that are ready to process requests immediately. As a result, requests can be served without experiencing cold-start delays.
+
+The value 30 was chosen primarily as a demonstration of the operational deployment capabilities of AWS Lambda rather than because a workload analysis indicated a need for 30 concurrent requests. For a real production system, the Provisioned Concurrency value would typically be determined based on expected traffic levels, response-time requirements, and cost considerations, which is beyond the scope of this work.
+
 ![Fig17](https://github.com/sschuhmi/sschuhmi.github.io/blob/main/_posts/img/2026-07_MLE-Cap/05-LambdaConcurrency.jpg?raw=true)
 <p align="center" style="text-align:center, text-style:italic">
 Fig. 17: Lambda Concurrency Settings
