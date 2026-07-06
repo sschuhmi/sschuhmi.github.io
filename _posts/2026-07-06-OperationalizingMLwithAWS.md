@@ -777,34 +777,116 @@ While this class-specific weakness limits the practical applicability of the mod
 Fig. 13: Classification Report for MOR Ridge (Regressor with highest accuracy)
 </p>
 
-## Justification
+# Operationalization and Deployment
 
-Summing up the evaluation results, the following interesting insights could be gained in this project:
-- The randomized classifier which serves as benchmark for the ML algorithms produced performance scores in the anticipated range. The overall accuracy score was 0.34.
-- As the simple multi-output classifiers suffered from the problem of non-unique classifications, they could not really outperform the randomized classifier, but were in the same range of this simple non-ML classifier.
-- However, the advanced multi-output regressors with corrected result vectors showed significantly improved accuracy scores around 0.5 (i.e., around 50% better than the naive randomized approach), as they do not suffer from the non-unique classification problem. The choice of the estimator seems to be of secondary nature, since the differences in the accuracy scores were quite low.
-- Nevertheless, if maximum accuracy has to be aspired, we suggest to the multi-output regressor with an SGD estimator, since it produced the highest overall accuracy as well as fine precision, recall and F1-scores. Furthermore, its loss of accuracy was least when the training set was further reduced.
-- All classifiers and regressors had problems in accurately determining a draw, which was kind of forecasted in the data visualization section when determining the influence of the features on the results. As football is a very complex sport with thousands of events in a single match, this result is not surprising.
+While the previous chapters focused on data analysis, feature engineering, model development, and model evaluation, an additional objective of this project was the operationalization of the best-performing Machine Learning model. To achieve this goal, the complete prediction pipeline was implemented and deployed on the Amazon Web Services (AWS) cloud platform, enabling automated prediction of football match outcomes based on StatsBomb event data.
 
+The deployed solution consists of three main components:
 
-# Conclusion
+1. Model training in an AWS SageMaker Jupyter Notebook.
+2. Deployment of the trained model as a SageMaker inference endpoint.
+3. Implementation of an AWS Lambda function that performs feature generation and invokes the deployed endpoint.
 
-## Reflection
+The resulting architecture is illustrated in Figure X.
 
-In this paper, we presented an ML-based approach to predict results of football matches using advanced statistical analysis data from StatsBomb. After exploring the provided data set, we first made some necessary preprocessings, visualized the data and selected a feature set that promises to have the biggest impact on the prediction performance of the ML algorihms. Then, we implemented and evaluated a bunch of modern ML classifiers and regressors and compared their accuracies to a naive approach where the result was selected randomly by the classifier.
+```text
+StatsBomb Open Data (S3)
+           │
+           ▼
+  SageMaker Notebook
+  - Data Import
+  - Feature Engineering
+  - Model Training
+  - Model Evaluation
+           │
+           ▼
+  Best Model (MOR Ridge)
+           │
+           ▼
+ SageMaker Endpoint
+           ▲
+           │
+ AWS Lambda Function
+  - Load Match Data
+  - Load Event Data
+  - Build Features
+  - Invoke Endpoint
+           │
+           ▼
+      Prediction
+```
 
-The extensive evaluations showed that standard binary multi-output classifiers suffered the problem of non-unique classification results and, thus, led to rather poor prediction accuracies. However, using advanced continuous multi-output regressors with corrected binary results helped to significantly improve accuracies by up to 50% compared to the naive approach. This shows that Data Science and Machine Learning becomes more and more an important field of intereset in modern supervised sports events like football matches.
+## Model Training in SageMaker
 
-## Improvement
+The complete data preparation, feature engineering, model training, and evaluation process was implemented within an AWS SageMaker Jupyter Notebook environment. The notebook imports the StatsBomb Open Data repository, aggregates event statistics at match level, performs feature selection, applies feature scaling, and trains multiple Machine Learning models.
 
-While the results presented in the previous section show that optimized Multi-Output Regressors which use advanced algorithms like Ridge or SVD help to significantly improve the prediction accuracy,
-it has to be mentioned that there is still a large optimization potential, considering that the best accuracy was only slightly above 50% (which is, though, quite fine for complex football matches in our opinion).
+Following the experimental evaluation presented in the previous chapter, the **MultiOutputRegressor using Ridge Regression (MOR Ridge)** achieved the highest average prediction accuracy and was therefore selected for operational deployment.
 
-However, regarding that the data set consisted only of 120 out of the 3500 matches from open data (and the whole StatsBomb data comprises even much more than those matches!), it is obvious that there exists a large potential by increasing the training set for the ML predictors.
+After training, the resulting model was serialized and prepared for deployment using SageMaker's built-in model hosting capabilities.
 
-Futhermore, we only used a quantitative approach by simply counting the number of events per event type. As there is also qualitative information included in the data (i.e, different results of the event types), this data could additionally be used to have an even more fine-grained feature set to further improve prediction accuracies. 
+## Endpoint Deployment
 
-Taking into account the timely manner and sequence in which specific events occur may also help to further increase the performance of the classifiers, but additionally increase the complexity of the model, making it much more time and resource consuming. Thus, one has to consider if maximum accuracy should be aspired under each circumstances without considering consumption costs of the data processings and calculations.
+To enable online predictions, the trained MOR Ridge model was deployed as a real-time SageMaker inference endpoint.
+
+The endpoint provides a REST-like prediction interface that accepts a feature vector containing the selected match statistics and returns the corresponding prediction result. Internally, the endpoint loads the serialized Ridge regression model and performs inference on incoming requests.
+
+For a given match, the endpoint returns:
+
+- The predicted match outcome.
+- The corresponding one-hot encoded prediction vector.
+- The raw regression scores generated by the model before the final outcome correction step.
+
+An example prediction response is shown below:
+
+```json
+{
+  "prediction": "win_none",
+  "prediction_vector": {
+    "win_home": 0,
+    "win_away": 0,
+    "win_none": 1
+  }
+}
+```
+
+The SageMaker endpoint therefore represents the central prediction component of the deployed architecture.
+
+## Feature Engineering Service using AWS Lambda
+
+While the SageMaker endpoint expects a feature vector as input, the original StatsBomb data is stored as JSON documents containing match metadata and detailed event information. Consequently, an additional preprocessing step is required before a prediction can be generated.
+
+To automate this process, an AWS Lambda function was implemented. The Lambda function acts as an orchestration layer between the raw data source and the deployed Machine Learning model.
+
+For each prediction request, the Lambda function performs the following steps:
+
+1. Load the corresponding match file from Amazon S3.
+2. Determine the participating home and away teams.
+3. Load the event file of the requested match.
+4. Aggregate the event statistics according to the feature engineering rules used during model training.
+5. Construct the feature vector containing the selected model features.
+6. Invoke the SageMaker endpoint.
+7. Return the prediction result.
+
+A key design objective was to ensure that the feature engineering logic executed within the Lambda function exactly matches the preprocessing logic used during model training. This guarantees consistency between training and inference and prevents discrepancies caused by differing feature calculations.
+
+## End-to-End Prediction Workflow
+
+The resulting operational workflow can be summarized as follows:
+
+1. A match identifier is provided to the Lambda function.
+2. The corresponding match and event data are loaded from S3.
+3. Match-level statistics are generated using the same aggregation procedures applied during model training.
+4. The generated feature vector is forwarded to the MOR Ridge inference endpoint.
+5. The endpoint predicts the match outcome.
+6. The prediction result is returned to the caller.
+
+As a result, the complete Machine Learning workflow can be executed automatically without requiring any manual intervention after deployment.
+
+## Discussion
+
+The implemented AWS architecture demonstrates how a Machine Learning model developed in an experimental environment can be transformed into an operational prediction service. By combining SageMaker for model hosting with AWS Lambda for serverless preprocessing and orchestration, the solution provides a scalable and reusable framework for football match outcome prediction.
+
+Furthermore, the architecture separates feature engineering, model inference, and data storage into independent components, enabling future extensions such as automated retraining, batch predictions, API integration, or deployment of alternative Machine Learning models without fundamental changes to the overall system design.
 
 # Acknowledges
 
