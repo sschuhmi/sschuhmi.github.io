@@ -1,4 +1,4 @@
-# An Operational End-2-End Approach in Predicting Match Results in Modern Football with AWS SageMaker
+# An Operational End-2-End Approach for Predicting Match Results in Modern Football with AWS SageMaker
 
 ![](https://github.com/sschuhmi/sschuhmi.github.io/blob/main/_posts/img/2026-07_MLE-Cap/football2.png?raw=true)
 
@@ -6,14 +6,15 @@
 
 ## Project Overview
 
-Football - also known as soccer in the USA - is one of the most famous sports in the world. In the last years, the amount of analysis data that is generated in modern football matches using cameras, drones or
-other advanced technologies has significantly increased. StatsBomb [[1]](#ref1) has become one of the most famous data providers in this area, delivering tons of analysis data from matches all over the planet. Besides data where the customer needs to pay for, there is also a large StatsBomb open data repository in GitHub available [[2]](#ref2) which includes more than 3500 matches from 21 competitions, reaching from national competitions up to continental and global championships like the recent world championships that were held in 2022.
+Football — known as soccer in the United States where currently the World Cup 2026 is ongoing — is one of the most popular sports worldwide. Over the past decade, the volume of analytical data generated during professional football matches has increased dramatically due to advances in technologies such as high-resolution cameras, drones, wearable sensors, and automated tracking systems. One of the leading providers of football analytics data is StatsBomb [[1]](#ref1), which offers extensive event and performance data from matches around the world. In addition to its commercial products, StatsBomb maintains a large open-data repository on GitHub [[2]](#ref2). This repository currently (in July 2026) contains free data from more than 3,400 matches across 190+ competitions, ranging from domestic leagues to major continental and international tournaments, including the 2022 FIFA World Cup as well as the latest continental championships, like the 2025 UEFA Women´s Euro Cup.
 
-An interesting question that arises with this constantly increasing amount of football analysis data is the following:
+The rapid growth in the availability of football analytics data raises an interesting research question:
 
-*“Suppose you have the analysis data of a specific match available, without knowing who won the match or if there was a draw. Solely based on the analysis of data of previous matches where the winners are known, is it possible to predict the winner of this match with a high accuracy by taking advantage of modern Machine Learning (ML) algorithms?”*
+*“Suppose the detailed event data of a football match is available, but the final result is unknown. Based solely on historical match data for which the outcomes are known, is it possible to accurately predict the result of the match using modern Machine Learning (ML) techniques?“*
 
-That´s exactly what the focus of this project is: We exploit the large open data set and use Machine Learning multi-output Classifiers and Regressors to predict the winner of a match, compared to a simple non-ML Classifier which randomly decides one of the possible three results - first team wins, second team wins, or there is a draw between the teams.
+This question forms the foundation of the present project. Leveraging the extensive StatsBomb open-data collection, various Machine Learning models—including multi-output classifiers and regressors—are trained to predict the outcome of a football match. Possible outcomes are defined as a win for the home team, a win for the away team, or a draw. The performance of these ML-based approaches is then compared to a simple baseline classifier that selects one of the three possible outcomes at random. The objective is to evaluate whether modern Machine Learning methods can significantly outperform such a naïve approach and achieve meaningful predictive accuracy based solely on match event data.
+
+While previous work from 2024 focused solely on the fitting of classifiers to predict the match results, we follow a more generalized end-2-end approach here in order to operationalize the prediction process using AWS SageMaker invocation endpoints and AWS Lambda. Moreover, we optimize the prediction results by extending the data scope for training and testing from originally 150 matches (in 2024) up to 1000 matches (now). As you will see, this improves important metrics like the prediction accuracy, precision or recall.
 
 ## Problem Statement
 
