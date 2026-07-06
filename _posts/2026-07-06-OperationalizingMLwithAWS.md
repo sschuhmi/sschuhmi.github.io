@@ -14,7 +14,7 @@ The rapid growth in the availability of football analytics data raises an intere
 
 This question forms the foundation of the present project. Leveraging the extensive StatsBomb open-data collection, various Machine Learning models—including multi-output classifiers and regressors—are trained to predict the outcome of a football match. Possible outcomes are defined as a win for the home team, a win for the away team, or a draw. The performance of these ML-based approaches is then compared to a simple baseline classifier that selects one of the three possible outcomes at random. The objective is to evaluate whether modern Machine Learning methods can significantly outperform such a naïve approach and achieve meaningful predictive accuracy based solely on match event data.
 
-While previous work from October 2024 [[2b]](#ref2b) focused solely on the fitting of classifiers to predict the match results, we follow a complete end-2-end approach here in order to operationalize the prediction process using AWS SageMaker invocation endpoints and AWS Lambda. Moreover, we optimize the prediction results by extending the data scope for training and testing from originally 150 matches (in 2024) up to 1000 matches (now). As you will see, this further improves the prediction results.
+While previous work from October 2024 [[3]](#ref2b) focused solely on the fitting of classifiers to predict the match results, we follow a complete end-2-end approach here in order to operationalize the prediction process using AWS SageMaker invocation endpoints and AWS Lambda. Moreover, we optimize the prediction results by extending the data scope for training and testing from originally 150 matches (in 2024) up to 1000 matches (now). As you will see, this further improves the prediction results.
 
 ## Problem Statement
 
@@ -422,7 +422,7 @@ Regarding the immense amount of the dataset and the immense amount and memory co
 - 1000 matches in the open data set from all seasons of all 21 competitions provided via StatsBomb open data
 - These matches include 3,508,294 events of all event types
 
-In 2024, we regarded a significantly reduced data amount and only focused on the Data Science part of the problem than Operationalizing the complete E2E process .
+In 2024 [[3]](#ref2b), we regarded a significantly reduced data amount and only focused on the Data Science part of the problem than Operationalizing the complete E2E process .
 - All 116 provided matches in the open data set from specific seasons of 3 competitions - Spanish 'La Liga' 2019/2020, Euro Cup 2024 and Copa America 2024
 - These matches included 417,221 events of all event types
 
@@ -516,7 +516,7 @@ A final preprocessing step required prior to model training was the normalizatio
 
 Without appropriate scaling, features with larger numerical ranges could disproportionately influence the learning process of many Machine Learning algorithms. Consequently, the contribution of individual features would no longer solely depend on their predictive relevance but also on their scale.
 
-To ensure comparability between features and to prevent scale-dependent biases, all predictor variables were normalized using the **MinMaxScaler** provided by the scikit-learn framework [[5]5. The transformation maps each feature to the interval \([0,1]\) according to
+To ensure comparability between features and to prevent scale-dependent biases, all predictor variables were normalized using the **MinMaxScaler** provided by the scikit-learn framework [[5]]. The transformation maps each feature to the interval \([0,1]\) according to
 
 $$
 X_{scaled} =
@@ -940,8 +940,7 @@ Further acknowledges go to [StatsBomb](#ref1) for providing their [open data set
 # References
 1. <a name="ref1">[StatsBomb homepage](https://statsbomb.com/)</a>
 2. <a name="ref2">[StatsBomb Open Data - public GitHub Repository](https://github.com/statsbomb/open-data)</a>
-2b. <a name="ref2b">[Applied Data Science with Modern Football Data: Predicting Match Results](https://sschuhmi.github.io/2024/10/06/PredictingFootballResults.html)</a>
-3. <a name="ref3">[Performance Metrics in Machine Learning | Complete Guide](https://neptune.ai/blog/performance-metrics-in-machine-learning-complete-guide)</a>
+3. <a name="ref2b">[Applied Data Science with Modern Football Data: Predicting Match Results](https://sschuhmi.github.io/2024/10/06/PredictingFootballResults.html)</a>
 4. <a name="ref4">[scikit-learn Classification Report Metrics](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.classification_report.html)</a>
 5. <a name="ref5">[scikit-learn MinMaxScaler](https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.MinMaxScaler.html)</a>
 6. <a name="ref6">[scikit-learn MultiOutputClassifier](https://scikit-learn.org/stable/modules/generated/sklearn.multioutput.MultiOutputClassifier.html)</a>
