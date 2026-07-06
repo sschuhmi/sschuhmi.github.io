@@ -53,18 +53,93 @@ Fig. 1: Result Matrix as output vector for prediction
 The goal of a prediction algorithm is to predict result matrices y_pred which are close to or, in the optimum case, exactly the result matrix y_true of the actual results.
 Mathematically set, the sum of |y_pred - y| (row-wise calculated) should be as minimal as possible. If the prediction exactly matches the actual results, the sum of |y_pred - y| is zero.
 
-## Metrics
+## Evaluation Metrics
 
-To quantify the results of the classification algorithms, common classification metrics in Machine Learning [[3]](#ref3) are used, being combined in a classification report which is provided by the used scikit-learn framework [[4]](#ref4).
-These comprise the following:
-- <b>Precision score:</b> Precision is the ability of the classifier not to label a sample which actually is negative as positive. This metric is important here to find out if there are many false positives where a result was predicted (i.e., y_pred = 1) which actually did not occur (i.e., y_true = 0).
-- <b>Recall score:</b> Contrary to precision, recall is the ability of the classifier to find all the positive samples. This metric is important to find out if a classifier has many undesired false negatives, where a result which actually occurred (i.e., y_true = 1) was not predicted by classifier (i.e., y_pred = 0)
-- <b>F1 score:</b> This metric can be interpreted as a weighted harmonic mean of the precision and recall and takes care both of false positives and false negatives. It considers precision and recall with the same fraction and calculates as *2 * precision * recall / (precision + recall)*
-- <b>Accuracy score:</b> The accuracy_score represents the fraction of correctly classified samples. Here, a sample represents a single row vector within the results matrix. As our main goal is to have the most matches between the actual and the predicted results (i.e., the number rows of the result matrix should be maximized), the accuracy (calculated in a row-wise manner) is considered to be the most important of the above metrics here.
+To quantitatively assess the performance of the investigated Machine Learning models, several standard classification metrics are used. These metrics are provided by the scikit-learn framework and summarized in a classification report #ref3, #ref4.
 
-Mathematical foundations on these metrics can also be found at [[4]](#ref4).
+For each target class, the prediction results can be represented by a confusion matrix consisting of the following components:
 
-As mentioned, our focus is on the highest possible accuracy, but the other metrics are also taken into consideration in the evaluations to additionally record if an algorithm performs good or bad in terms of false positives and/or false negatives.
+- **True Positives (TP):** Positive samples that were correctly classified.
+- **True Negatives (TN):** Negative samples that were correctly classified.
+- **False Positives (FP):** Negative samples that were incorrectly classified as positive.
+- **False Negatives (FN):** Positive samples that were incorrectly classified as negative.
+
+Based on these quantities, several evaluation metrics can be defined.
+
+### Precision
+
+Precision measures the proportion of predicted positive samples that are actually positive and is therefore an indicator of how reliable positive predictions are.
+
+\[
+Precision = \frac{TP}{TP + FP}
+\]
+
+A high precision score indicates that the classifier produces relatively few false positive predictions. In the context of football match prediction, this metric is useful for identifying whether a predicted outcome (e.g., a home-team win) was frequently predicted incorrectly.
+
+### Recall
+
+Recall, also referred to as sensitivity or true positive rate, measures the proportion of actual positive samples that are correctly identified by the classifier.
+
+\[
+Recall = \frac{TP}{TP + FN}
+\]
+
+A high recall score indicates that the classifier successfully identifies most of the matches belonging to a specific outcome class. Low recall values suggest that many actual occurrences of a result are missed by the model.
+
+### F1 Score
+
+The F1 score combines precision and recall into a single metric by calculating their harmonic mean:
+
+\[
+F_1 = \frac{2 \cdot Precision \cdot Recall}
+           {Precision + Recall}
+\]
+
+The F1 score is particularly useful when class distributions are imbalanced, as it simultaneously penalizes false positives and false negatives. A high F1 score can only be achieved when both precision and recall are high.
+
+### Accuracy
+
+Accuracy measures the proportion of correctly classified samples among all evaluated samples.
+
+\[
+Accuracy = \frac{TP + TN}
+                 {TP + TN + FP + FN}
+\]
+
+In this project, a sample corresponds to a single football match represented by a target vector of length three. A prediction is considered correct if the predicted outcome vector exactly matches the actual outcome vector.
+
+Since the primary objective of the project is to maximize the number of correctly predicted match outcomes, accuracy is considered the most important evaluation metric. However, accuracy alone may not provide a complete picture, especially when the classes are not equally distributed. Therefore, precision, recall, and F1 score are evaluated as complementary metrics.
+
+### Macro and Weighted Averages
+
+Because the prediction problem consists of three possible match outcomes (`win_home`, `win_none`, and `win_away`), the classification report additionally provides aggregated metrics:
+
+- **Macro Average:** Arithmetic mean of the metric across all classes. Each class contributes equally, regardless of its frequency.
+
+\[
+MacroAvg = \frac{1}{C}
+            \sum_{i=1}^{C} Metric_i
+\]
+
+where \(C\) denotes the number of classes.
+
+- **Weighted Average:** Average of the metric weighted by the number of samples belonging to each class.
+
+\[
+WeightedAvg =
+\frac{\sum_{i=1}^{C} n_i \cdot Metric_i}
+     {\sum_{i=1}^{C} n_i}
+\]
+
+where \(n_i\) represents the number of samples of class \(i\).
+
+These aggregated metrics provide additional insight into model performance, particularly when one class occurs more frequently than the others.
+
+### Evaluation Objective
+
+Although all previously introduced metrics are taken into account during model evaluation, the primary objective of this project is to maximize the overall prediction accuracy. Nevertheless, precision, recall, and F1 score remain important complementary measures because they reveal whether a model tends to produce excessive false positives or false negatives for specific match outcomes.
+
+Particular attention is paid to the individual performance of the three target classes (`win_home`, `win_none`, and `win_away`) in order to identify potential class-specific weaknesses of the investigated Machine Learning models.
 
 # Analysis
 
