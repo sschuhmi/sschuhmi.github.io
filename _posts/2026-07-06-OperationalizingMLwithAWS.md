@@ -428,6 +428,17 @@ In 2024, we regarded a significantly reduced data amount and only focused on the
 
 From these numbers, one can see that the amount of regarded data is significantly increased by around factor 8.5.
 
+
+# Methodology
+
+## Data Preprocessing
+
+#### Duplicates and Missing Values
+
+The competitions and matches files could simply be imported using the standard Python3 json import function. They did not include any duplicates or missing rows. While there was no further preprocessing needed for the competitions set, the matches needed to be enriched by the event-specific data of the events files to have the feature set (X) and the output set (y) for the classification algorithms.
+
+#### Feature Set Reduction
+
 In order to score, a team typically needs to get adequately close to the goal. This is typically performed by 
   - conquering the ball in a dribble, duel, clearance, by a misleading pass of the oppenent or by getting a free kick, penalty kick or throw-in,
   - then (optionally) passing the ball between players to come closer to the door
@@ -436,42 +447,16 @@ In order to score, a team typically needs to get adequately close to the goal. T
 
 To determine the most relevant features with highest influence on the prediction results and as all events are team-specific, we performed as follows: As the event types start with a technique specific prefix (e.g., 'shot.' for all goal shot-related event types), we distinguished between to team for which event was relevant (home or away time) and created multiple heatmaps showing the influence of these team-specific event types on the result columns for the prediction, i.e., the three binary columns for the different match outcomes ('win_home', 'win_away', 'win_none'). [Fig. 2](#Fig2) shows these heatmaps.
 
-<!-- ![Fig2](https://github.com/sschuhmi/sschuhmi.github.io/blob/main/_posts/img/2024-10_Football/Heatmap_comb_trans.png?raw=true) -->
-![Fig2](https://github.com/sschuhmi/sschuhmi.github.io/blob/main/_posts/img/2026-07_MLE-Cap/Heatmap_filtered_midex-type.png?raw=true)
+Thus, some features seemed to have only a minor impact on the result columns. Thus, we only considered those 30 features from the events dataset with highest absolute cell values. This leads to significantly reduced calculation and processing costs without a larger impact on the classification results. [Fig. 4](#Fig4) shows the resulting consolidated heatmap which only includes those 60 features (out of the original 2*119 = 238) with the largest influence on the result columns that were taken into consideration for the classification algorithms later on. As one can see, there is still a lot of complexity included in this immense feature set.
+
+![Fig4](https://github.com/sschuhmi/sschuhmi.github.io/blob/main/_posts/img/2026-07_Football/Heatmap_mixed-type.png?raw=true)
 <p align="center" style="text-align:center, text-style:italic">
-Fig. 2: Heatmaps for all events-types an result columns ('win_home', 'win_none', 'win_awyy')
+Fig. 4: Heatmap of combined-type, reduced feature set with most important 60 features (30 per team)
 </p>
 
 The heatmaps show at first glance that the influence of the specific types on the result columns is widely spread: 
 - Some of the events have a positive impact on a specific result column, represented by a positive value and in a rather bright color, while other events have a negative impact with values below 0.
 - Moreover, some events have a rather large impact on the result with values >0.2 or <-0.2, while others have a rather minimal impact on the results columns since their values are close to 0.
-
-To clarify this, let us take a closer look on some specific cells of the heatmap E for some of the goalkeeper-related event types. [Fig. 3](#Fig3) displays them.
-
-![Fig3](https://github.com/sschuhmi/sschuhmi.github.io/blob/main/_posts/img/2026-07_MLE-Cap/Heatmap_comb_trans.png?raw=true)
-<p align="center" style="text-align:center, text-style:italic">
-Fig. 3: Focus on impact of specific events on results columns ('win_home', 'win_none', 'win_awyy')
-</p>
-
-There are some interesting insights to gain from these cells:
-- There is a significant difference in terms of the team for which a goalkeeper-specific event was recorded: Taking the home team related goalkeeper events, it can be seen that there is a positive impact on the result 'win_home', while the impact on the result 'win_away' is negative and the impact on the result 'win_none' is rather marginal. Contrary to this, the away team related goalkeeper events' impact on 'win_home' and 'win_away' is switched. Thus, keeping both of these event types ('home_' and 'away_') strongly seems to make sense, as their appearences particularly help to predict the results where a specific team won.
-- Moreover, some of the events have significantly higher impact than others. For instance, the 'technique.id' events have impacts with absolute values that are larger than 0.3 on 'win_home' or 'win_away', while the 'shot_saved_off_target' events have rather low impact, as all absolute values are below 0.15.
-- As the influences of the features on the third result column that represents a draw with no winner are much lower than those on the home or away win columns, it may be harder to accurately predict draws than to predict wins of the home or the away team
-
-# Methodology
-
-## Data Preprocessing
-
-#### Duplicates and Missing Values
-The competitions and matches files could simply be imported using the standard Python3 json import function. They did not include any duplicates or missing rows. While there was no further preprocessing needed for the competitions set, the matches needed to be enriched by the event-specific data of the events files to have the feature set (X) and the output set (y) for the classification algorithms.
-
-#### Feature Set Reduction
-First of all, as we already discussed in the data visualizations section, some features seemed to have only a minor impact on the result columns. Thus, we only considered those features from the events dataset where at least one of the absolute cell values was above 0.2, i.e. |value > 0.2|. This leads to significantly reduced calculation and processing costs without a larger impact on the classification results. [Fig. 4](#Fig4) shows the resulting consolidated heatmap which only includes those 60 features (out of the original 2*119 = 238) with the largest influence on the result columns that were taken into consideration for the classification algorithms later on. As one can see, there is still a lot of complexity included in this immense feature set.
-
-![Fig4](https://github.com/sschuhmi/sschuhmi.github.io/blob/main/_posts/img/2014-10_Football/Heatmap_mixed-type.png?raw=true)
-<p align="center" style="text-align:center, text-style:italic">
-Fig. 4: Heatmap of combined-type, reduced feature set with 60 features
-</p>
 
 #### Feature Set - Quantitative Approach
 For this project, we decided just to consider the quantitative amounts of the event types, meaning we counted the amount of each event type per match and added an additional column for this feature holding the number of counts of this event. For some events, it may be possible to additionally exploit the actual qualitative value of an event, but we leave this for future work, as it would increase the computational complexity again (e.g., the goalkeeper´s body part for an event may be 'head', 'chest', 'both hands', 'left hand', 'right hand', 'left foot' or 'right foot', i.e. 7 possible values for only one event type!) when considering the whole feature set for this technique.
