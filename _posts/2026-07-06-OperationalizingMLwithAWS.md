@@ -14,7 +14,7 @@ The rapid growth in the availability of football analytics data raises an intere
 
 This question forms the foundation of the present project. Leveraging the extensive StatsBomb open-data collection, various Machine Learning models—including multi-output classifiers and regressors—are trained to predict the outcome of a football match. Possible outcomes are defined as a win for the home team, a win for the away team, or a draw. The performance of these ML-based approaches is then compared to a simple baseline classifier that selects one of the three possible outcomes at random. The objective is to evaluate whether modern Machine Learning methods can significantly outperform such a naïve approach and achieve meaningful predictive accuracy based solely on match event data.
 
-While previous work from 2024 focused solely on the fitting of classifiers to predict the match results, we follow a more generalized end-2-end approach here in order to operationalize the prediction process using AWS SageMaker invocation endpoints and AWS Lambda. Moreover, we optimize the prediction results by extending the data scope for training and testing from originally 150 matches (in 2024) up to 1000 matches (now). As you will see, this further improves the prediction results.
+While previous work from October 2024 [[2b]](#ref2b) focused solely on the fitting of classifiers to predict the match results, we follow a complete end-2-end approach here in order to operationalize the prediction process using AWS SageMaker invocation endpoints and AWS Lambda. Moreover, we optimize the prediction results by extending the data scope for training and testing from originally 150 matches (in 2024) up to 1000 matches (now). As you will see, this further improves the prediction results.
 
 ## Problem Statement
 
@@ -164,8 +164,6 @@ The competitions included in the repository cover a wide range of football tourn
 For each match, the event data contains a chronological sequence of football actions such as passes, shots, dribbles, duels, interceptions, fouls, and goalkeeper actions. These events form the primary data source used in this project to derive match-specific features for the Machine Learning models.
 
 The repository additionally provides extensive documentation describing the structure, content, and semantics of the available JSON files. This documentation includes detailed explanations of event types, attributes, nested data structures, and relationships between the different datasets, thereby facilitating efficient data preprocessing and feature engineering.
-
-
 
 ### Competitions and Seasons
 
@@ -504,6 +502,7 @@ Further acknowledges go to [StatsBomb](#ref1) for providing their [open data set
 # References
 1. <a name="ref1">[StatsBomb homepage](https://statsbomb.com/)</a>
 2. <a name="ref2">[StatsBomb Open Data - public GitHub Repository](https://github.com/statsbomb/open-data)</a>
+2b. <a name="ref2b">[Applied Data Science with Modern Football Data: Predicting Match Results](https://github.com/statsbomb/open-data](https://sschuhmi.github.io/2024/10/06/PredictingFootballResults.html)</a>
 3. <a name="ref3">[Performance Metrics in Machine Learning | Complete Guide]](https://neptune.ai/blog/performance-metrics-in-machine-learning-complete-guide)</a>
 4. <a name="ref4">[scikit-learn Classification Report Metrics](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.classification_report.html)</a>
 5. <a name="ref5">[scikit-learn MinMaxScaler](https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.MinMaxScaler.html)</a>
