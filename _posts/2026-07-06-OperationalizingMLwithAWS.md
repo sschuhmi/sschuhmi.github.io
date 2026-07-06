@@ -777,26 +777,6 @@ While this class-specific weakness limits the practical applicability of the mod
 Fig. 13: Classification Report for MOR Ridge (Regressor with highest accuracy)
 </p>
 
-
-
-
-
-#### Focus on Accuracy: Is the training set big enough?
-The evaluation results presented in the last section show that the accuracy over the complete test series can significantly be increased compared to random choice by using a multi-output regressor with an estimator like Ridge or SGD. However, one question that may arise when looking on the number of investigated matches is: Is this amount of matches and events sufficient for an adequate use of Machine Learning classifiers? To find an answer on this question, we decided to vary the test_ratio and change the amount of training data in terms of matches for the classifier: While the training set is rather large when test_ratio = 0.1 - there still remain 108 out of 120 matches for training and only 12 are used in testing (see Evaluation Setup) - this number is significantly lower when test_ratio = 0.5 - then, there are only 60 out of 120 matches left for training. By starting with test_ratio = 0.1 and then taking small increases of 0.05 for the test_ratio up to 0.5, the accuracies per classifier were recorded and are shown in Fig. 13. There, it can be seen that all of the ML algorithms perform best with the largest training set (i.e., test_ratio = 0.1) and the score decrease with a rising test_ratio value. However, the decrease is only slightly, meaning that even a small training set of 60 matches is sufficient for an acceptable accuracy. Comparing the best accuracies (typically at test_ratio 0.1 or 0.15) with the worst accuracies (typically at test_ratio 0.45 or 0.5), the relative decreases of accuracy are the following:
-- 7.4% for MOC_DecTree
-- 5.9% for MOC_RandomForests
-- 7.7% for MOC_LogisticRegression
-- 7.8% for MOR_GradBoo
-- 5.9% for MOR_Ridge
-- 3.8% for MOR_SGD
-
-These results show once again that all ML algorithms are suited even for small training sets, and that the multi-output regressor with SGD estimator should be preferred over the other classifiers, as it its loss in accuracy is lowest when the training set becomes smaller.
-
-![Fig13](https://github.com/sschuhmi/sschuhmi.github.io/blob/main/_posts/img/2014-10_Football/Accuracy_vs_test_ratio.png?raw=true)
-<p align="center" style="text-align:center, text-style:italic">
-Fig. 13: Accuracy scores at various test ratios
-</p>
-
 ## Justification
 
 Summing up the evaluation results, the following interesting insights could be gained in this project:
