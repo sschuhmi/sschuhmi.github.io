@@ -918,7 +918,7 @@ Furthermore, the architecture separates feature engineering, model inference, an
 
 # Acknowledges
 
-Thanks go to Udacity´s Data Scientist Nanodegree ([nd025](#ref13)) where this project is part of.
+Thanks go to Udacity´s Data Scientist Nanodegree ([nd189](#ref13)) where this project is part of.
 
 Further acknowledges go to [StatsBomb](#ref1) for providing their [open data set](#ref2).
 ![StatsBomb](https://github.com/sschuhmi/sschuhmi.github.io/blob/main/_posts/img/2014-10_Football/StatsBomb-logo_small.png?raw=true)
@@ -937,4 +937,4 @@ Further acknowledges go to [StatsBomb](#ref1) for providing their [open data set
 10. <a name="ref10">[scikit-learn MultiOutputRegressor](https://scikit-learn.org/stable/modules/generated/sklearn.multioutput.MultiOutputRegressor.html)</a>
 11. <a name="ref11">[Ridge in scikit-learn](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.Ridge.html#sklearn.linear_model.Ridge)</a>
 12. <a name="ref12">[StochasticGradientBoost in scikit-learn](https://scikit-learn.org/stable/modules/sgd.html)</a>
-13. <a name="ref13">[Data Scientist Nanodegree at Udacity](https://www.udacity.com/enrollment/nd025)</a>
+13. <a name="ref13">[AWS Machine Learning Engineer Nanodegree at Udacity](https://www.udacity.com/enrollment/nd189)</a>
