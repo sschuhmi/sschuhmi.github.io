@@ -112,7 +112,7 @@ Since the primary objective of the project is to maximize the number of correctl
 
 ### Macro and Weighted Averages
 
-Because the prediction problem consists of three possible match outcomes (`win_home`, `win_none`, and `win_away`), the classification report additionally provides aggregated metrics:
+Because the prediction problem consists of three possible match outcomes (`win_home`, `win_none`, and `win_away`), the classification report [[4]](#ref4) additionally provides aggregated metrics:
 
 - **Macro Average:** Arithmetic mean of the metric across all classes. Each class contributes equally, regardless of its frequency.
 
