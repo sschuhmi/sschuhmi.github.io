@@ -1,4 +1,4 @@
-# Predicting Results of modern Football matches using StatsBomb analysis data and advanced multi-output Machine Learning Regressors
+# Data Science in Modern Football Data
 
 ![Football](https://github.com/sschuhmi/sschuhmi.github.io/blob/main/_posts/img/2014-10_Football/football.jpg?raw=true)
 
