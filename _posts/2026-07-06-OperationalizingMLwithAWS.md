@@ -751,7 +751,7 @@ The strongest performance is achieved by the regression-based approaches. The Mu
 
 These results indicate that the regression-based formulation combined with the subsequent one-hot correction procedure provides a more effective solution to the match outcome prediction problem than the investigated classification-based approaches. Consequently, the following sections focus on a more detailed analysis of the best-performing models.
 
-![Fig12](https://github.com/sschuhmi/sschuhmi.github.io/blob/main/_posts/img/2026-07_MLE-Cap/Accuracy_vs_test_ratio.png?raw=true)
+![Fig12](https://github.com/sschuhmi/sschuhmi.github.io/blob/main/_posts/img/2026-07_MLE-Cap/eval/Accuracy_vs_test_ratio.png?raw=true)
 <p align="center" style="text-align:center, text-style:italic">
 Fig. 12: Accuracy scores at various test ratios
 </p>
@@ -772,9 +772,9 @@ This behavior can largely be explained by the class distribution of the dataset.
 
 While this class-specific weakness limits the practical applicability of the model in its current form, the overall accuracy results nevertheless demonstrate that Ridge regression is the most effective approach among all investigated algorithms. The classification report further reveals that future improvements should primarily focus on enhancing the predictive performance for the `win_away` class, for example through improved feature engineering, class balancing techniques, or alternative model architectures.
 
-![Fig13](https://github.com/sschuhmi/sschuhmi.github.io/blob/main/_posts/img/2026-07_MLE-Cap/CR_Classification_report_for_MOR_Ridge.png?raw=true)
+![Fig13](https://github.com/sschuhmi/sschuhmi.github.io/blob/main/_posts/img/2026-07_MLE-Cap/eval/CR_Classification_report_for_MOR_Ridge.png?raw=true)
 <p align="center" style="text-align:center, text-style:italic">
-Fig. 13: Accuracy scores at various test ratios
+Fig. 13: Classification Report for MOR Ridge (Regressor with highest accuracy)
 </p>
 
 
