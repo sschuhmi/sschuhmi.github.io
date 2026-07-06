@@ -932,8 +932,8 @@ Further acknowledges go to [StatsBomb](#ref1) for providing their [open data set
 # References
 1. <a name="ref1">[StatsBomb homepage](https://statsbomb.com/)</a>
 2. <a name="ref2">[StatsBomb Open Data - public GitHub Repository](https://github.com/statsbomb/open-data)</a>
-2b. <a name="ref2b">[Applied Data Science with Modern Football Data: Predicting Match Results](https://github.com/statsbomb/open-data](https://sschuhmi.github.io/2024/10/06/PredictingFootballResults.html)</a>
-3. <a name="ref3">[Performance Metrics in Machine Learning | Complete Guide]](https://neptune.ai/blog/performance-metrics-in-machine-learning-complete-guide)</a>
+2b. <a name="ref2b">[Applied Data Science with Modern Football Data: Predicting Match Results](https://sschuhmi.github.io/2024/10/06/PredictingFootballResults.html)</a>
+3. <a name="ref3">[Performance Metrics in Machine Learning | Complete Guide](https://neptune.ai/blog/performance-metrics-in-machine-learning-complete-guide)</a>
 4. <a name="ref4">[scikit-learn Classification Report Metrics](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.classification_report.html)</a>
 5. <a name="ref5">[scikit-learn MinMaxScaler](https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.MinMaxScaler.html)</a>
 6. <a name="ref6">[scikit-learn MultiOutputClassifier](https://scikit-learn.org/stable/modules/generated/sklearn.multioutput.MultiOutputClassifier.html)</a>
