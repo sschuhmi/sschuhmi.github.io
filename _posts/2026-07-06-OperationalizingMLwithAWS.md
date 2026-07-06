@@ -664,10 +664,9 @@ A post-processing step is subsequently applied to transform the continuous predi
 Formally, let
 
 $$
-k =
-\operatorname{argmax}
-(\hat{y}_1,\hat{y}_2,\hat{y}_3)
+k = argmax(\hat{y}_1,\hat{y}_2,\hat{y}_3)
 $$
+
 
 denote the index of the largest predicted value. The corrected prediction vector is then defined as
 
