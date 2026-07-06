@@ -165,54 +165,104 @@ For each match, the event data contains a chronological sequence of football act
 
 The repository additionally provides extensive documentation describing the structure, content, and semantics of the available JSON files. This documentation includes detailed explanations of event types, attributes, nested data structures, and relationships between the different datasets, thereby facilitating efficient data preprocessing and feature engineering.
 
-#### Competitions and Seasons
 
-The single competitions.json file includes an array of competition-season objects with the following properties relevant for this project:
-- competition_id, competition_name (unique identifier of the competition and the respective name of this competition)
-- season_id, season_name (unique identifier of the season and the respective name of this season)
 
-The competition file was used as starting point for the data import in this project.
+### Competitions and Seasons
 
-The full set of objects can be found [here](https://github.com/statsbomb/open-data/blob/master/doc/Open%20Data%20Competitions%20v2.0.0.pdf).
+The entry point to the StatsBomb Open Data repository is the `competitions.json` file. This file contains an array of competition-season objects that provide metadata about the available football competitions and seasons.
 
-#### Matches
+For the purposes of this project, the most relevant attributes are:
 
-For every competition-season, there exists a match file which includes 1 to n matches of this season. Thus, there exist 74 match-specific json files.
-Each match file contains an array of match objects, the most important objects for further investigation are the following:
-- match_id (unique identifier for the match, which is required to request events, as the events files are named by this match_id)
-- competition (mixed-type containing the unique ID for the competition and the respective name of the competition)
-- season (mixed-type containing the unique ID for the season and the respective name of the season)
-- home_team (mixed-type containing the unique ID for the home team and the respective name of this team)
-- away_team (mixed-type containing the unique ID for the away team and the respective name of this team)
-- home_score (final score of the home team)
-- away_score (final score of the away team)
+- `competition_id` and `competition_name`, which uniquely identify a competition and provide a human-readable description.
+- `season_id` and `season_name`, which uniquely identify a season within a competition.
 
-Please note that there is no explicit information on the result (i.e., the winner) of the match - this has to be retrieved manually, as described later on in the Data Preprocessing section.
+The competition dataset serves as the starting point of the data ingestion process. It is used to identify all available competition-season combinations and subsequently retrieve the corresponding match data.
 
-The full set of objects can be found [here](https://github.com/statsbomb/open-data/blob/master/doc/Open%20Data%20Matches%20v3.0.0.pdf).
+A complete description of all available fields can be found [here](https://github.com/statsbomb/open-data/blob/master/doc/Open%20Data%20Competitions%20v2.0.0.pdf) in the official StatsBomb Open Data documentation.
 
-#### Events
+---
 
-The events represent the actual complexity of the data set as they involve each recorded event of a match.
-Thus, there is one json file per match, summing up to almost 3500 matches. The number of recorded events per match obviously differs (since every game is different from each other), but is typically in the range of 2000 up to 5000 events. The average number of recorded events per match is around 3600 in this open data set, as investigated within this project.
+### Matches
 
-Each events file contains an array containing information for both teams. Some elements have rather child elements (e.g., ID and name of an object) and some have even child arrays, leading to a deeper structure of this file type.
+For each competition-season combination, the repository contains a dedicated match file comprising all matches played during the respective season. Consequently, the dataset includes a total of 74 match files, corresponding to the 74 available seasons.
 
-For each event, there is some basic information on the event like the period, minute and second when the event was recorded.
+Each match file consists of an array of match objects. The most relevant attributes used in this project are:
 
-The heart of the complexity consists in the very fine-granular event types used in this file. 
+- `match_id`: Unique identifier of the match. This identifier is particularly important as it is used to locate the corresponding events and lineup files.
+- `competition`: Nested object containing the competition identifier and competition name.
+- `season`: Nested object containing the season identifier and season name.
+- `home_team`: Nested object containing information about the home team.
+- `away_team`: Nested object containing information about the away team.
+- `home_score`: Number of goals scored by the home team during regular playing time.
+- `away_score`: Number of goals scored by the away team during regular playing time.
 
-A complete list of the 119 event types (which are recorded team-specific, thus doubling this number in practice) can be found in the following figure, just to clarify the complexity of a modern football match.
+Although the final scores are included in the dataset, no explicit match outcome variable is provided. Consequently, the target variables (`win_home`, `win_none`, and `win_away`) must be derived during the data preprocessing stage by comparing the final scores of both teams.
 
-![Event-types](https://github.com/sschuhmi/sschuhmi.github.io/blob/main/_posts/img/2014-10_Football/Event-Types.PNG?raw=true)
+The match dataset therefore serves two primary purposes within this project:
 
-#### Lineups
+1. Providing metadata about the participating teams and the competition context.
+2. Generating the target variables used for supervised Machine Learning.
 
-The lineups represent the players of both teams that participate in a match, represented by an array of players for each team.
-They only show up the unique identifiers, names, jersey numbers and countries of each player.
+A complete description of all available match attributes can be found [here](https://github.com/statsbomb/open-data/blob/master/doc/Open%20Data%20Matches%20v3.0.0.pdf) in the official StatsBomb Open Data documentation.
 
-As there is no further information on the players included like their skills, value on the market, fitness or freshness, we do not further regard the lineups in the following.
+---
 
+### Events
+
+The event data represents the most important and by far the most complex part of the entire dataset. While the competition and match files primarily contain metadata, the event files contain the actual football actions that occurred during a match.
+
+For every match, a dedicated event file exists. Given that the repository currently contains approximately 3,500 matches, the dataset also contains approximately 3,500 event files.
+
+The number of recorded events differs from match to match depending on the flow and intensity of the game. Within the dataset analyzed in this project, matches typically contain between 2,000 and 5,000 recorded events, with an average of approximately 3,600 events per match.
+
+Each event file consists of an ordered sequence of event objects describing actions performed by both participating teams. In addition to basic event information such as:
+
+- Match period
+- Timestamp
+- Minute
+- Second
+- Team
+- Player
+
+many event types contain nested attributes and hierarchical substructures. Examples include shot information, pass characteristics, duel outcomes, goalkeeper actions, and positional information. Some attributes are represented as nested objects containing identifiers and descriptive names, while others contain arrays of additional contextual data.
+
+The richness of the event data is primarily driven by the large number of supported event types. StatsBomb records a highly detailed representation of football matches covering offensive, defensive, tactical, and transitional actions. Examples include:
+
+- Passes
+- Shots
+- Carries
+- Dribbles
+- Duels
+- Ball recoveries
+- Interceptions
+- Fouls
+- Clearances
+- Goalkeeper actions
+
+and many more.
+
+Overall, the repository contains 119 distinct event attributes and event-related feature categories. Since these events are recorded separately for both teams, the effective number of potentially relevant match characteristics is substantially larger. Consequently, the event data forms the foundation for the feature engineering process and provides the predictive variables used by the Machine Learning models developed in this project.
+
+A complete overview of the available event types is shown in the following figure.
+
+![Event Types](https://github.com/sschuhmi/sschuhmi.github.io/blob/main/_posts/img/2014-10_Football/Event-Types.PNG?raw=true)
+
+---
+
+### Lineups
+
+For each match, the repository additionally provides lineup information describing the participating players of both teams.
+
+The lineup files contain player-specific metadata such as:
+
+- Player identifier
+- Player name
+- Jersey number
+- Nationality
+
+While these files provide information about which players participated in a match, they do not contain additional performance-related attributes such as player ratings, market values, fitness indicators, recent form, or physical condition.
+
+Since the primary objective of this project is to predict match outcomes solely on the basis of event-derived match statistics, the lineup information is not incorporated into the feature engineering process. Consequently, the lineup data is excluded from further analysis.
 
 ## Data Visualization
 
