@@ -751,14 +751,16 @@ The strongest performance is achieved by the regression-based approaches. The Mu
 
 These results indicate that the regression-based formulation combined with the subsequent one-hot correction procedure provides a more effective solution to the match outcome prediction problem than the investigated classification-based approaches. Consequently, the following sections focus on a more detailed analysis of the best-performing models.
 
-Compared to the results obtained in 2024, where the best-performing model achieved an accuracy of approximately 0.51, the current approach demonstrates a substantial improvement in predictive performance. The best model evaluated in this study, the MultiOutputRegressor based on Ridge regression, achieved an average accuracy of approximately 0.67. This corresponds to a relative increase in accuracy of roughly 31% compared to the previous results.
-
-Several factors are likely to have contributed to this improvement. Most notably, the size of the training dataset was increased from approximately 150 matches to around 1,000 matches, providing the Machine Learning algorithms with a considerably larger amount of training data. In addition, the more sophisticated preprocessing pipeline, the enhanced feature engineering process, and the systematic feature selection strategy introduced in this project enabled a richer and more informative representation of match characteristics. Together, these improvements significantly increased the predictive capabilities of the investigated models.
-
 ![Fig12](https://github.com/sschuhmi/sschuhmi.github.io/blob/main/_posts/img/2026-07_MLE-Cap/eval/Accuracy_vs_test_ratio.png?raw=true)
 <p align="center" style="text-align:center, text-style:italic">
 Fig. 12: Accuracy scores at various test ratios
 </p>
+
+#### Result Comparison
+
+Compared to the results obtained in 2024 [[5]](#ref5), where the best-performing model achieved an accuracy of approximately 0.51, the current approach demonstrates a substantial improvement in predictive performance. The best model evaluated in this study, the MultiOutputRegressor based on Ridge regression, achieved an average accuracy of approximately 0.67. This corresponds to a relative increase in accuracy of roughly 31% compared to the previous results.
+
+Several factors are likely to have contributed to this improvement. Most notably, the size of the training dataset was increased from approximately 150 matches to around 1,000 matches, providing the Machine Learning algorithms with a considerably larger amount of training data. In addition, the more sophisticated preprocessing pipeline, the enhanced feature engineering process, and the systematic feature selection strategy introduced in this project enabled a richer and more informative representation of match characteristics. Together, these improvements significantly increased the predictive capabilities of the investigated models.
 
 ### 2. MultiOutputRegressor using Ridge Regression (MOR-Ridge)
 
