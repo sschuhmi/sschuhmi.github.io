@@ -116,20 +116,20 @@ Because the prediction problem consists of three possible match outcomes (`win_h
 
 - **Macro Average:** Arithmetic mean of the metric across all classes. Each class contributes equally, regardless of its frequency.
 
-\[
+$$
 MacroAvg = \frac{1}{C}
             \sum_{i=1}^{C} Metric_i
-\]
+$$
 
 where \(C\) denotes the number of classes.
 
 - **Weighted Average:** Average of the metric weighted by the number of samples belonging to each class.
 
-\[
+$$
 WeightedAvg =
 \frac{\sum_{i=1}^{C} n_i \cdot Metric_i}
      {\sum_{i=1}^{C} n_i}
-\]
+$$
 
 where \(n_i\) represents the number of samples of class \(i\).
 
