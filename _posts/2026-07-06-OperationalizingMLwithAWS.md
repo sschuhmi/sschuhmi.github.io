@@ -787,7 +787,7 @@ The deployed solution consists of three main components:
 2. Deployment of the trained model as a SageMaker inference endpoint.
 3. Implementation of an AWS Lambda function that performs feature generation and invokes the deployed endpoint.
 
-The resulting architecture is illustrated in Figure X.
+The resulting architecture is illustrated below.
 
 ```text
 StatsBomb Open Data (S3)
@@ -851,6 +851,13 @@ An example prediction response is shown below:
 
 The SageMaker endpoint therefore represents the central prediction component of the deployed architecture.
 
+Figure X shows a screenshot of the Endpoint "up & running".
+
+![Fig14](https://github.com/sschuhmi/sschuhmi.github.io/blob/main/_posts/img/2026-07_MLE-Cap/10-endpoint_InService.jpg?raw=true)
+<p align="center" style="text-align:center, text-style:italic">
+Fig. 14: AWS SageMaker Inference Endpoint in Service
+</p>
+
 ## Feature Engineering Service using AWS Lambda
 
 While the SageMaker endpoint expects a feature vector as input, the original StatsBomb data is stored as JSON documents containing match metadata and detailed event information. Consequently, an additional preprocessing step is required before a prediction can be generated.
@@ -881,6 +888,21 @@ The resulting operational workflow can be summarized as follows:
 6. The prediction result is returned to the caller.
 
 As a result, the complete Machine Learning workflow can be executed automatically without requiring any manual intervention after deployment.
+
+Figure X shows an exemplary successful test call on the Lambda function in AWS.
+
+![Fig16](https://github.com/sschuhmi/sschuhmi.github.io/blob/main/_posts/img/2026-07_MLE-Cap/04-LambdaSuccess.jpg?raw=true)
+<p align="center" style="text-align:center, text-style:italic">
+Fig. 16: Successful Test Call on AWS Lambda function
+</p>
+
+Moreover, the next figure shows the taken concurrency settings to be able to react on temporarily high-throughput, low-latency situations where many parallel calls on the Lambda function are performed.
+
+![Fig17](https://github.com/sschuhmi/sschuhmi.github.io/blob/main/_posts/img/2026-07_MLE-Cap/05-LambdaConcurrency.jpg?raw=true)
+<p align="center" style="text-align:center, text-style:italic">
+Fig. 17: Lambda Concurrency Settings
+</p>
+
 
 ## Discussion
 
