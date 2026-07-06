@@ -510,10 +510,30 @@ An important advantage of the chosen aggregation process is that it naturally pr
 The aggregation and transfer of event-derived statistics into the match-level dataset was implemented in the `update_match_stats()` function. This function processes each event attribute according to its predefined aggregation rule and generates corresponding home-team and away-team features, which are subsequently used as input variables for the Machine Learning models.
 
 
-#### Scaling
-What was finally needed was scaling of the feature values: As the events occur in (partially) significantly different magnitudes, they need to be scaled before they can be used by Machine Learning algorithms, since otherwise, features would not be equally weighted by the algorithms. To scale the results in a positive range of floating-point numbers between zero (meaning this event type did not happen at all in this match) and one (meaning this event type happened most often in this match), we used scikit-learn´s standard MinMaxScaler [[5]](#ref5)
+#### Feature Scaling
 
-Summarizing, there are 179,136 out of the originally 417,221 events remaining for further analysis within this project.
+A final preprocessing step required prior to model training was the normalization of the feature values. The generated match-level features exhibit substantially different numerical ranges and magnitudes. For example, some event frequencies may occur several hundred times per match, whereas aggregated variables such as expected goals (`statsbomb_xg`) or averaged pass characteristics typically assume much smaller values.
+
+Without appropriate scaling, features with larger numerical ranges could disproportionately influence the learning process of many Machine Learning algorithms. Consequently, the contribution of individual features would no longer solely depend on their predictive relevance but also on their scale.
+
+To ensure comparability between features and to prevent scale-dependent biases, all predictor variables were normalized using the **MinMaxScaler** provided by the scikit-learn framework [[5]5. The transformation maps each feature to the interval \([0,1]\) according to
+
+$$
+X_{scaled} =
+\frac{X - X_{min}}
+     {X_{max} - X_{min}}
+$$
+
+where \(X\) denotes the original feature value, \(X_{min}\) the minimum observed value, and \(X_{max}\) the maximum observed value of the respective feature.
+
+As a consequence, a transformed value of 0 indicates the minimum observed value of a feature within the dataset, whereas a value of 1 corresponds to the maximum observed value. All intermediate values are mapped proportionally to this range.
+
+Feature scaling is particularly important in the present study because the feature set contains a heterogeneous mixture of aggregated statistics, including event frequencies, cumulative measures (e.g., total expected goals or event durations), average values (e.g., pass lengths and pass angles), and counts of binary event occurrences. Normalization ensures that these different feature types contribute on a comparable scale during model training and evaluation.
+
+The resulting normalized feature matrix is subsequently used as input for all investigated Machine Learning models.
+
+To perform scaling, we used scikit-learn´s standard MinMaxScaler [[5]](#ref5)
+
 
 ## Implementation
 
