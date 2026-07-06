@@ -428,17 +428,13 @@ In 2024, we regarded a significantly reduced data amount and only focused on the
 
 Thus, one can see that the amount of regarded data is significantly increased by around factor 8.5.
 
-![Pattern-types](https://github.com/sschuhmi/sschuhmi.github.io/blob/main/_posts/img/2014-10_Football/Pattern-types.PNG?raw=true)
-- In order to score, a team typically needs to get adequately close to the goal. This is typically performed by 
+In order to score, a team typically needs to get adequately close to the goal. This is typically performed by 
   - conquering the ball in a dribble, duel, clearance, by a misleading pass of the oppenent or by getting a free kick, penalty kick or throw-in,
   - then (optionally) passing the ball between players to come closer to the door
   - and finally, performing a shot on the goal
   - to overcome the goalkeeper of the opponent team
 
-We consider events that are related to the above mentioned game techniques to be most important for prediction the winner of a match based on analysis date.
-Contrary to this, events like the start or end of a half, or an interception where the game is stopped should have a rather minimal impact on the result of a match.
-
-As the event types start with a technique specific prefix (e.g., 'shot.' for all goal shot-related event types), we distinguished between to team for which event was relevant (home or away time) and created multiple heatmaps showing the influence of these team-specific event types on the result columns for the prediction, i.e., the three binary columns for the different match outcomes ('win_home', 'win_away', 'win_none'). [Fig. 2](#Fig2) shows these heatmaps.
+To determine the most relevant features with highest influence on the prediction results and as all events are team-specific, we performed as follows: As the event types start with a technique specific prefix (e.g., 'shot.' for all goal shot-related event types), we distinguished between to team for which event was relevant (home or away time) and created multiple heatmaps showing the influence of these team-specific event types on the result columns for the prediction, i.e., the three binary columns for the different match outcomes ('win_home', 'win_away', 'win_none'). [Fig. 2](#Fig2) shows these heatmaps.
 
 ![Fig2](https://github.com/sschuhmi/sschuhmi.github.io/blob/main/_posts/img/2014-10_Football/Heatmap_comb_trans.png?raw=true)
 <p align="center" style="text-align:center, text-style:italic">
