@@ -70,15 +70,9 @@ Based on these quantities, several evaluation metrics can be defined.
 
 Precision measures the proportion of predicted positive samples that are actually positive and is therefore an indicator of how reliable positive predictions are.
 
-<p align="center">
-Precision = <sup>TP</sup>&frasl;<sub>TP + FP</sub>
-</p>
-
-
 $$
 Precision = \frac{TP}{TP + FP}
 $$
-
 
 A high precision score indicates that the classifier produces relatively few false positive predictions. In the context of football match prediction, this metric is useful for identifying whether a predicted outcome (e.g., a home-team win) was frequently predicted incorrectly.
 
@@ -86,9 +80,9 @@ A high precision score indicates that the classifier produces relatively few fal
 
 Recall, also referred to as sensitivity or true positive rate, measures the proportion of actual positive samples that are correctly identified by the classifier.
 
-\[
+$$
 Recall = \frac{TP}{TP + FN}
-\]
+$$
 
 A high recall score indicates that the classifier successfully identifies most of the matches belonging to a specific outcome class. Low recall values suggest that many actual occurrences of a result are missed by the model.
 
@@ -96,10 +90,10 @@ A high recall score indicates that the classifier successfully identifies most o
 
 The F1 score combines precision and recall into a single metric by calculating their harmonic mean:
 
-\[
+$$
 F_1 = \frac{2 \cdot Precision \cdot Recall}
            {Precision + Recall}
-\]
+$$
 
 The F1 score is particularly useful when class distributions are imbalanced, as it simultaneously penalizes false positives and false negatives. A high F1 score can only be achieved when both precision and recall are high.
 
@@ -107,10 +101,10 @@ The F1 score is particularly useful when class distributions are imbalanced, as 
 
 Accuracy measures the proportion of correctly classified samples among all evaluated samples.
 
-\[
+$$
 Accuracy = \frac{TP + TN}
                  {TP + TN + FP + FN}
-\]
+$$
 
 In this project, a sample corresponds to a single football match represented by a target vector of length three. A prediction is considered correct if the predicted outcome vector exactly matches the actual outcome vector.
 
