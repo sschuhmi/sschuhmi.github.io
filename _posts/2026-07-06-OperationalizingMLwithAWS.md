@@ -70,7 +70,10 @@ Based on these quantities, several evaluation metrics can be defined.
 
 Precision measures the proportion of predicted positive samples that are actually positive and is therefore an indicator of how reliable positive predictions are.
 
-Precision = TP / (TP + FP)
+<p align="center">
+Precision = <sup>TP</sup>&frasl;<sub>TP + FP</sub>
+</p>
+
 
 A high precision score indicates that the classifier produces relatively few false positive predictions. In the context of football match prediction, this metric is useful for identifying whether a predicted outcome (e.g., a home-team win) was frequently predicted incorrectly.
 
