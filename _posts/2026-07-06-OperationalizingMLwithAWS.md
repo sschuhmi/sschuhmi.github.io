@@ -739,16 +739,33 @@ The resulting performance metrics were subsequently aggregated and compared in o
 
 #### Classification Reports
 
-The following sections show the evaluated classification metrics of the different classifiers that were gained over the test series described above.
-While precision, recall and F1 scores are separated per possible result outcome ('win_home', 'win_none', 'win_away'), the accuracy is reported as average over all possible result outcomes in the classification report.
+The following sections present the classification reports obtained from the experimental evaluation procedure described above. For each investigated Machine Learning model, the reported values represent the aggregated results obtained across the repeated train-test experiments.
+
+The classification reports summarize the four evaluation metrics introduced previously: precision, recall, F1 score, and accuracy. Precision, recall, and F1 score are reported separately for each of the three possible match outcomes:
+
+- `win_home`
+- `win_none`
+- `win_away`
+
+This class-specific evaluation allows the predictive performance of a model to be analyzed individually for home-team victories, draws, and away-team victories. Such a breakdown is particularly useful for identifying potential weaknesses of a classifier with respect to specific match outcomes.
+
+In contrast, the accuracy score provides a single overall measure of predictive performance. It represents the proportion of correctly classified matches across all outcome classes and therefore serves as the primary metric for comparing the investigated models.
+
+Together, these metrics provide both a global assessment of model performance and a detailed view of class-specific prediction quality, enabling a comprehensive comparison of the different Machine Learning approaches.
 
 ##### 1. RandomClassifier (RC)
 
-The RandomClassifier (RC) produced accuracies in the anticipated range: The average accuracy was 0.34 which is close to 1/3, the expected when the result is randomly predicted.
-The other metrics - precision, recall and F1 - were in the same range, except the precision score for 'win_home' that was around 25% above the accuracy score. 
-As already mentioned, the RandomClassifier just serves as benchmark for the ML classifiers and regressors.
+As expected, the RandomClassifier (RC) achieved the weakest overall performance among all investigated models. The average accuracy of approximately 0.33–0.34 closely matches the theoretical baseline of one-third, which corresponds to randomly selecting one out of the three possible match outcomes (`win_home`, `win_none`, and `win_away`) with equal probability.
 
-![Fig6](https://github.com/sschuhmi/sschuhmi.github.io/blob/main/_posts/img/2014-10_Football/CR_ClassificationReport_for_1_RandomClassifier_testRatios=0.1-0.5.png?raw=true)
+The remaining evaluation metrics exhibit a similar behavior. Recall values are approximately 0.33 for all three classes, indicating that each outcome is identified at the expected rate of a random guess. Likewise, the F1 scores remain within the range that would be anticipated for a non-informative classifier.
+
+A noticeable exception is the precision score of the `win_home` class, which reaches a value of approximately 0.44 and is therefore substantially higher than the overall accuracy. This effect can be explained by the class distribution of the dataset. Home-team victories constitute the largest class in the training data (59,661 samples), followed by draws (46,317 samples) and away-team victories (29,022 samples). Consequently, a random prediction has a higher probability of being correct when predicting a home-team victory than when predicting an away-team victory, which results in a higher precision score for the `win_home` class and a considerably lower precision score for the `win_away` class.
+
+Overall, the obtained results confirm that the RandomClassifier behaves as expected and provides a suitable baseline for evaluating the predictive capabilities of the Machine Learning models investigated later in this study. Any meaningful Machine Learning approach should significantly outperform this benchmark in terms of both overall accuracy and class-specific evaluation metrics.
+
+Figure 6 shows the corresponding classification report for the RandomClassifier.
+
+![Fig6](https://github.com/sschuhmi/sschuhmi.github.io/blob/main/_posts/img/2026-07_MLE-Cap/eval/CR_Classification report for RandomClassifier, testRatio(s)=[0.1..0.2].png?raw=true)
 <p align="center" style="text-align:center, text-style:italic">
 Fig. 6: RandomClassifier evaluation results
 </p>
