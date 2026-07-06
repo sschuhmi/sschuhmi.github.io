@@ -449,7 +449,7 @@ To determine the most relevant features with highest influence on the prediction
 
 Thus, some features seemed to have only a minor impact on the result columns. Thus, we only considered those 30 features from the events dataset with highest absolute cell values. This leads to significantly reduced calculation and processing costs without a larger impact on the classification results. [Fig. 4](#Fig4) shows the resulting consolidated heatmap which only includes those 60 features (out of the original 2*119 = 238) with the largest influence on the result columns that were taken into consideration for the classification algorithms later on. As one can see, there is still a lot of complexity included in this immense feature set.
 
-![Fig4](https://github.com/sschuhmi/sschuhmi.github.io/blob/main/_posts/img/2026-07_Football/eval/Heatmap_mixed-type.png?raw=true)
+![Fig4](https://github.com/sschuhmi/sschuhmi.github.io/blob/main/_posts/img/2026-07_MLE-Cap/eval/Heatmap_mixed-type.png?raw=true)
 <p align="center" style="text-align:center, text-style:italic">
 Fig. 4: Heatmap of combined-type, full feature set
 </p>
@@ -459,7 +459,7 @@ The heatmaps show at first glance that the influence of the specific types on th
 - Moreover, some events have a rather large impact on the result, e.g. with values >0.5 or <-0.5, while others have a rather minimal impact on the results columns since their values are close to 0.
 
 Fig. 4: Heatmap of combined-type, reduced feature set with all features
-![Fig5](https://github.com/sschuhmi/sschuhmi.github.io/blob/main/_posts/img/2026-07_Football/eval/Heatmap_top30features.png?raw=true)
+![Fig5](https://github.com/sschuhmi/sschuhmi.github.io/blob/main/_posts/img/2026-07_MLE-Cap/eval/Heatmap_top30features.png?raw=true)
 <p align="center" style="text-align:center, text-style:italic">
 Fig. 5: Heatmap of combined-type, with reduced feature set to Top 30 features with highest influence on target columns 'win_home', 'win_none', 'win_away'
 </p>
