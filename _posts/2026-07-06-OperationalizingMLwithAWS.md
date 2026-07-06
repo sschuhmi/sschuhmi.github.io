@@ -419,8 +419,14 @@ As mentioned above, the event types in the events file contain the most importan
 
 In order to find out which event types are most important to become features for the supervised classification algorithms later on, we imported the data of a specific subset of the 3600 matches.
 Regarding the immense amount of the dataset and the immense amount and memory consumption for processing the data, we focused on a small subset of matches for our observations, leaving the extension to a larger set for further work. Thus, the data visualizations in the following are created using the following data:
+- 1000 matches in the open data set from all seasons of all 21 competitions provided via StatsBomb open data
+- These matches include 3,508,294 events of all event types
+
+In 2024, we regarded a significantly reduced data amount and only focused on the Data Science part of the problem than Operationalizing the complete E2E process .
 - All 116 provided matches in the open data set from specific seasons of 3 competitions - Spanish 'La Liga' 2019/2020, Euro Cup 2024 and Copa America 2024
-- These matches include 417,221 events of all event types, which can be distinguished by the following numbers of event patterns:
+- These matches included 417,221 events of all event types
+
+Thus, one can see that the amount of regarded data is significantly increased by around factor 8.5.
 
 ![Pattern-types](https://github.com/sschuhmi/sschuhmi.github.io/blob/main/_posts/img/2014-10_Football/Pattern-types.PNG?raw=true)
 - In order to score, a team typically needs to get adequately close to the goal. This is typically performed by 
