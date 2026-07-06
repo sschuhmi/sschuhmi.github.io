@@ -709,17 +709,33 @@ Finally, after having evaluated the results and decided in favor of a specific c
 
 ## Model Evaluation and Validation
 
-#### Evaluation Setup
-We evaluated the implemented models presented in the last section using a set of automated tests with randomized, but determined generation of the training and test sets (using built-in scikit-learn function train_test_split) with different test ratios (i.e., the size of the test set compared to the total size). We decided to evaluate various test ratios to find out if the size of the training set for the ML classifier is sufficient, considering that only 116 matches were investigated.
+#### Experimental Evaluation Setup
 
-After each test run which comprises of the fitting of each classifier separately on the training set, predicting the results for each classifier on the test set and storing these results in an array, the random_state was increased by 1 to ensure differing train_test_splits and algorithm executions at the next run. For each test_ratio, there were 300 tests performed and then, the test_ratio was increased by 0.05 and the next test series was started. While the test series for a single test_ratio took around 132.5sec in average, the complete test series took around 19.9 minutes to be completed.
+The models introduced in the previous section were evaluated using an automated experimental framework based on repeated randomized train-test splits. The data was partitioned into training and test sets using scikit-learn's `train_test_split()` function, ensuring reproducible yet diverse evaluation scenarios through the controlled use of varying random seeds.
 
-[[Fig. 5]](#fig5) gives an overview of the evaluation setup and the runtimes of the single test_ratio series.
+The primary objective of these experiments was to investigate the robustness and generalization performance of the different Machine Learning models under varying amounts of training data. Since the dataset analyzed in this project is relatively small compared to many modern Machine Learning applications, the size of the training set may have a considerable influence on the predictive performance of the investigated algorithms.
 
-![Fig5](https://github.com/sschuhmi/sschuhmi.github.io/blob/main/_posts/img/2014-10_Football/Evaluation-setup.PNG?raw=true)
-<p align="center" style="text-align:center, text-style:italic">
-Fig. 5: Evaluation Setup
-</p>
+To analyze this effect, several train-test split ratios were evaluated. The test set proportion was varied from **10% to 20%** in increments of **5 percentage points**, resulting in the following test ratios:
+
+- 10%
+- 15%
+- 20%
+
+For each test ratio, a series of **300 independent experiments** was performed. In every experiment, the following steps were executed:
+
+1. Random partitioning of the dataset into a training set and a test set.
+2. Training (fitting) of each Machine Learning model using the generated training set.
+3. Prediction of the match outcomes for all samples in the corresponding test set.
+4. Computation and storage of the evaluation metrics.
+5. Increment of the `random_state` parameter to generate a different train-test split for the subsequent iteration.
+
+By repeatedly varying the train-test split while maintaining reproducibility through deterministic random seeds, the influence of a particular dataset partition on the evaluation results is significantly reduced. Consequently, the reported performance measures represent average model behavior across many independent train-test configurations rather than a single potentially favorable or unfavorable split.
+
+The repeated evaluation procedure also allows the variance of the performance metrics to be assessed and provides a more reliable estimate of the true predictive capabilities of each algorithm.
+
+From a computational perspective, a complete test series comprising 300 evaluation runs for a single test ratio required approximately 12.5 minutes on the utilized hardware platform. Since three different test ratios were investigated, the overall experimental evaluation required approximately 37.5 minutes to complete.
+
+The resulting performance metrics were subsequently aggregated and compared in order to identify the most suitable Machine Learning approach for football match outcome prediction.
 
 #### Classification Reports
 
