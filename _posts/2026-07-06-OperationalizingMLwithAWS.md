@@ -739,9 +739,9 @@ The resulting performance metrics were subsequently aggregated and compared in o
 
 #### 1. Overall Accuracy Comparison
 
-Before analyzing the individual classification reports in detail, the investigated Machine Learning models are compared using their overall prediction accuracy. Since accuracy represents the primary evaluation metric of this study, it provides a concise overview of the relative performance of the different approaches.
+Before taking a look at the classification report, the investigated Machine Learning models are compared using their overall prediction accuracy. Since accuracy represents the primary evaluation metric of this study, it provides a concise overview of the relative performance of the different approaches.
 
-Figure X shows the average accuracy obtained by each classifier and regressor for test ratios between 10% and 20%. It can be observed that the accuracy remains largely stable across all investigated train-test splits, indicating that the models are relatively insensitive to the exact partitioning of the available data.
+Figure 12 shows the average accuracy obtained by each classifier and regressor for test ratios between 10% and 20%. It can be observed that the accuracy remains largely stable across all investigated train-test splits, indicating that the models are relatively insensitive to the exact partitioning of the available data.
 
 The RandomClassifier serves as the baseline and achieves an average accuracy of approximately 0.33, which corresponds closely to the theoretical expectation of randomly selecting one of three possible match outcomes. The DecisionTreeClassifier improves only moderately upon this baseline and achieves an average accuracy of approximately 0.39.
 
