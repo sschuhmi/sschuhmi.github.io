@@ -439,15 +439,40 @@ The competitions and matches files could simply be imported using the standard P
 
 #### Feature Set Reduction
 
-In order to score, a team typically needs to get adequately close to the goal. This is typically performed by 
-  - conquering the ball in a dribble, duel, clearance, by a misleading pass of the oppenent or by getting a free kick, penalty kick or throw-in,
-  - then (optionally) passing the ball between players to come closer to the door
-  - and finally, performing a shot on the goal
-  - to overcome the goalkeeper of the opponent team
+In football, scoring a goal typically requires a team to gain possession of the ball, advance into promising attacking areas, create goal-scoring opportunities, and ultimately convert these opportunities into shots on goal. Consequently, successful attacking sequences are often reflected in specific event patterns recorded within the match data.
 
-To determine the most relevant features with highest influence on the prediction results and as all events are team-specific, we performed as follows: As the event types start with a technique specific prefix (e.g., 'shot.' for all goal shot-related event types), we distinguished between to team for which event was relevant (home or away time) and created multiple heatmaps showing the influence of these team-specific event types on the result columns for the prediction, i.e., the three binary columns for the different match outcomes ('win_home', 'win_away', 'win_none'). [Fig. 2](#Fig2) shows these heatmaps.
+Typical phases leading to a scoring opportunity include:
 
-Thus, some features seemed to have only a minor impact on the result columns. Thus, we only considered those 30 features from the events dataset with highest absolute cell values. This leads to significantly reduced calculation and processing costs without a larger impact on the classification results. [Fig. 4](#Fig4) shows the resulting consolidated heatmap which only includes those 60 features (out of the original 2*119 = 238) with the largest influence on the result columns that were taken into consideration for the classification algorithms later on. As one can see, there is still a lot of complexity included in this immense feature set.
+- Gaining possession through actions such as dribbles, duels, interceptions, clearances, opponent mistakes, throw-ins, free kicks, or penalty kicks.
+- Progressing the ball towards the opponent's goal through carries and combinations of passes.
+- Creating goal-scoring opportunities by generating advantageous attacking situations.
+- Performing one or more shots on goal.
+- Successfully overcoming the opposing goalkeeper and defensive structure.
+
+As a result, many event characteristics recorded in the StatsBomb dataset can be expected to exhibit a relationship to the eventual match outcome. The objective of the feature engineering process is therefore to identify those event-derived variables that provide the most predictive information regarding a team's probability of winning, drawing, or losing a match.
+
+Since all event data is recorded separately for both participating teams, each event-derived feature was transformed into a pair of team-specific match features. For a given event attribute \(x\), two corresponding match-level features were generated:
+
+- `home_<x>`
+- `away_<x>`
+
+Depending on the semantic meaning of the attribute, different aggregation strategies were applied. Event frequencies were generally represented as occurrence counts, while quantitative variables such as expected goals (`statsbomb_xg`) and event durations were aggregated by summation. Continuous variables such as pass lengths and pass angles were aggregated using arithmetic means. Binary indicators, for example `under_pressure` or `counterpress`, were represented by the number of positive occurrences within a match.
+
+This aggregation process resulted in a match-level feature matrix containing team-specific statistics for each recorded event type and attribute.
+
+To identify the most relevant predictive variables, correlation analyses were performed between the generated feature set and the three target variables:
+
+- `win_home`
+- `win_none`
+- `win_away`
+
+The results were visualized using a series of correlation heatmaps, as shown in #Fig2. These visualizations provide an intuitive overview of the strength and direction of the relationship between individual event-derived features and the different match outcomes.
+
+The analysis revealed that many features exhibit only weak correlations with the target variables and therefore contribute little predictive information. To reduce the dimensionality of the feature space and improve computational efficiency, only the features with the largest absolute correlation values were retained for model training.
+
+More specifically, the 30 most influential home-team features and the 30 most influential away-team features were selected, resulting in a reduced feature set of 60 variables. This approach substantially decreases computational and memory requirements while preserving the majority of the predictive information contained in the original event dataset.
+
+The resulting consolidated correlation heatmap is shown in #Fig4. Although the feature space was reduced from 238 team-specific event features (2 × 119 event attributes) to only 60 features, the remaining variables still capture a rich and diverse representation of match dynamics, including offensive actions, defensive behavior, possession-related statistics, goalkeeper actions, and expected-goal metrics. Consequently, the reduced feature set provides a strong foundation for the Machine Learning models developed in this project while avoiding unnecessary model complexity.
 
 ![Fig4](https://github.com/sschuhmi/sschuhmi.github.io/blob/main/_posts/img/2026-07_MLE-Cap/eval/Heatmap-filtered_mixed-type.png?raw=true)
 <p align="center" style="text-align:center, text-style:italic">
@@ -463,12 +488,28 @@ The heatmaps show at first glance that the influence of the specific types on th
 Fig. 5: Heatmap of combined-type, with reduced feature set to Top 30 features with highest influence on target columns 'win_home', 'win_none', 'win_away'
 </p>
 
-#### Feature Set - Quantitative Approach
-For this project, we decided just to consider the quantitative amounts of the event types, meaning we counted the amount of each event type per match and added an additional column for this feature holding the number of counts of this event. For some events, it may be possible to additionally exploit the actual qualitative value of an event, but we leave this for future work, as it would increase the computational complexity again (e.g., the goalkeeper´s body part for an event may be 'head', 'chest', 'both hands', 'left hand', 'right hand', 'left foot' or 'right foot', i.e. 7 possible values for only one event type!) when considering the whole feature set for this technique.
 
-Immanent to this way of calculating and adding up the match statistics is that there are neither missing values nor duplicates in the feature set included, as each cell is calculated (even if an event did not occur, there is still a zero and not a NaN as cell value) exactly once per feature and team.
+#### Feature Aggregation
 
-The feature set was imported event type-wise from the events file into the matches dataframe within the function 'update_match_stats'.
+The event files contain a large number of event-specific attributes that must be transformed into match-level features before they can be used for Machine Learning. Since the prediction models operate on a single feature vector per match, the event data was aggregated individually for the home and away team, resulting in one row per match in the final dataset.
+
+For many event attributes, the aggregation was performed by counting the number of occurrences within a match. This approach was primarily applied to categorical and event-based attributes, such as passes, shots, duels, interceptions, or goalkeeper actions. The resulting feature values therefore represent the frequency with which specific types of events occurred during a match.
+
+However, not all event attributes were aggregated using simple event counts. Depending on the semantic meaning of the underlying variable, different aggregation strategies were employed:
+
+- **Count aggregation:** Number of occurrences of a particular event or attribute.
+- **Sum aggregation:** Cumulative values of quantitative measures such as event duration or expected goals (`statsbomb_xg`).
+- **Mean aggregation:** Average values of continuous attributes such as pass length or pass angle.
+- **Boolean occurrence counts:** Number of successful occurrences of binary event indicators such as `under_pressure`, `counterpress`, or `pass.cross`.
+
+This aggregation strategy allows quantitative information contained in the event data to be preserved more effectively than a pure counting approach. For example, the total expected goals (`xG`) generated by a team during a match is generally more informative than merely counting the number of shots for which an xG value was recorded.
+
+A potential extension of this work would be to exploit the qualitative values of categorical event attributes more explicitly. For example, a goalkeeper action may contain information regarding the body part involved (`head`, `chest`, `both hands`, `left hand`, `right hand`, `left foot`, or `right foot`). Encoding all possible categories separately could potentially provide additional predictive power. However, doing so would substantially increase the dimensionality of the feature space and the computational complexity of the feature engineering process. Consequently, this project focuses primarily on aggregated numerical representations of the event data.
+
+An important advantage of the chosen aggregation process is that it naturally produces a complete and consistent feature matrix. Each feature value is calculated exactly once for every match and team. If a specific event did not occur during a match, the corresponding feature value is explicitly set to zero. As a result, the generated feature set contains neither duplicate observations nor missing values (`NaN`) resulting from the aggregation process.
+
+The aggregation and transfer of event-derived statistics into the match-level dataset was implemented in the `update_match_stats()` function. This function processes each event attribute according to its predefined aggregation rule and generates corresponding home-team and away-team features, which are subsequently used as input variables for the Machine Learning models.
+
 
 #### Scaling
 What was finally needed was scaling of the feature values: As the events occur in (partially) significantly different magnitudes, they need to be scaled before they can be used by Machine Learning algorithms, since otherwise, features would not be equally weighted by the algorithms. To scale the results in a positive range of floating-point numbers between zero (meaning this event type did not happen at all in this match) and one (meaning this event type happened most often in this match), we used scikit-learn´s standard MinMaxScaler [[5]](#ref5)
