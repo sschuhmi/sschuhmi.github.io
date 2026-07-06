@@ -34,7 +34,7 @@ The resulting target representation is defined as follows:
 | Draw | [0, 1, 0] |
 | Away team wins | [0, 0, 1] |
 
-Academic version:
+Stripping down the encoded vector to single variables would lead to the following representation:
 
 | Match Outcome | win_home | win_none | win_away |
 |---------------|----------|----------|----------|
