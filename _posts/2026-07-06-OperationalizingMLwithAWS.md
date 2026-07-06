@@ -6,7 +6,7 @@
 
 ## Project Overview
 
-Football — known as soccer in the United States where currently the World Cup 2026 is ongoing — is one of the most popular sports worldwide. Over the past decade, the volume of analytical data generated during professional football matches has increased dramatically due to advances in technologies such as high-resolution cameras, drones, wearable sensors, and automated tracking systems. One of the leading providers of football analytics data is StatsBomb [[1]](#ref1), which offers extensive event and performance data from matches around the world. In addition to its commercial products, StatsBomb maintains a large open-data repository on GitHub [[2]](#ref2). This repository currently (in July 2026) contains free data from more than 3,400 matches across 190+ competitions, ranging from domestic leagues to major continental and international tournaments, including the 2022 FIFA World Cup as well as the latest continental championships, like the 2025 UEFA Women´s Euro Cup.
+Football — known as soccer in the United States where currently the World Cup 2026 is ongoing — is one of the most popular sports worldwide. Over the past decade, the volume of analytical data generated during professional football matches has increased dramatically due to advances in technologies such as high-resolution cameras, drones, wearable sensors, and automated tracking systems. One of the leading providers of football analytics data is StatsBomb [[1]](#ref1), which offers extensive event and performance data from matches around the world. In addition to its commercial products, StatsBomb maintains a large open-data repository on GitHub [[2]](#ref2). This repository currently (in July 2026) contains free data from many thousand matches across 190+ competitions, ranging from domestic leagues to major continental and international tournaments, including the 2022 FIFA World Cup as well as the latest continental championships, like the 2025 UEFA Women´s Euro Cup.
 
 The rapid growth in the availability of football analytics data raises an interesting research question:
 
@@ -147,16 +147,23 @@ Consequently, the final evaluation of each model is based not only on its overal
 
 # Analysis
 
-## Data Exploration
+## Dataset Overview
 
-Currently in October 2024, StatsBomb´s open data represents only a small, but yet comprehensive subset of the overall StatsBomb data. 
+As of July 2026, the StatsBomb Open Data repository represents only a subset of StatsBomb's complete commercial data offering. Nevertheless, it provides a comprehensive and diverse collection of football match data that is well suited for data analytics and Machine Learning applications.
 
-The data is provided as JSON files exported from the StatsBomb Data API, in the following structure:
-- 21 competitions with 74 seasons
-- Almost 3500 matches, spread among the above mentioned competitions and seasons
-- Events and lineups for each of these matches, included additional StatsBomb 360 data for selected matches
+The dataset is publicly available through the StatsBomb Open Data GitHub repository [[2]](#ref2) and is provided as a collection of JSON files exported from the StatsBomb Data API. The repository is organized hierarchically and currently contains:
 
-A fine-grained documentation of the files, their formats and their contents is also included in the GitHub repository. [[2]](#ref2)
+- **21 football competitions**
+- **74 individual seasons**
+- **Approximately 3,500 matches** distributed across the available competitions and seasons
+- **Event data and lineup information** for each match
+- **StatsBomb 360 data** for a subset of matches, providing additional contextual information about player positioning and surrounding match situations
+
+The competitions included in the repository cover a wide range of football tournaments, from domestic league competitions to major continental and international championships. Consequently, the dataset captures a broad spectrum of playing styles, tactical approaches, and competitive levels.
+
+For each match, the event data contains a chronological sequence of football actions such as passes, shots, dribbles, duels, interceptions, fouls, and goalkeeper actions. These events form the primary data source used in this project to derive match-specific features for the Machine Learning models.
+
+The repository additionally provides extensive documentation describing the structure, content, and semantics of the available JSON files. This documentation includes detailed explanations of event types, attributes, nested data structures, and relationships between the different datasets, thereby facilitating efficient data preprocessing and feature engineering.
 
 #### Competitions and Seasons
 
