@@ -133,13 +133,17 @@ $$
 
 where \(n_i\) represents the number of samples of class \(i\).
 
-These aggregated metrics provide additional insight into model performance, particularly when one class occurs more frequently than the others.
+These aggregated metrics provide additional insights into the model's performance, particularly when one class occurs more frequently than the others.
 
 ### Evaluation Objective
 
-Although all previously introduced metrics are taken into account during model evaluation, the primary objective of this project is to maximize the overall prediction accuracy. Nevertheless, precision, recall, and F1 score remain important complementary measures because they reveal whether a model tends to produce excessive false positives or false negatives for specific match outcomes.
+Although all previously introduced evaluation metrics are considered during model assessment, the primary objective of this project is to maximize the overall prediction accuracy. Since the task consists of predicting the correct outcome of a football match, the proportion of correctly classified matches represents the most intuitive and practically relevant measure of model performance.
 
-Particular attention is paid to the individual performance of the three target classes (`win_home`, `win_none`, and `win_away`) in order to identify potential class-specific weaknesses of the investigated Machine Learning models.
+Nevertheless, accuracy alone does not provide a complete assessment of a classifier's quality. In particular, when the distribution of match outcomes is imbalanced, a model may achieve a relatively high overall accuracy while performing poorly on less frequent classes. For this reason, the complementary metrics precision, recall, and F1 score are also evaluated. These metrics provide additional insight into the classifier's behavior with respect to false positive and false negative predictions and enable a more comprehensive assessment of model performance.
+
+Special attention is paid to the individual predictive performance of the three target classes (`win_home`, `win_none`, and `win_away`). While aggregate metrics summarize the overall model quality, class-specific metrics reveal whether certain match outcomes are systematically easier or more difficult to predict. Such analyses are particularly important for identifying potential biases, class imbalance effects, or weaknesses of individual Machine Learning models.
+
+Consequently, the final evaluation of each model is based not only on its overall accuracy, but also on its ability to consistently and reliably identify all three possible match outcomes.
 
 # Analysis
 
