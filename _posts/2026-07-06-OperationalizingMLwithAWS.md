@@ -74,7 +74,7 @@ $$
 Precision = \frac{TP}{TP + FP}
 $$
 
-A high precision score indicates that the classifier produces relatively few false positive predictions. In the context of football match prediction, this metric is useful for identifying whether a predicted outcome (e.g., a home-team win) was frequently predicted incorrectly.
+A high precision score indicates that the classifier produces relatively few false positive predictions. In the context of football match prediction, this metric is useful for identifying whether a predicted outcome (e.g., a home-team win) was frequently predicted incorrectly. 
 
 ### Recall
 
