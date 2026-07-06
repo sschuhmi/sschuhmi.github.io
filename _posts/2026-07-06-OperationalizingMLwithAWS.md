@@ -241,7 +241,7 @@ and many more.
 
 Overall, the repository contains 119 distinct event attributes and event-related feature categories. Since these events are recorded separately for both teams, the effective number of potentially relevant match characteristics is substantially larger. Consequently, the event data forms the foundation for the feature engineering process and provides the predictive variables used by the Machine Learning models developed in this project.
 
-A complete overview of all events' columns including all event types is shown below. Every single event is attached to one specific teams, i.e. the home team _or_ the away team.
+A complete overview of all events' files 150 structures including the ~120 event types is shown below. Every single event is attached to one specific teams, i.e. the home team _or_ the away team.
 
 ```python
 [
