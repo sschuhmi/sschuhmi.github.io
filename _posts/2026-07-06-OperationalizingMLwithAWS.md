@@ -704,7 +704,8 @@ $$
 ||y - Xw||_2^2
 +
 \alpha ||w||_2^2
-\
+\right)
+$$
 
 - scikit-learn´s MultiOutputRegressor [[10]](#ref10) with Stochastic Gradient Descent (SGD) [[12]](#ref12) as estimator: SGD represents a simple, yet very efficient approach to fitting linear classifiers and regressors under convex loss functions such as (linear) Support Vector Machines and Logistic Regression.
 
