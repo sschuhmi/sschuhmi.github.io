@@ -398,10 +398,6 @@ A complete overview of all events' files 150 structures including the ~120 event
 ]
 ```
 
-#![Event Types](https://github.com/sschuhmi/sschuhmi.github.io/blob/main/_posts/img/2014-10_Football/Event-Types.PNG?raw=true)
-
----
-
 ### Lineups
 
 For each match, the repository additionally provides lineup information describing the participating players of both teams.
