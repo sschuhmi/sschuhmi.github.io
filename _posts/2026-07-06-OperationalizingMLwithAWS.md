@@ -1,4 +1,6 @@
-# Applied Data Science with Modern Football Data: Predicting Match Results
+# An Operational End-2-End Approach in Predicting Match Results in Modern Football with AWS SageMaker
+
+![](https://github.com/sschuhmi/sschuhmi.github.io/blob/main/_posts/img/2026-07_MLE-Cap/football2.png?raw=true)
 
 # Project Definition
 
