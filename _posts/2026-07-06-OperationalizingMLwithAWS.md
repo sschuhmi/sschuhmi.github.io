@@ -458,7 +458,6 @@ The heatmaps show at first glance that the influence of the specific types on th
 - Some of the events have a positive impact on a specific result column, represented by a positive value and in a rather bright color, while other events have a negative impact with values below 0.
 - Moreover, some events have a rather large impact on the result, e.g. with values >0.5 or <-0.5, while others have a rather minimal impact on the results columns since their values are close to 0.
 
-Fig. 4: Heatmap of combined-type, reduced feature set with all features
 ![Fig5](https://github.com/sschuhmi/sschuhmi.github.io/blob/main/_posts/img/2026-07_MLE-Cap/eval/Heatmap-top30features.png?raw=true)
 <p align="center" style="text-align:center, text-style:italic">
 Fig. 5: Heatmap of combined-type, with reduced feature set to Top 30 features with highest influence on target columns 'win_home', 'win_none', 'win_away'
