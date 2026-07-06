@@ -697,7 +697,9 @@ This refinement guarantees that every prediction satisfies the fundamental const
 The following three regressors were implemented and optizimed using the algorithm described above:
 - scikit-learn´s MultiOutputRegressor [[10]](#ref10) with GradientBoostingRegressor [[8]](#ref8) as estimator: This estimator builds an additive model in a forward stage-wise fashion; it allows for the optimization of arbitrary differentiable loss functions
 - scikit-learn´s MultiOutputRegressor [[10]](#ref10) with Ridge [[11]](#ref11) as estimator: Ridge represents a Linear least squares with L2 regularization and minimizes the following objective function:
+$$
 ||y - Xw||^2_2 + alpha * ||w||^2_2
+$$
 - scikit-learn´s MultiOutputRegressor [[10]](#ref10) with Stochastic Gradient Descent (SGD) [[12]](#ref12) as estimator: SGD represents a simple, yet very efficient approach to fitting linear classifiers and regressors under convex loss functions such as (linear) Support Vector Machines and Logistic Regression.
 
 In summary, we compare the naive RandomClassifier with three ML multi-output classifiers and three ML multi-output regressor with corrected result vectors.
